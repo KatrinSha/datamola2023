@@ -1,40 +1,268 @@
 .task {
     background-color: #5043a610;
 }
-
+.path{
+    margin-top:10px ;
+}
 .task__wrapper {
     display: flex;
     flex-direction: column;
+
+}
+.task__container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  
+    align-items: center;
+ transform: translateY(-60px);
+    
+}
+.button__to-main {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 170px;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: var(--white);
+    background-color: var(--secondary-color);
+    margin-top:10px ;
+
+}
+
+.arrow_back {
+    background-image: url("/datamola2023/UI/assets/icon/arrow-back.svg");
+    width: 24px;
+    height: 24px;
 }
 
 .task__box {
     width: 800px;
-    margin: 0 auto;
+
     box-sizing: 20px;
     background: #FFFFFF;
     border: 1px solid rgba(104, 130, 158, 0.5);
     border-radius: 20px 20px 0px 0px;
+
+    display: grid;
+    grid-template-areas:
+        "status title title title priority"
+        "assigne assigne assigne date date"
+        "description description description description description"
+        "description description description description description"
+        "comments private . delete edit";
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: repeat(5, 60px);
+    padding: 30px 35px;
+    color: var(--black);
 }
 
-.comments-box{
-    width: 800px;
-    margin: 0 auto;
-    background: rgba(123, 97, 255, 0.1);
-    border-top: 1px solid rgba(66, 115, 166, 0.4);
-    box-shadow: 0px 0px 4px rgba(66, 115, 166, 0.2), 2px 2px 4px rgba(66, 115, 166, 0.2);
+
+.task__status {
+    grid-area: status;
+    align-self: center;
+    justify-self: flex-start;
 }
+
+.task__title {
+    grid-area: title;
+    font-size: 2.0rem;
+    align-self: flex-start;
+    justify-self: center;
+}
+
+.task__priority {
+    grid-area: priority;
+    font-size: 1.4rem;
+    color: var(--additional-color-3-darker);
+    align-self: center;
+    justify-self: flex-end;
+}
+
+.task__description {
+    grid-area: description;
+    font-weight: 400;
+    text-align: justify;
+    align-self: flex-start;
+    justify-self: center;
+}
+
+.task__assignee {
+    grid-area: assigne;
+    font-size: 1.4rem;
+    align-self: center;
+    justify-self: flex-start;
+}
+
+.task__assignee span {
+    font-size: 1.6rem;
+    margin-left: 20px;
+}
+
+.task__date {
+    grid-area: date;
+    font-size: 1.4rem;
+    align-self: center;
+    justify-self: flex-end;
+}
+
+.task__comments {
+    grid-area: comments;
+    align-self: center;
+    justify-self: flex-start;
+    color: var(--secondary-color);
+
+}
+
+.comments {
+    background-image: url("/datamola2023/UI/assets/icon/comments.svg");
+    width: 30px;
+    height: 24px;
+    margin-right: 10px;
+
+}
+
+.task__private {
+    grid-area: private;
+    align-self: center;
+    justify-self: flex-start;
+    font-weight: 400;
+}
+
+.task__delete-button {
+    grid-area: delete;
+    text-transform: uppercase;
+    color: var(--secondary-color);
+
+    align-self: center;
+    justify-self: flex-end;
+    padding: 9px 20px;
+    display: flex;
+    align-items: center;
+    line-height: 120%;
+    gap: 10px;
+
+
+}
+
+.delete {
+    background-image: url("/datamola2023/UI/assets/icon/delete.svg");
+    width: 24px;
+    height: 24px;
+    opacity: 100%;
+}
+
+.task__edit-button {
+    grid-area: edit;
+    background-color: var(--secondary-color);
+    color: var(--white);
+    text-transform: uppercase;
+    align-self: center;
+    justify-self: flex-end;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    line-height: 120%;
+    gap: 10px;
+}
+
+.edit {
+    background-image: url("/datamola2023/UI/assets/icon/edit.svg");
+    width: 14px;
+    height: 14px;
+    opacity: 100%;
+
+}
+
 
 .comments-box {
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+    margin: 0 auto;
+    background: rgba(123, 97, 255, 0.05);
+    border-top: 1px solid rgba(66, 115, 166, 0.4);
+    box-shadow: 0px 0px 4px rgba(66, 115, 166, 0.2), 2px 2px 4px rgba(66, 115, 166, 0.2);
+    max-height: 250px;
+    min-height: fit-content;
+    overflow-y: scroll;
+}
+
+.comment {
+    padding: 2px 30px;
+    display: grid;
+    grid-template-areas:
+        "username comment-date . ."
+        "comment-text comment-text comment-text comment-text";
+    gap: 5px;
+    align-items: flex-end;
+}
+
+.username {
+    grid-area: username;
+    color: var(--black);
+}
+
+.comment__date {
+    grid-area: comment-date;
+    color: #33333390;
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+}
+
+.comment__text {
+    grid-area: comment-text;
+    color: #333333;
+    font-weight: 400;
+    padding: 10px 20px;
+    background: #FFFFFF;
+    border: 1px solid #4273A6;
+    border-radius: 5px;
+    margin: 0 10px;
 
 }
-.comment__form{
- display: flex;
- padding: 20px 40px;
- align-items: center;
- height: 100px;
- gap: 20px;
+
+.comment__form {
+    display: flex;
+    gap: 20px;
+    padding: 20px 40px;
+    align-items: center;
+    height: 100px;
+    width: 800px;
+
+    background-color: var(--white);
+    border-radius: 0 0 10px 10px;
+    border: 1px solid rgba(66, 115, 166, 0.5);
+    box-shadow: -2px 0px 2px rgba(66, 115, 166, 0.2), 2px 0px 2px rgba(66, 115, 166, 0.2);
+
 }
-.comment__input{
+.submit{
+    padding: 11px 20px;
+    color: var(--white);
+    background-color: var(--secondary-color);
+    text-transform: uppercase;
+}
+.comment__input {
     height: 50px;
-   flex:80%;
+    flex: 80%;
+    background: rgba(249, 232, 204, 0.1);
+}
+
+.comment__input::placeholder {
+    color: #33333350;
+}
+::-webkit-scrollbar {
+    background-color: var(--additional-color-2);
+    width: 10px;    border-radius: 20px;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 2px var(--additional-color-2-darker);
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(80, 67, 166, 0.5);
 }
