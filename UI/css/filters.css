@@ -69,7 +69,7 @@ input::placeholder {
 .button-date {
     display: flex;
     align-items: flex-start;
-  gap: 5px;
+    gap: 5px;
     font-size: 1.6rem;
     background: #FFFFFF;
     border: 1px solid rgba(66, 115, 166, 0.60);
