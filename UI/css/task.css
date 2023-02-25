@@ -1,7 +1,16 @@
 
-.path{
-    margin-top:10px ;
+.arrow-back_dark {
+    background-image: url("/datamola2023/UI/assets/icon/arrow-back-dark.svg");
+    width: 16px;
+    height: 16px;
 }
+
+.path {
+    margin-top: 10px;
+    display: flex;
+    gap: 5px;
+}
+
 .task__wrapper {
     display: flex;
     flex-direction: column;
