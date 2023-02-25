@@ -1,7 +1,24 @@
+.task__wrapper {
+    display: flex;
+    justify-content: flex-start;
+}
+
+@media (max-width:1024px) {
+    .task__wrapper {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 10px;
+    }
+}
+
 .arrow-back_dark {
     background-image: url("/datamola2023/UI/assets/icon/arrow-back-dark.svg");
     width: 16px;
     height: 16px;
+}
+
+.path-to {
+    align-self: flex-start;
 }
 
 .path {
@@ -10,17 +27,20 @@
     gap: 5px;
 }
 
-.task__wrapper {
-    display: flex;
-    flex-direction: column;
-}
-
 .task__container {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    transform: translateY(-60px);
+    margin-left: calc(((1320px - 800px) / 2) - 170px);
+    margin-top: 40px;
+}
+
+@media (max-width:1024px) {
+    .task__container {
+        margin-left: 0;
+        margin-top: 5px;
+    }
 }
 
 .button__to-main {
@@ -64,6 +84,21 @@
     color: var(--black);
 }
 
+@media (max-width:1024px) {
+    .task__box {
+        width: 70vw;
+        padding: 20px 15px;
+        grid-template-rows: repeat(5, 50px);
+    }
+}
+
+@media (max-width:600px) {
+    .task__box {
+        width: 80vw;
+        padding: 20px 15px;
+        grid-template-rows: repeat(5, 40px);
+    }
+}
 
 .task__status {
     grid-area: status;
@@ -71,11 +106,28 @@
     justify-self: flex-start;
 }
 
+@media (max-width:600px) {
+    .task__status {
+        font-size: 1.2rem;
+    }
+}
+
 .task__title {
     grid-area: title;
     font-size: 2.0rem;
     align-self: flex-start;
     justify-self: center;
+}
+
+@media (max-width:768px) {
+    .task__title {
+        font-size: 1.6rem;
+    }
+}
+@media (max-width:600px) {
+    .task__title {
+        text-align: center;
+    }
 }
 
 .task__priority {
@@ -86,12 +138,26 @@
     justify-self: flex-end;
 }
 
+@media (max-width:600px) {
+    .task__priority {
+        font-size: 1.2rem;
+    }
+}
+
 .task__description {
     grid-area: description;
     font-weight: 400;
     text-align: justify;
     align-self: flex-start;
     justify-self: center;
+    height: 80px;
+    overflow: hidden;
+}
+
+@media (max-width:600px) {
+    .task__description {
+        font-size: 1.2rem;
+    }
 }
 
 .task__assignee {
@@ -103,6 +169,18 @@
 
 .task__assignee span {
     font-size: 1.6rem;
+}
+
+@media (max-width:600px) {
+    .task__assignee {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width:600px) {
+    .task__assignee span {
+        font-size: 1.2rem;
+    }
 }
 
 .task__date {
@@ -117,7 +195,12 @@
     align-self: center;
     justify-self: flex-start;
     color: var(--secondary-color);
+}
 
+@media (max-width:768px) {
+    .task__comments {
+        align-self: flex-end;
+    }
 }
 
 .comments {
@@ -135,6 +218,12 @@
     font-weight: 400;
 }
 
+@media (max-width:768px) {
+    .task__private {
+        align-self: flex-end;
+    }
+}
+
 .task__delete-button {
     grid-area: delete;
     text-transform: uppercase;
@@ -147,15 +236,49 @@
     align-items: center;
     line-height: 120%;
     gap: 10px;
-
-
 }
 
+@media (max-width:1024px) {
+    .task__delete-button {
+        padding: 9px 10px;
+    }
+}
+
+@media (max-width:768px) {
+    .task__delete-button {
+        font-size: 1.2rem;
+        padding: 6px 8px;
+    }
+}
+@media (max-width:600px) {
+    .task__delete-button {
+        align-self: flex-end;
+        font-size: 0;
+        padding: 0;
+        box-shadow:none;
+        border: none;
+    }
+}
 .delete {
     background-image: url("/datamola2023/UI/assets/icon/delete.svg");
     width: 24px;
     height: 24px;
     opacity: 100%;
+}
+
+@media (max-width:768px) {
+    .delete {
+        background-size: contain;
+        width: 20px;
+        height: 20px;
+    }
+}
+@media (max-width:600px) {
+    .delete {
+        background-size: contain;
+        width: 24px;
+        height: 24px;
+    }
 }
 
 .task__edit-button {
@@ -172,14 +295,43 @@
     gap: 10px;
 }
 
+@media (max-width:1024px) {
+    .task__edit-button {
+        padding: 12px 10px;
+    }
+}
+
+@media (max-width:768px) {
+    .task__edit-button {
+        font-size: 1.4rem;
+        padding: 8px 8px;
+    }
+}
+@media (max-width:600px) {
+    .task__edit-button {
+        align-self: flex-end;
+        justify-self: center;
+        font-size: 0;
+        padding: 0;
+        box-shadow:none;
+        border: none;
+        background-color: var(--white);
+    }
+}
 .edit {
     background-image: url("/datamola2023/UI/assets/icon/edit.svg");
     width: 14px;
     height: 14px;
     opacity: 100%;
-
 }
-
+@media (max-width:600px) {
+    .edit {
+        background-image: url("/datamola2023/UI/assets/icon/edit_dark.svg");
+        background-size: contain;
+        width: 20px;
+        height: 20px;
+    }
+}
 
 .comments-box {
     display: flex;
@@ -189,11 +341,21 @@
     background: rgba(123, 97, 255, 0.05);
     border-top: 1px solid rgba(66, 115, 166, 0.4);
     box-shadow: 0px 0px 4px rgba(66, 115, 166, 0.2), 2px 2px 4px rgba(66, 115, 166, 0.2);
-    max-height: 250px;
+    max-height: 300px;
     min-height: fit-content;
     overflow-y: scroll;
 }
 
+@media (max-width:1024px) {
+    .comments-box {
+        width: 70vw;
+    }
+}
+@media (max-width:600px) {
+    .comments-box {
+        width: 80vw;
+    }
+}
 .comment {
     padding: 2px 30px;
     display: grid;
@@ -204,9 +366,29 @@
     align-items: flex-end;
 }
 
+@media (max-width:1024px) {
+    .comment {
+        padding: 2px 15px;
+    }
+}
+@media (max-width:600px) {
+    .comment {
+        grid-template-areas:
+        "username comment-date "
+        "comment-text comment-text";
+        padding: 2px 20px;
+    }
+}
 .username {
     grid-area: username;
     color: var(--black);
+}
+
+@media (max-width:600px) {
+    .username {
+        font-size: 1.2rem;
+        align-self: flex-end;
+    }
 }
 
 .comment__date {
@@ -215,7 +397,13 @@
     font-size: 1.2rem;
     line-height: 1.4rem;
 }
-
+@media (max-width:600px) {
+    .comment__date {
+        font-size: 1.2rem;
+       justify-self: flex-start;
+       line-height: 1.8rem;
+    }
+}
 .comment__text {
     grid-area: comment-text;
     color: #333333;
@@ -228,10 +416,17 @@
 
 }
 
+@media (max-width:768px) {
+    .comment__text {
+        font-size: 1.2rem;
+        margin: 0 ;
+    }
+}
+
 .comment__form {
     display: flex;
     gap: 20px;
-    padding: 20px 40px;
+    padding: 15px 40px;
     align-items: center;
     height: 100px;
     width: 800px;
@@ -243,19 +438,49 @@
 
 }
 
+@media (max-width:1024px) {
+    .comment__form {
+        width: 70vw;
+        padding: 15px 25px;
+        height: 80px;
+    }
+}
+@media (max-width:600px) {
+    .comment__form {
+        width: 80vw;
+        padding: 15px 20px;
+        height: 50px;
+        gap:5px
+    }
+}
 .submit {
     padding: 11px 20px;
     color: var(--white);
     background-color: var(--secondary-color);
     text-transform: uppercase;
 }
-
+@media (max-width:768px) {
+    .submit {
+        font-size: 1.4rem;
+        padding: 8px 8px;
+    }
+}
+@media (max-width:600px) {
+    .submit {
+        font-size: 1.2rem;
+        font-weight: 400;
+    }
+}
 .comment__input {
     height: 50px;
     flex: 80%;
     background: rgba(249, 232, 204, 0.1);
 }
-
+@media (max-width:768px) {
+    .comment__input {
+        height: 35px;
+    }
+}
 .comment__input::placeholder {
     color: #33333350;
 }
