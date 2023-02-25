@@ -1,6 +1,4 @@
-.task {
-    background-color: #5043a610;
-}
+
 .path{
     margin-top:10px ;
 }
@@ -98,7 +96,6 @@
 
 .task__assignee span {
     font-size: 1.6rem;
-    margin-left: 20px;
 }
 
 .task__date {

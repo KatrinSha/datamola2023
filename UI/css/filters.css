@@ -67,14 +67,22 @@ input::placeholder {
 }
 
 .button-date {
+    display: flex;
+    align-items: flex-start;
+  gap: 5px;
     font-size: 1.6rem;
     background: #FFFFFF;
     border: 1px solid rgba(66, 115, 166, 0.60);
     box-shadow: 0px 4px 4px rgba(66, 115, 166, 0.1);
     border-radius: 5px;
-    padding: 10.5px 12px;
-    width: 90px;
+    padding: 11px 5px 11px 10px;
+    width: 80px;
     text-align: start;
+}
+.arrow {
+    background-image: url("/datamola2023/UI/assets/icon/arrow.svg");
+    width: 19px;
+    height:19px;
 }
 
 .form__search {
