@@ -1,0 +1,41 @@
+.header {
+    background: var(--white);
+    box-shadow: 0px 4px 4px rgba(66, 115, 166, 0.1);
+}
+
+.header__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+}
+
+.header-logo {
+    display: flex;
+
+}
+
+.logo {
+    background-image: url("/assets/icon/logo.svg");
+    width: 50px;
+    height: 50px;
+}
+
+.logo__text {
+    font-family: "Urbanist";
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    align-self: flex-end;
+  
+}
+.header .logo__text{
+    transform: translate(-45%, 16%);
+}
+.header .profile-name{
+    font-size: 1.8rem;
+    margin-left:calc(30vw) ;
+}
+.header__button{
+    font-size: 1.8rem;
+    padding: 7px 15px;
+}

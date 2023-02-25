@@ -1,0 +1,245 @@
+.cards__wrapper {
+    display: flex;
+    flex-direction: column;
+    padding-top: 5px;
+}
+
+.cards-container {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    max-height: calc(100vh * 0.26);
+    border-radius: 10px;
+    border-bottom: 1px solid rgba(66, 115, 166, 0.2);
+    gap: 1px;
+    overflow-y: scroll;
+}
+
+.cards__info {
+    display: none;
+}
+
+.todo {
+    background-color: var(--additional-color-2);
+}
+.inprogress {
+    background-color: var(--additional-color-1);
+}
+
+.complete {
+    background-color: var(--primary-color);
+}
+
+.card__box {
+    background: #FFFFFF;
+    filter: drop-shadow(0px 4px 4px rgba(66, 115, 166, 0.2));
+    height: fit-content;
+}
+
+.table__header {
+    display: grid;
+    grid-template-areas:
+        ". status title priority description assignee date comments privacy edit delete ";
+    grid-template-columns: 11% 6% 11% 6% 27% 9% 6.5% 7% 6.5% 4% 6%;
+    grid-template-rows: 50px;
+    color: var(--black);
+}
+
+.table__header div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.visibility{
+    display: none;
+}
+/*.table__name,
+.table__status,
+.table__title,
+.table__priority,
+.table__discription,
+.table__assigne,
+.table__date,
+.table__comments,
+.table__privacy,
+.table__delete,
+.table__edit {
+background-color: #5043a640;
+}*/
+
+
+.todo .table__header div:nth-child(even) {
+    background-color: #5043a610;
+}
+.inprogress .table__header div:nth-child(even) {
+    background-color: #d4711320;
+}
+.complete .table__header div:nth-child(even) {
+    background-color:  #4273a620;
+}
+.card {
+    display: grid;
+    grid-template-areas:
+        ". status title priority description assignee date comments privacy edit delete ";
+    grid-template-columns: 11% 6% 11% 6% 27% 9% 6.5% 7% 6.5% 4% 6%;
+    grid-template-rows: 100px;
+}
+
+.card__status,
+.card__title,
+.card__priority,
+.card__description,
+.card__assignee,
+.card__date,
+.card__comments,
+.card__private,
+.card__delete-button,
+.card__edit-button {
+    border: 1px solid rgba(66, 115, 166, 0.2);
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.card__status {
+    grid-area: status;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+
+.card__title {
+    grid-area: title;
+    text-align: center;
+    font-size: 1.4rem;
+    word-wrap: break-word;
+    color: var(--black);
+    opacity: 80%;
+    overflow: hidden;
+    align-items: flex-start;
+}
+
+
+.card__priority {
+    grid-area: priority;
+    font-size: 1.2rem;
+    color: var(--additional-color-2-darker);
+
+}
+
+.card__description {
+    grid-area: description;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--black);
+    overflow: hidden;
+    align-items: flex-start;
+}
+
+.card__assignee {
+    grid-area: assignee;
+    font-size: 1.6rem;
+    word-wrap: break-word;
+
+}
+
+.card__assignee span {
+    font-weight: 400;
+}
+
+.card__date {
+    grid-area: date;
+    font-size: 1.2rem;
+    color: var(--black);
+    opacity: 50%;
+}
+
+.card__comments {
+    grid-area: comments;
+    display: flex;
+    gap: 10px;
+}
+
+
+.card__private {
+    grid-area: privacy;
+    color: var(--black);
+    opacity: 50%;
+}
+
+.card__delete-button {
+    grid-area: delete;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.delete {
+    background-image: url("/assets/icon/delete.svg");
+    width: 24px;
+    height: 24px;
+    opacity: 50%;
+}
+
+.card__edit-button {
+
+    grid-area: edit;
+    font-size: 0;
+    border-radius: 0;
+    box-shadow: none;
+
+}
+
+.edit {
+    background-image: url("/assets/icon/edit_dark.svg");
+    width: 14px;
+    height: 14px;
+    opacity: 50%;
+}
+
+
+
+::-webkit-scrollbar {
+    width: 15px;
+    background-color: var(--additional-color-1);
+    border-radius: 20px;
+}
+
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 2px var(--additional-color-1-darker);
+    border-radius: 20px;
+
+}
+
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(212, 113, 19, 0.5);
+    border-radius: 20px;
+
+}
+
+.todo::-webkit-scrollbar {
+    background-color: var(--additional-color-2);
+}
+
+.todo::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 2px var(--additional-color-2-darker);
+}
+
+.todo::-webkit-scrollbar-thumb {
+    background-color: rgba(80, 67, 166, 0.5);
+}
+
+.complete::-webkit-scrollbar {
+    background-color: var(--primary-color);
+}
+
+.complete::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 2px var(--secondary-color);
+}
+
+.complete::-webkit-scrollbar-thumb {
+    background-color: rgba(66, 115, 166, 0.5);
+}

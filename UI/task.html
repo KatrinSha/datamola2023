@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__wrapper wrapper">
+            <div class="header-logo">
+                <span class="ico logo"></span>
+                <p class="logo__text">Funtask</p>
+            </div>
+            <p class="profile-name">Shchablovskaya Katerina</p>
+            <button class="header__button button">Log out</button>
+        </div>
+    </header>
+    <main class="main">
+        <section class="filters">
+            <div class="filters__wrapper wrapper">
+                <div class="filters__container">
+                    <div class="filters__name filters-box">
+                        <select id="name">
+                            <option disabled selected>Name</option>
+                            <option value="Livia Aminoff">Livia Aminoff</option>
+                            <option value="Allison Franci">Allison Franci</option>
+                            <option value="Lincoln Dorwart">Lincoln Dorwart</option>
+                            <option value="Martin Kenter">Martin Kenter</option>
+                            <option value="Ryan Curtis">Ryan Curtis</option>
+                            <option value="Tiana George">Tiana George</option>
+                        </select>
+                    </div>
+
+                    <div class="filters__privacy filters-box">
+                        <select id="privacy">
+                            <option disabled selected>Privacy</option>
+                            <option value="Public">Public</option>
+                            <option value="Private">Private</option>
+                        </select>
+                    </div>
+
+
+                    <div class="filters__priority filters-box">
+                        <select id="priority">
+                            <option disabled selected>Priority</option>
+                            <option value="Low">Low</option>
+                            <option value="Medium">Medium</option>
+                            <option value="High">High</option>
+                        </select>
+                    </div>
+
+
+                    <div class="filters__date">
+                        <button class="button-date" name="Date">Date < </button>
+                                <div class="calendars visibility">
+                                    <div class="from">
+                                        <label for="dateFrom">From: </label>
+                                        <input type="date" id="date1" name="dateFrom" />
+                                    </div>
+                                    <div class="to">
+                                        <label for="dateTo">to: </label>
+                                        <input type="date" id="date2" name="dateTo" />
+                                    </div>
+                                </div>
+                    </div>
+                    <div>
+                        <form class="form__search" action="" method="post">
+                            <input type="text" placeholder="Title" name="search">
+                            <button class="button-search" type=""><span class="ico search"></span></button>
+                        </form>
+                    </div>
+                </div>
+                <div class="view">
+                    <button class="button__view-table"><span class="ico table-view"></span></button>
+                    <button class="button__view-row"><span class="ico row-view"></span></button>
+                </div>
+                <button class="button__add-new-task"><span class="ico add"></span> Add new task</button>
+            </div>
+        </section>
+        <section class="task">
+            <div class="task__wrapper wrapper">
+                <div class="path">Main < Task </div>
+                        <button class="button__to-main"><span class="ico add"></span> Main page</button>
+                        <div class="task__box">
+                            <div class="task__status">
+                                <div class="status__wrapper">Complete</div>
+                            </div>
+                            <div class="task__title">Create a preview and text</div>
+                            <div class="task__priority">
+                                <div class="task__wrapper">Medium</div>
+                            </div>
+                            <div class="task__description">Gorem ipsum dolor sit amet, consectetur
+                                adipiscing elit. Nunc
+                                vulputate libero et velit interdum, ac aliquet odio mattis. </div>
+                            <div class="task__assignee">Katerina Sha</div>
+                            <div class="task__date">12.10.2023 14:58</div>
+                            <div class="task__comments"><span class="ico comments"></span>4</div>
+                            <div class="task__private">Public</div>
+                            <button class="task__delete-button">
+                                <span class="ico delete"></span>
+                            </button>
+                            <button class="task__edit-button">
+                                Edit<span class="ico edit"></span>
+                            </button>
+                        </div>
+                        <div class="comments-box">
+                            <div class="comment">
+                                <div class="user">Tiana George</div>
+                                <div class="comment-date">16.02.2023 15:07</div>
+                                <div class="comment-text">Gorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+                                    vulputate libero velit interdum, ac aliquet odio mattis. Nunc vulputate libero et
+                                    velit interdum, ac aliquet, odio mattis. Gorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit Gorem ipsum dolor adipiscing elit amet.</div>
+                            </div>
+                            <form class="comment__form" method="post" action="">
+                                <input class="comment__input" placeholder="add comment..."></input>
+                                <div class="action">
+                                    <input class="submit" type="button">
+                                </div>
+                            </form>
+                        </div>
+                </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer__wrapper wrapper">
+            <div class="author">
+                <p class="logo__text">Funtask</p>
+                <span class="ico copyright"></span>
+                <p class="profile-name">Shchablovskaya Katerina</p>
+            </div>
+            <div class="info">
+                <div class="mail">shablovskaykate@mail.ru</div>
+                <span class="ico email"></span>
+                <div class="pulication-date">22.02.2023</div>
+            </div </div>
+    </footer>
+</body>
+
+</html>
