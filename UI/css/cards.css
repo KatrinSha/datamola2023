@@ -146,7 +146,7 @@
 }
 
 .comments {
-    background-image: url("/assets/icon/comments.svg");
+    background-image: url("/datamola2023/UI/assets/icon/comments.svg");
     width: 30px;
     height: 24px;
 }
@@ -170,7 +170,7 @@
 }
 
 .delete {
-    background-image: url("/assets/icon/delete.svg");
+    background-image: url("/datamola2023/UI/assets/icon/delete.svg");
     width: 24px;
     height: 24px;
 }
@@ -188,7 +188,7 @@
 }
 
 .edit {
-    background-image: url("/assets/icon/edit.svg");
+    background-image: url("/datamola2023/UI/assets/icon/edit.svg");
     width: 14px;
     height: 14px;
 }

@@ -176,7 +176,7 @@ background-color: #5043a640;
 }
 
 .delete {
-    background-image: url("/assets/icon/delete.svg");
+    background-image: url("/datamola2023/UI/assets/icon/delete.svg");
     width: 24px;
     height: 24px;
     opacity: 50%;
@@ -192,7 +192,7 @@ background-color: #5043a640;
 }
 
 .edit {
-    background-image: url("/assets/icon/edit_dark.svg");
+    background-image: url("/datamola2023/UI/assets/icon/edit_dark.svg");
     width: 14px;
     height: 14px;
     opacity: 50%;

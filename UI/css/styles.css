@@ -1,9 +1,9 @@
-@import url('/css/normolize.css');
+@import url('/datamola2023/UI/css/normolize.css');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Urbanist:wght@600&display=swap');
-@import url('/css/base.css');
-@import url('/css/header.css');
-@import url('/css/filters.css');
+@import url('/datamola2023/UI/css/base.css');
+@import url('/datamola2023/UI/css/header.css');
+@import url('/datamola2023/UI/css/filters.css');
 /*@import url('/css/cards.css');*/
-@import url('/css/cards_table.css');
-@import url("/css/task.css");
-@import url('/css/footer.css');
+@import url('/datamola2023/UI/css/cards_table.css');
+@import url("/datamola2023/UI/css/task.css");
+@import url('/datamola2023/UI/css/footer.css');
