@@ -1,0 +1,193 @@
+.profile-edit__wrapper {
+    display: flex;
+    gap: 130px;
+}
+
+@media (max-width:1319px) {
+    .profile-edit__wrapper {
+        padding: 0 10px;
+    }
+}
+
+@media (max-width:1024px) {
+    .profile-edit__wrapper {
+        gap: 50px;
+    }
+}
+@media (max-width:768px) {
+    .profile-edit__wrapper {
+        flex-direction: column;
+        align-items: center;
+        gap: 2vw;
+    }
+}
+
+.arrow-back_dark {
+    background-image: url("/datamola2023/UI/assets/icon/arrow-back-dark.svg");
+    width: 16px;
+    height: 16px;
+}
+@media (max-width:768px) {
+    .path-to{
+        align-self: flex-start;
+    }
+}
+
+.path {
+    margin-top: 10px;
+    display: flex;
+    gap: 5px;
+}
+@media (max-width:768px) {
+    .path {
+        font-size: 1.2rem;
+        gap: 2px;
+    }
+}
+.button__to-main {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 170px;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: var(--white);
+    background-color: var(--secondary-color);
+    margin-top: 10px;
+}
+@media (max-width:768px) {
+    .button__to-main {
+        width: 50px;
+        padding: 5px 5px;
+        font-size: 0rem;
+    }
+}
+.arrow-back {
+    background-image: url("/datamola2023/UI/assets/icon/arrow-back.svg");
+    width: 24px;
+    height: 24px;
+}
+
+.profile__container {
+    display: flex;
+    gap: 55px;
+    padding: 40px 0;
+}
+
+@media (max-width:1024px) {
+    .profile__container {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+@media (max-width:768px) {
+    .profile__container {
+        padding: 0;
+    }
+}
+
+@media (max-width:600px) {
+    .profile__container {
+        padding: 0 10px;
+    }
+}
+
+.photo__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    flex: 83%;
+}
+@media (max-width:768px) {
+    .photo__container {
+        flex-direction: row;
+        gap: 30px;
+        align-items: flex-end;
+    }
+}
+.photo {
+    background-image: url("/datamola2023/UI/assets/img/user.jpg");
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+@media (max-width:768px) {
+    .photo {
+        background-size: contain;
+        width: 100px;
+        height: 100px
+    }
+}
+
+.button__add-photo {
+    background-color: var(--secondary-color);
+    width: 75px;
+    padding: 5px 20px;
+    border-radius: 25px;
+}
+
+.photo-camera {
+    background-image: url("/datamola2023/UI/assets/icon/camera.svg");
+    width: 22px;
+    height: 20px;
+}
+
+.profile__form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile__form input {
+    height: 55px;
+    width: 555px;
+    margin-bottom: 40px;
+    border: 2px solid #598234;
+    box-shadow: inset 0px 0px 3px rgba(13, 96, 111, 0.08), inset 0px 2px 3px rgba(13, 96, 111, 0.16);
+    border-radius: 10px;
+}
+
+@media (max-width:1024px) {
+    .profile__form input {
+        max-height:45px;
+        max-width: 400px;
+        margin-bottom: 20px;
+    }
+}
+@media (max-width:600px) {
+    .profile__form input {
+        max-height:45px;
+        max-width: 300px;
+        margin-bottom: 15px;
+    }
+}
+
+.profile__form input::placeholder {
+    color: var(--black);
+}
+
+.profile__form label {
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+
+.forms-buttons {
+    align-self: flex-end;
+    display: flex;
+    gap: 30px;
+
+}
+
+.forms-buttons .reset {
+    padding: 8px 25px;
+    text-transform: uppercase;
+}
+
+.forms-buttons .submit {
+    padding: 8px 20px;
+    background-color: var(--secondary-color);
+    color: var(--white);
+    text-transform: uppercase;
+}
