@@ -213,6 +213,12 @@ input::placeholder {
     display: inline-flex;
 }
 
+@media (max-width:600px) {
+    .view {
+display: none;
+    }
+}
+
 .button__view-row,
 .button__view-table {
     width: 45px;
