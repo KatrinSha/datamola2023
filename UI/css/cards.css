@@ -3,19 +3,29 @@
     grid-template-columns: 1fr 1fr 1fr;
     gap: 30px;
     padding-top: 15px;
+}
 
+@media (max-width:1024px) {
+    .cards__wrapper {
+        gap: 10px;
+    }
 }
 
 .cards-container {
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     height: fit-content;
     max-height: calc(100vh - 160px - 42px - 40px);
- 
     border-radius: 10px;
     padding: 15px 20px;
     gap: 10px;
     overflow-y: scroll;
+}
+
+@media (max-width:1024px) {
+    .cards-container {
+        padding: 10px 10px;
+    }
 }
 
 .cards__info {
@@ -43,9 +53,11 @@
 .complete {
     background-color: var(--primary-color);
 }
-.table__header{
+
+.table__header {
     display: none;
 }
+
 .card__box {
     padding: 15px 20px;
     background: #FFFFFF;
@@ -53,6 +65,12 @@
     filter: drop-shadow(0px 4px 4px rgba(66, 115, 166, 0.2));
     height: 220px;
     max-width: 360px;
+}
+
+@media (max-width:1024px) {
+    .card__box {
+        padding: 10px 10px;
+    }
 }
 
 .card {
@@ -71,6 +89,14 @@
     grid-area: status;
     font-size: 1rem;
     align-self: center;
+}
+
+@media (max-width:1024px) {
+    .card__status {
+        justify-self: flex-start;
+        line-height: 1rem;
+       min-width: 46px;
+    }
 }
 
 .status__wrapper {
@@ -92,6 +118,11 @@
     overflow: hidden;
 }
 
+@media (max-width:1024px) {
+    .card__title {
+        font-size: 1.4rem;
+    }
+}
 
 .card__priority {
     grid-area: priority;
@@ -99,6 +130,13 @@
     font-size: 1.2rem;
     color: var(--additional-color-2-darker);
     justify-self: flex-end;
+}
+
+@media (max-width:1024px) {
+    .card__priority {
+        justify-self: flex-end;
+        font-size: 1.0rem;
+    }
 }
 
 .priority__wrapper {
@@ -111,6 +149,13 @@
     align-items: center;
 }
 
+@media (max-width:1024px) {
+    .priority__wrapper {
+        border: none;
+        justify-content: flex-end;
+    }
+}
+
 .card__description {
     grid-area: description;
     font-size: 1.4rem;
@@ -121,11 +166,22 @@
     overflow: hidden;
 }
 
+@media (max-width:1024px) {
+    .card__description {
+        font-size: 1.0rem;
+    }
+}
+
 .card__assignee {
     grid-area: assignee;
     align-self: center;
     justify-self: flex-start;
+}
 
+@media (max-width:1024px) {
+    .card__assignee {
+        font-size: 1.2rem;
+    }
 }
 
 .card__assignee span {
@@ -142,6 +198,13 @@
 
 }
 
+@media (max-width:1024px) {
+    .card__date {
+        font-size: 1.0rem;
+        line-height: 1rem;
+    }
+}
+
 .card__comments {
     grid-area: comments;
     align-self: center;
@@ -150,10 +213,25 @@
     gap: 10px;
 }
 
+@media (max-width:1024px) {
+    .card__comments {
+        font-size: 1.4rem;
+        gap: 2px;
+    }
+}
+
 .comments {
     background-image: url("/datamola2023/UI/assets/icon/comments.svg");
     width: 30px;
     height: 24px;
+}
+
+@media (max-width:1024px) {
+    .comments {
+        background-size: contain;
+        width: 20px;
+        height: 16px;
+    }
 }
 
 .card__private {
@@ -162,7 +240,12 @@
     opacity: 50%;
     align-self: center;
     justify-self: flex-end;
+}
 
+@media (max-width:1024px) {
+    .card__private {
+        font-size: 1.4rem;
+    }
 }
 
 .card__delete-button {
@@ -191,14 +274,28 @@
     text-transform: uppercase;
     padding: 7px 13px;
 }
-
+@media (max-width:1024px) {
+    .card__edit-button {
+        font-size: 0;
+        background-color: var(--white);
+        box-shadow: none;
+        border: none;
+    }
+}
 .edit {
     background-image: url("/datamola2023/UI/assets/icon/edit.svg");
     width: 14px;
     height: 14px;
 }
 
-
+@media (max-width:1024px) {
+    .edit {
+        background-image: url("/datamola2023/UI/assets/icon/edit_dark.svg");
+        background-size: contain;
+        width: 20px;
+        height: 20px;
+    }
+}
 
 ::-webkit-scrollbar {
     width: 15px;
@@ -219,21 +316,27 @@
     border-radius: 20px;
 
 }
+
 .todo::-webkit-scrollbar {
     background-color: var(--additional-color-2);
 }
-.todo::-webkit-scrollbar-track{
+
+.todo::-webkit-scrollbar-track {
     box-shadow: inset 0 0 2px var(--additional-color-2-darker);
 }
-.todo::-webkit-scrollbar-thumb{
+
+.todo::-webkit-scrollbar-thumb {
     background-color: rgba(80, 67, 166, 0.5);
 }
+
 .complete::-webkit-scrollbar {
-    background-color: var( --primary-color);
+    background-color: var(--primary-color);
 }
-.complete::-webkit-scrollbar-track{
+
+.complete::-webkit-scrollbar-track {
     box-shadow: inset 0 0 2px var(--secondary-color);
 }
-.complete::-webkit-scrollbar-thumb{
+
+.complete::-webkit-scrollbar-thumb {
     background-color: rgba(66, 115, 166, 0.5);
 }
