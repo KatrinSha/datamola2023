@@ -9,6 +9,19 @@
     align-items: center;
 }
 
+@media (max-width:1319px) {
+    .filters__wrapper {
+        padding: 0 10px;
+    }
+}
+
+@media (max-width:768px) {
+    .filters__wrapper {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 5px;
+    }
+}
 
 .visibility {
     display: none;
@@ -19,12 +32,33 @@
     gap: 35px;
 }
 
+@media (max-width:1024px) {
+    .filters__container {
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width:600px) {
+    .filters__container {
+        gap: 10px;
+    }
+}
+
 .filters-box {
     background: #FFFFFF;
     border: 1px solid rgba(66, 115, 166, 0.85);
     box-shadow: 0px 4px 4px rgba(66, 115, 166, 0.1);
-    border-radius:5px;  padding: 10px 5px;
+    border-radius: 5px;
+    padding: 10px 5px;
 
+}
+
+@media (max-width:1024px) {
+    .filters-box {
+        height: 30px;
+        padding: 5px 5px;
+    }
 }
 
 select {
@@ -34,30 +68,45 @@ select {
     color: var(--black);
     color: var(--secondary-color);
     text-align: start;
-    gap:10px;
+    gap: 10px;
     cursor: pointer;
-    
 }
-option{
+
+@media (max-width:1024px) {
+    select {
+        font-size: 1.4rem;
+        width: 65px;
+    }
+}
+
+option {
     color: var(--black);
     font-size: 1.4rem;
 }
 
 
 
-input {
-    display: block;
-    background: #FFFFFF;
-    border: 1px solid rgba(66, 115, 166, 0.60);
-    box-shadow: 0px 4px 4px rgba(66, 115, 166, 0.1);
-    width: 90px;
-    border-radius: 5px;
-    padding: 12px 12px;
-}
 
 .filters__privacy,
-.filters__priority input {
+.filters__priority {
     width: 100px;
+}
+
+@media (max-width:1024px) {
+
+    .filters__privacy,
+    .filters__priority {
+        width: 75px;
+    }
+}
+
+@media (max-width:1024px) {
+
+    .filters__privacy select,
+    .filters__priority select {
+        font-size: 1.2rem;
+
+    }
 }
 
 input::placeholder {
@@ -79,10 +128,20 @@ input::placeholder {
     width: 80px;
     text-align: start;
 }
+
+@media (max-width:1024px) {
+    .button-date {
+        width: 65px;
+        font-size: 1.4rem;
+        padding: 5px 5px 5px 10px;
+        gap: 1px;
+    }
+}
+
 .arrow {
     background-image: url("/datamola2023/UI/assets/icon/arrow.svg");
     width: 19px;
-    height:19px;
+    height: 19px;
 }
 
 .form__search {
@@ -94,6 +153,27 @@ input::placeholder {
     padding: 10.5px 12px;
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
+    border: 1px solid rgba(66, 115, 166, 0.60);
+    box-shadow: 0px 4px 4px rgba(66, 115, 166, 0.1);
+    width: 90px;
+    border-radius: 5px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    padding: 13px 12px;
+}
+
+@media (max-width:1024px) {
+    .form__search input {
+        min-width: 100px;
+        padding: 8px 10px;
+        height: 32px;
+    }
+}
+
+@media (max-width:500px) {
+    .form__search input {
+    width: 85vw;
+    }
 }
 
 .form__search input::placeholder {
@@ -109,10 +189,24 @@ input::placeholder {
     border-bottom-left-radius: 0px;
 }
 
+@media (max-width:1024px) {
+    .button-search {
+        height: 32px;
+    }
+}
+
 .search {
     background-image: url("/datamola2023/UI/assets/icon/search.svg");
     width: 35px;
     height: 35px;
+}
+
+@media (max-width:1024px) {
+    .search {
+        background-size: contain;
+        width: 27px;
+        height: 27px;
+    }
 }
 
 .view {
@@ -124,6 +218,16 @@ input::placeholder {
     width: 45px;
     height: 45px;
     background-color: var(--white);
+}
+
+@media (max-width:1024px) {
+
+    .button__view-row,
+    .button__view-table {
+        width: 30px;
+        height: 30px;
+        border-radius: 5px;
+    }
 }
 
 .button__view-row {
@@ -144,10 +248,26 @@ input::placeholder {
     height: 26px;
 }
 
+@media (max-width:1024px) {
+    .table-view {
+        background-size: contain;
+        width: 18px;
+        height: 18px;
+    }
+}
+
 .row-view {
     background-image: url("/datamola2023/UI/assets/icon/row.svg");
     width: 22px;
     height: 24px;
+}
+
+@media (max-width:1024px) {
+    .row-view {
+        background-size: contain;
+        width: 18px;
+        height: 18px;
+    }
 }
 
 .button__add-new-task {
@@ -158,8 +278,24 @@ input::placeholder {
     box-sizing: border-box;
 }
 
+@media (max-width:1024px) {
+    .button__add-new-task {
+        padding: 8px 13px;
+        height: 30px;
+        font-size: 1.4rem;
+    }
+}
+
 .add {
     background-image: url("/datamola2023/UI/assets/icon/plus.svg");
     width: 23px;
     height: 23px;
+}
+
+@media (max-width:1024px) {
+    .add {
+        background-size: contain;
+        width: 20px;
+        height: 20px;
+    }
 }
