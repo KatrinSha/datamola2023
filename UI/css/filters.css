@@ -139,7 +139,7 @@ input::placeholder {
 }
 
 .arrow {
-    background-image: url("/datamola2023/UI/assets/icon/arrow.svg");
+    background-image: url("../assets/icon/arrow.svg");
     width: 19px;
     height: 19px;
 }
@@ -196,7 +196,7 @@ input::placeholder {
 }
 
 .search {
-    background-image: url("/datamola2023/UI/assets/icon/search.svg");
+    background-image: url("../assets/icon/search.svg");
     width: 35px;
     height: 35px;
 }
@@ -249,7 +249,7 @@ display: none;
 }
 
 .table-view {
-    background-image: url("/datamola2023/UI/assets/icon/table.svg");
+    background-image: url("../assets/icon/table.svg");
     width: 26px;
     height: 26px;
 }
@@ -263,7 +263,7 @@ display: none;
 }
 
 .row-view {
-    background-image: url("/datamola2023/UI/assets/icon/row.svg");
+    background-image: url("../assets/icon/row.svg");
     width: 22px;
     height: 24px;
 }
@@ -293,7 +293,7 @@ display: none;
 }
 
 .add {
-    background-image: url("/datamola2023/UI/assets/icon/plus.svg");
+    background-image: url("../assets/icon/plus.svg");
     width: 23px;
     height: 23px;
 }

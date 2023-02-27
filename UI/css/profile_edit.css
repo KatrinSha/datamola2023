@@ -23,7 +23,7 @@
 }
 
 .arrow-back_dark {
-    background-image: url("/datamola2023/UI/assets/icon/arrow-back-dark.svg");
+    background-image: url("../assets/icon/arrow-back-dark.svg");
     width: 16px;
     height: 16px;
 }
@@ -64,7 +64,7 @@
     }
 }
 .arrow-back {
-    background-image: url("/datamola2023/UI/assets/icon/arrow-back.svg");
+    background-image: url("../assets/icon/arrow-back.svg");
     width: 24px;
     height: 24px;
 }
@@ -108,7 +108,7 @@
     }
 }
 .photo {
-    background-image: url("/datamola2023/UI/assets/img/user.jpg");
+    background-image: url("../assets/img/user.jpg");
     width: 150px;
     height: 150px;
     border-radius: 50%;
@@ -129,7 +129,7 @@
 }
 
 .photo-camera {
-    background-image: url("/datamola2023/UI/assets/icon/camera.svg");
+    background-image: url("../assets/icon/camera.svg");
     width: 22px;
     height: 20px;
 }
