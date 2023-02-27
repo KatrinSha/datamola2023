@@ -221,7 +221,7 @@
 }
 
 .delete {
-    background-image: url("/datamola2023/UI/assets/icon/delete.svg");
+    background-image: url("../assets/icon/delete.svg");
     width: 24px;
     height: 24px;
     opacity: 50%;
@@ -236,7 +236,7 @@
 }
 
 .edit {
-    background-image: url("/datamola2023/UI/assets/icon/edit_dark.svg");
+    background-image: url("../assets/icon/edit_dark.svg");
     width: 14px;
     height: 14px;
     opacity: 50%;
@@ -337,7 +337,7 @@
 }
 
 .table-view {
-    background-image: url("/datamola2023/UI/assets/icon/table_dark.svg");
+    background-image: url("../assets/icon/table_dark.svg");
     width: 26px;
     height: 26px;
 }
@@ -352,7 +352,7 @@
 }
 
 .row-view {
-    background-image: url("/datamola2023/UI/assets/icon/row_light.svg");
+    background-image: url("../assets/icon/row_light.svg");
     width: 22px;
     height: 24px;
 }
