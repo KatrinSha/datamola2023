@@ -3,14 +3,6 @@
     justify-content: flex-start;
 }
 
-@media (max-width:1024px) {
-    .task__wrapper {
-        flex-direction: column;
-        align-items: center;
-        padding: 0 10px;
-    }
-}
-
 .arrow-back_dark {
     background-image: url("../assets/icon/arrow-back-dark.svg");
     width: 16px;
@@ -22,9 +14,9 @@
 }
 
 .path {
-    margin-top: 10px;
+    margin-top: var(--offset-m);
     display: flex;
-    gap: 5px;
+    gap: var(--offset-s);
 }
 
 .task__container {
@@ -36,24 +28,17 @@
     margin-top: 40px;
 }
 
-@media (max-width:1024px) {
-    .task__container {
-        margin-left: 0;
-        margin-top: 5px;
-    }
-}
-
 .button__to-main {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: var(--offset-m);
     width: 170px;
-    padding: 10px 20px;
+    padding: var(--offset-m) 20px;
     text-transform: uppercase;
     font-weight: 400;
     color: var(--white);
     background-color: var(--secondary-color);
-    margin-top: 10px;
+    margin-top: var(--offset-m);
 
 }
 
@@ -66,7 +51,7 @@
 .task__box {
     width: 800px;
 
-    box-sizing: 20px;
+    box-sizing: var(--offset-l);
     background: #FFFFFF;
     border: 1px solid rgba(104, 130, 158, 0.5);
     border-radius: 20px 20px 0px 0px;
@@ -80,36 +65,14 @@
         "comments private . delete edit";
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: repeat(5, 60px);
-    padding: 30px 35px;
+    padding: var(--offset-l-30) 35px;
     color: var(--black);
-}
-
-@media (max-width:1024px) {
-    .task__box {
-        width: 70vw;
-        padding: 20px 15px;
-        grid-template-rows: repeat(5, 50px);
-    }
-}
-
-@media (max-width:600px) {
-    .task__box {
-        width: 80vw;
-        padding: 20px 15px;
-        grid-template-rows: repeat(5, 40px);
-    }
 }
 
 .task__status {
     grid-area: status;
     align-self: center;
     justify-self: flex-start;
-}
-
-@media (max-width:600px) {
-    .task__status {
-        font-size: 1.2rem;
-    }
 }
 
 .task__title {
@@ -119,29 +82,12 @@
     justify-self: center;
 }
 
-@media (max-width:768px) {
-    .task__title {
-        font-size: 1.6rem;
-    }
-}
-@media (max-width:600px) {
-    .task__title {
-        text-align: center;
-    }
-}
-
 .task__priority {
     grid-area: priority;
     font-size: 1.4rem;
     color: var(--additional-color-3-darker);
     align-self: center;
     justify-self: flex-end;
-}
-
-@media (max-width:600px) {
-    .task__priority {
-        font-size: 1.2rem;
-    }
 }
 
 .task__description {
@@ -154,12 +100,6 @@
     overflow: hidden;
 }
 
-@media (max-width:600px) {
-    .task__description {
-        font-size: 1.2rem;
-    }
-}
-
 .task__assignee {
     grid-area: assigne;
     font-size: 1.4rem;
@@ -169,18 +109,6 @@
 
 .task__assignee span {
     font-size: 1.6rem;
-}
-
-@media (max-width:600px) {
-    .task__assignee {
-        font-size: 1.2rem;
-    }
-}
-
-@media (max-width:600px) {
-    .task__assignee span {
-        font-size: 1.2rem;
-    }
 }
 
 .task__date {
@@ -197,17 +125,11 @@
     color: var(--secondary-color);
 }
 
-@media (max-width:768px) {
-    .task__comments {
-        align-self: flex-end;
-    }
-}
-
 .comments {
     background-image: url("../assets/icon/comments.svg");
     width: 30px;
     height: 24px;
-    margin-right: 10px;
+    margin-right: var(--offset-m);
 
 }
 
@@ -218,12 +140,6 @@
     font-weight: 400;
 }
 
-@media (max-width:768px) {
-    .task__private {
-        align-self: flex-end;
-    }
-}
-
 .task__delete-button {
     grid-area: delete;
     text-transform: uppercase;
@@ -231,54 +147,18 @@
 
     align-self: center;
     justify-self: flex-end;
-    padding: 9px 20px;
+    padding: 9px var(--offset-l);
     display: flex;
     align-items: center;
     line-height: 120%;
-    gap: 10px;
+    gap: var(--offset-m);
 }
 
-@media (max-width:1024px) {
-    .task__delete-button {
-        padding: 9px 10px;
-    }
-}
-
-@media (max-width:768px) {
-    .task__delete-button {
-        font-size: 1.2rem;
-        padding: 6px 8px;
-    }
-}
-@media (max-width:600px) {
-    .task__delete-button {
-        align-self: flex-end;
-        font-size: 0;
-        padding: 0;
-        box-shadow:none;
-        border: none;
-    }
-}
 .delete {
     background-image: url("../assets/icon/delete.svg");
     width: 24px;
     height: 24px;
     opacity: 100%;
-}
-
-@media (max-width:768px) {
-    .delete {
-        background-size: contain;
-        width: 20px;
-        height: 20px;
-    }
-}
-@media (max-width:600px) {
-    .delete {
-        background-size: contain;
-        width: 24px;
-        height: 24px;
-    }
 }
 
 .task__edit-button {
@@ -288,49 +168,18 @@
     text-transform: uppercase;
     align-self: center;
     justify-self: flex-end;
-    padding: 12px 20px;
+    padding: 12px var(--offset-l);
     display: flex;
     align-items: center;
     line-height: 120%;
-    gap: 10px;
+    gap: var(--offset-m);
 }
 
-@media (max-width:1024px) {
-    .task__edit-button {
-        padding: 12px 10px;
-    }
-}
-
-@media (max-width:768px) {
-    .task__edit-button {
-        font-size: 1.4rem;
-        padding: 8px 8px;
-    }
-}
-@media (max-width:600px) {
-    .task__edit-button {
-        align-self: flex-end;
-        justify-self: center;
-        font-size: 0;
-        padding: 0;
-        box-shadow:none;
-        border: none;
-        background-color: var(--white);
-    }
-}
 .edit {
     background-image: url("../assets/icon/edit.svg");
     width: 14px;
     height: 14px;
     opacity: 100%;
-}
-@media (max-width:600px) {
-    .edit {
-        background-image: url("../assets/icon/edit_dark.svg");
-        background-size: contain;
-        width: 20px;
-        height: 20px;
-    }
 }
 
 .comments-box {
@@ -346,39 +195,16 @@
     overflow-y: scroll;
 }
 
-@media (max-width:1024px) {
-    .comments-box {
-        width: 70vw;
-    }
-}
-@media (max-width:600px) {
-    .comments-box {
-        width: 80vw;
-    }
-}
 .comment {
-    padding: 2px 30px;
+    padding: 2px var(--offset-l-30);
     display: grid;
     grid-template-areas:
         "username comment-date . ."
         "comment-text comment-text comment-text comment-text";
-    gap: 5px;
+    gap: var(--offset-s);
     align-items: flex-end;
 }
 
-@media (max-width:1024px) {
-    .comment {
-        padding: 2px 15px;
-    }
-}
-@media (max-width:600px) {
-    .comment {
-        grid-template-areas:
-        "username comment-date "
-        "comment-text comment-text";
-        padding: 2px 20px;
-    }
-}
 .username {
     grid-area: username;
     color: var(--black);
@@ -397,112 +223,238 @@
     font-size: 1.2rem;
     line-height: 1.4rem;
 }
+
 @media (max-width:600px) {
     .comment__date {
         font-size: 1.2rem;
-       justify-self: flex-start;
-       line-height: 1.8rem;
+        justify-self: flex-start;
+        line-height: 1.8rem;
     }
 }
+
 .comment__text {
     grid-area: comment-text;
-    color: #333333;
+    color: var(--black);
     font-weight: 400;
-    padding: 10px 20px;
+    padding: var(--offset-m) 20px;
     background: #FFFFFF;
     border: 1px solid #4273A6;
-    border-radius: 5px;
-    margin: 0 10px;
-
-}
-
-@media (max-width:768px) {
-    .comment__text {
-        font-size: 1.2rem;
-        margin: 0 ;
-    }
+    border-radius: var(--offset-s);
+    margin: 0 var(--offset-m);
 }
 
 .comment__form {
     display: flex;
-    gap: 20px;
-    padding: 15px 40px;
+    gap: var(--offset-l);
+    padding: var(--offset-m-15) 40px;
     align-items: center;
     height: 100px;
     width: 800px;
 
     background-color: var(--white);
     border-radius: 0 0 10px 10px;
-    border: 1px solid rgba(66, 115, 166, 0.5);
-    box-shadow: -2px 0px 2px rgba(66, 115, 166, 0.2), 2px 0px 2px rgba(66, 115, 166, 0.2);
-
+    border: 1px solid var(--secondary-color-o50);
+    box-shadow: -2px 0px 2px var(--secondary-color-o20), 2px 0px 2px var(--secondary-color-o20);
 }
 
-@media (max-width:1024px) {
-    .comment__form {
-        width: 70vw;
-        padding: 15px 25px;
-        height: 80px;
-    }
-}
-@media (max-width:600px) {
-    .comment__form {
-        width: 80vw;
-        padding: 15px 20px;
-        height: 50px;
-        gap:5px
-    }
-}
 .submit {
-    padding: 11px 20px;
+    padding: 11px var(--offset-l);
     color: var(--white);
     background-color: var(--secondary-color);
     text-transform: uppercase;
 }
+
 .arrow-back {
     background-image: url("../assets/icon/arrow-back.svg");
     width: 24px;
     height: 24px;
 }
 
-@media (max-width:768px) {
-    .submit {
-        font-size: 1.4rem;
-        padding: 8px 8px;
-    }
-}
-@media (max-width:600px) {
-    .submit {
-        font-size: 1.2rem;
-        font-weight: 400;
-    }
-}
 .comment__input {
     height: 50px;
     flex: 80%;
-    background: rgba(249, 232, 204, 0.1);
-    border:1px solid  rgba(249, 232, 204, 0.3);
+    background: var(--additional-color-1-darker-o10);
+    border: 1px solid var(--additional-color-1-darker-o50);
 }
-@media (max-width:768px) {
-    .comment__input {
-        height: 35px;
-    }
-}
+
 .comment__input::placeholder {
-    color: #33333350;
+    color: var(--black-o50);
 }
 
 ::-webkit-scrollbar {
     background-color: var(--additional-color-2);
-    width: 10px;
-    border-radius: 20px;
+    width: var(--offset-m);
+    border-radius: var(--offset-l);
 }
 
 ::-webkit-scrollbar-track {
     box-shadow: inset 0 0 2px var(--additional-color-2-darker);
-    border-radius: 20px;
+    border-radius: var(--offset-l);
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: rgba(80, 67, 166, 0.5);
+    background-color: var(--additional-color-2-darker-o50);
+}
+
+@media (max-width:1024px) {
+    .task__wrapper {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 var(--offset-m);
+    }
+
+    .task__container {
+        margin-left: 0;
+        margin-top: var(--offset-s);
+    }
+
+    .task__box {
+        width: 70vw;
+        padding: var(--offset-l) var(--offset-m-15);
+        grid-template-rows: repeat(5, 50px);
+    }
+
+    .task__delete-button {
+        padding: 9px var(--offset-m);
+    }
+
+    .task__edit-button {
+        padding: 12px var(--offset-m);
+    }
+
+    .comments-box {
+        width: 70vw;
+    }
+
+    .comment {
+        padding: 2px var(--offset-m-15);
+    }
+
+    .comment__form {
+        width: 70vw;
+        padding: var(--offset-m-15) 25px;
+        height: 80px;
+    }
+}
+
+@media (max-width:768px) {
+    .comment__text {
+        font-size: 1.2rem;
+        margin: 0;
+    }
+
+    .task__comments {
+        align-self: flex-end;
+    }
+
+    .task__private {
+        align-self: flex-end;
+    }
+
+    .delete {
+        background-size: contain;
+        width: 20px;
+        height: 20px;
+    }
+
+    .task__delete-button {
+        font-size: 1.2rem;
+        padding: 6px 8px;
+    }
+
+    .task__edit-button {
+        font-size: 1.4rem;
+        padding: 8px 8px;
+    }
+
+    .submit {
+        font-size: 1.4rem;
+        padding: 8px 8px;
+    }
+
+    .comment__input {
+        height: 35px;
+    }
+}
+
+@media (max-width:600px) {
+    .task__box {
+        width: 80vw;
+        padding: var(--offset-l) var(--offset-m-15);
+        grid-template-rows: repeat(5, 40px);
+    }
+
+    .task__status {
+        font-size: 1.2rem;
+    }
+
+    .task__title {
+        text-align: center;
+    }
+
+    .task__priority {
+        font-size: 1.2rem;
+    }
+
+    .task__description {
+        font-size: 1.2rem;
+    }
+
+    .task__assignee {
+        font-size: 1.2rem;
+    }
+
+    .task__delete-button {
+        align-self: flex-end;
+        font-size: 0;
+        padding: 0;
+        box-shadow: none;
+        border: none;
+    }
+
+    .task__edit-button {
+        align-self: flex-end;
+        justify-self: center;
+        font-size: 0;
+        padding: 0;
+        box-shadow: none;
+        border: none;
+        background-color: var(--white);
+    }
+
+    .edit {
+        background-image: url("../assets/icon/edit_dark.svg");
+        background-size: contain;
+        width: var(--offset-l);
+        height: var(--offset-l);
+    }
+
+    .delete {
+        background-size: contain;
+        width: 24px;
+        height: 24px;
+    }
+
+    .comments-box {
+        width: 80vw;
+    }
+
+    .comment {
+        grid-template-areas:
+            "username comment-date "
+            "comment-text comment-text";
+        padding: 2px 20px;
+    }
+
+    .comment__form {
+        width: 80vw;
+        padding: var(--offset-m-15) var(--offset-l);
+        height: 50px;
+        gap: var(--offset-s);
+    }
+
+    .submit {
+        font-size: 1.2rem;
+        font-weight: 400;
+    }
 }
