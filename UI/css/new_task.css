@@ -1,0 +1,158 @@
+.modal-content {
+    width: 800px;
+    margin: 0 auto;
+    margin-top: calc(100vh / 2);
+    transform: translateY(-50%);
+    background: #FFFFFF;
+    border: 1px solid rgba(79, 81, 96, 0.3);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    padding: 20px 30px 40px 30px;
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--offset-l);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 2.4rem;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.close {
+    border: none;
+    box-shadow: none;
+    align-items: flex-start;
+}
+
+.task__form {
+    display: grid;
+    grid-template-areas:
+        "label-fot-title label-fot-title"
+        "input-title input-title"
+        "label-description label-description"
+        "input-description input-description"
+        "assignee assignee"
+        "status status"
+        "priority priority"
+        "privacy forms-buttons";
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.task__form input {
+    border: 1px solid #4273A6;
+    box-shadow: inset 0px 0px 3px rgba(13, 96, 111, 0.08), inset 0px 2px 3px rgba(13, 96, 111, 0.16);
+    border-radius: 1rem;
+    padding: 10px;
+}
+
+.task__form label {
+    font-size: 1.4rem;
+    color: var(--black);
+    width: 12%;
+}
+
+.label-for-title {
+    grid-area: label-fot-title;
+    margin-bottom: -18px;
+}
+
+.input-title {
+    grid-area: input-title;
+    height: 5rem;
+}
+
+.label-for-description {
+    grid-area: label-description;
+    margin-bottom: -18px;
+}
+
+.input-description {
+    grid-area: input-description;
+    height: 10rem;
+}
+
+.task__form input::placeholder {
+    color: var(--black-o50);
+    font-weight: 400;
+}
+
+.task__assignee {
+    grid-area: assignee;
+}
+
+.select-box {
+    display: flex;
+    align-items: center;
+}
+
+.select-box select {
+    padding: 10.5px 12px;
+    border: 1px solid var(--secondary-color-o50);
+    box-shadow: 0px 4px 4px var(--secondary-color-o20);
+    width: 120px;
+    border-radius: 5px;
+    padding: 13px 12px;
+    width: 28%;
+}
+
+.task__status {
+    grid-area: status;
+}
+
+.task__priority {
+    grid-area: priority;
+}
+
+.task__privacy {
+    grid-area: privacy;
+}
+
+.task__privacy input {
+    margin-right: 10px;
+}
+
+.label-for-public {
+    margin-right: 20px;
+}
+
+.forms-buttons {
+    grid-area: forms-buttons;
+    justify-self: flex-end;
+}
+
+.optional {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--black-o50);
+    margin-left: 15px;
+}
+
+.forms-buttons {
+    align-self: flex-end;
+    display: flex;
+    gap: 30px;
+}
+
+.forms-buttons .reset {
+    padding: 8px 25px;
+    text-transform: uppercase;
+}
+
+.forms-buttons .submit {
+    padding: 8px var(--offset-l);
+    background-color: var(--secondary-color);
+    color: var(--white);
+    text-transform: uppercase;
+}
+
+.reset {}
+
+.submit {}
