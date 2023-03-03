@@ -1,19 +1,18 @@
 .modal-content {
-    width: 800px;
+    width: 80rem;
     margin: 0 auto;
-    margin-top: calc(100vh / 2);
-    transform: translateY(-50%);
-    background: #FFFFFF;
-    border: 1px solid rgba(79, 81, 96, 0.3);
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
-    padding: 20px 30px 40px 30px;
+    margin-top: calc(100vh / 4);
+    background: var(--white);
+    border: 0.1rem solid var(--secondary-color-o30);
+    box-shadow: 0rem 0.5rem 1rem var(--black-o25);
+    border-radius: 1rem;
+    padding: 2rem 3rem 4rem 3rem;
 }
 
 .modal-content {
     display: flex;
     flex-direction: column;
-    gap: var(--offset-l);
+    gap: 2rem;
 }
 
 .modal-header {
@@ -46,10 +45,10 @@
 }
 
 .task__form input {
-    border: 1px solid #4273A6;
-    box-shadow: inset 0px 0px 3px rgba(13, 96, 111, 0.08), inset 0px 2px 3px rgba(13, 96, 111, 0.16);
+    border: 1px solid var(--secondary-color);
+    box-shadow: inset 0rem 0rem 0.3rem var(--secondary-color-o10), inset 0rem 0.2rem 0.3rem var(--secondary-color-o20);
     border-radius: 1rem;
-    padding: 10px;
+    padding: 1rem;
 }
 
 .task__form label {
@@ -60,7 +59,7 @@
 
 .label-for-title {
     grid-area: label-fot-title;
-    margin-bottom: -18px;
+    margin-bottom: -1.8rem;
 }
 
 .input-title {
@@ -70,7 +69,7 @@
 
 .label-for-description {
     grid-area: label-description;
-    margin-bottom: -18px;
+    margin-bottom: -1.8rem;
 }
 
 .input-description {
@@ -93,12 +92,12 @@
 }
 
 .select-box select {
-    padding: 10.5px 12px;
-    border: 1px solid var(--secondary-color-o50);
-    box-shadow: 0px 4px 4px var(--secondary-color-o20);
-    width: 120px;
-    border-radius: 5px;
-    padding: 13px 12px;
+    padding: 1.05rem 1.2rem;
+    border: 0.1rem solid var(--secondary-color-o50);
+    box-shadow: 0rem 0.4rem 0.4rem var(--secondary-color-o20);
+    width: 12rem;
+    border-radius: 0.5rem;
+    padding: 1.3rem 1.2rem;
     width: 28%;
 }
 
@@ -115,11 +114,11 @@
 }
 
 .task__privacy input {
-    margin-right: 10px;
+    margin-right: 1rem;
 }
 
 .label-for-public {
-    margin-right: 20px;
+    margin-right: 2rem;
 }
 
 .forms-buttons {
@@ -129,30 +128,99 @@
 
 .optional {
     font-weight: 400;
-    font-size: 14px;
-    line-height: 20px;
+    font-size: 1.4rem;
+    line-height: 2rem;
     color: var(--black-o50);
-    margin-left: 15px;
+    margin-left: 1.5rem;
 }
 
 .forms-buttons {
     align-self: flex-end;
     display: flex;
-    gap: 30px;
+    gap: 3rem;
 }
 
 .forms-buttons .reset {
-    padding: 8px 25px;
+    padding: 0.8rem 2.5rem;
     text-transform: uppercase;
 }
 
 .forms-buttons .submit {
-    padding: 8px var(--offset-l);
+    padding: 0.8rem 2rem;
     background-color: var(--secondary-color);
     color: var(--white);
     text-transform: uppercase;
 }
 
-.reset {}
+button:disabled {
+    opacity: 80%;
+}
 
-.submit {}
+@media (max-width:1024px) {
+    .modal {
+        width: 100vw;
+    }
+
+    .modal-content {
+        width: 100%;
+        margin-top: 10vh;
+    }
+}
+
+@media (max-width:600px) {
+    .modal-header {
+        font-size: 2rem;
+    }
+
+    .task__form {
+        grid-template-areas:
+            "label-fot-title label-fot-title"
+            "input-title input-title"
+            "label-description label-description"
+            "input-description input-description"
+            "assignee assignee"
+            "status status"
+            "priority priority"
+            "privacy privacy"
+            "forms-buttons forms-buttons";
+    }
+
+    .input-title {
+        height: 3rem;
+    }
+
+    .input-description {
+        height: 6rem;
+    }
+
+    .select-box select {
+        padding: 0.8rem 1rem;
+        width: 60%;
+    }
+
+    .task__form label {
+        width: 20%;
+    }
+
+    .task__privacy input {
+        margin-right: 0.5rem;
+    }
+
+    .label-for-public {
+        margin-right: 0.2rem;
+    }
+
+    .optional {
+        margin-left: 1rem;
+    }
+
+    .forms-buttons .reset {
+        font-size: 1.4rem;
+        padding: 0.6rem 2rem;
+    }
+
+    .forms-buttons .submit {
+        font-size: 1.4rem;
+        padding: 0.6rem 2rem;
+    }
+}

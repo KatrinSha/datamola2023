@@ -1,6 +1,6 @@
 .header {
     background: var(--white);
-    box-shadow: 0px 4px 4px var(--secondary-color-o10);
+    box-shadow: 0rem 0.4rem 0.4rem var(--secondary-color-o10);
     width: 100%;
 }
 
@@ -8,7 +8,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: var(--offset-s) 0;
+    padding:0.5rem 0;
 }
 
 .header-logo {
@@ -17,8 +17,8 @@
 
 .logo {
     background-image: url("../assets/icon/logo.svg");
-    width: 50px;
-    height: 50px;
+    width: 5rem;
+    height: 5rem;
 }
 
 .logo__text {
@@ -44,18 +44,18 @@
 
 .header__button {
     font-size: 1.8rem;
-    padding: 7px var(--offset-m-15);
+    padding: 0.7rem 1.5rem;
 }
 
 @media (max-width:1319px) {
     .header__wrapper {
-        padding: var(--offset-s) var(--offset-m);
+        padding: 0.5rem 1rem;
     }
 }
 
 @media (max-width:1024px) {
     .header__box {
-        gap: 50px;
+        gap: 5rem;
     }
 }
 
@@ -70,13 +70,13 @@
 
     .header__button {
         font-size: 1.2rem;
-        padding: var(--offset-s) var(--offset-m);
+        padding: 0.5rem 1rem;
     }
 }
 
 @media (max-width:600px) {
     .header__box {
-        gap: var(--offset-m);
+        gap: 1rem;
     }
 
     .header .profile-name {

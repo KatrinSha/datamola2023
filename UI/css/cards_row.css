@@ -9,10 +9,10 @@
     display: flex;
     flex-direction: column;
     height: fit-content;
-    max-height: calc(100vh - 160px - 42px - 40px);
-    border-radius: var(--offset-m);
-    padding: var(--offset-m-15) var(--offset-l);
-    gap: var(--offset-m);
+    max-height: calc(100vh - 1.6rem - 4.2rem - 4rem);
+    border-radius: 1rem;
+    padding: 1.5rem 2rem;
+    gap: 1rem;
     overflow-y: scroll;
 }
 
@@ -23,7 +23,7 @@
 }
 
 .cards__count {
-    padding: 11px 12.5px;
+    padding: 1.1rem 1.25rem;
     border-radius: 50%;
     background-color: var(--white);
     text-align: center;
@@ -50,17 +50,17 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    gap: var(--offset-m-15);
+    gap: 1.5rem;
     align-self: center;
 }
 
 .card__box {
-    padding: var(--offset-lm-15) var(--offset-l);
+    padding: 1.5rem 2rem;
     background: #FFFFFF;
-    border-radius: var(--offset-l);
-    filter: drop-shadow(0px 4px 4px var(--secondary-color-o20));
-    height: 220px;
-    width: 360px;
+    border-radius: 2rem;
+    filter: drop-shadow(0rem 0.4rem 0.4rem var(--secondary-color-o20));
+    height: 22rem;
+    width: 36rem;
 }
 
 .card {
@@ -88,8 +88,8 @@
 }
 
 .status__wrapper {
-    border: 1px solid var(--black-o10);
-    border-radius: var(--offset-m);
+    border: 0.1rem solid var(--black-o10);
+    border-radius: 1rem;
     text-align: center;
 }
 
@@ -102,7 +102,7 @@
     font-size: 2rem;
     color: var(--black);
     opacity: 80%;
-    max-height: 38px;
+    max-height: 3.5rem;
     overflow: hidden;
 }
 
@@ -115,11 +115,11 @@
 }
 
 .priority__wrapper {
-    width: 45px;
-    height: 45px;
+    width: 4.5rem;
+    height: 4.5rem;
     border: 1px solid var(--secondary-color-o10);
-    box-shadow: 0px 1px 1px var(--secondary-color-o10);
-    border-radius: 25px;
+    box-shadow: 0rem 0.1rem 0.1rem var(--secondary-color-o10);
+    border-radius: 2.5rem;
     display: flex;
     align-items: center;
 }
@@ -130,7 +130,7 @@
     font-weight: 400;
     color: var(--black);
     align-self: center;
-    max-height: 55px;
+    max-height: 5.5rem;
     overflow: hidden;
 }
 
@@ -158,13 +158,13 @@
     align-self: center;
     justify-self: flex-start;
     display: flex;
-    gap: var(--offset-m);
+    gap: 1rem;
 }
 
 .comments {
     background-image: url("../assets/icon/comments.svg");
-    width: var(--offset-l-30);
-    height: 24px;
+    width: 3rem;
+    height: 2.4rem;
 }
 
 .card__private {
@@ -181,18 +181,18 @@
     box-shadow: none;
     align-self: center;
     justify-self: flex-end;
-    transform: translateX(25px);
+    transform: translateX(2.5rem);
 }
 
 .delete {
     background-image: url("../assets/icon/delete.svg");
-    width: 24px;
-    height: 24px;
+    width: 2.4rem;
+    height: 2.4rem;
 }
 
 .card__edit-button {
     display: flex;
-    gap: var(--offset-m);
+    gap: 1rem;
     grid-area: edit;
     justify-self: flex-end;
     background-color: var(--secondary-color);
@@ -204,25 +204,25 @@
 
 .edit {
     background-image: url("../assets/icon/edit.svg");
-    width: 14px;
-    height: 14px;
+    width: 1.4rem;
+    height: 1.4rem;
 }
 
 ::-webkit-scrollbar {
-    width: var(--offset-m-15);
+    width: 1.5rem;
     background-color: var(--additional-color-1);
-    border-radius: var(--offset-l);
+    border-radius: 2rem;
 }
 
 
 ::-webkit-scrollbar-track {
     box-shadow: inset 0 0 2px var(--additional-color-1-darker);
-    border-radius: var(--offset-l);
+    border-radius: 2rem;
 }
 
 ::-webkit-scrollbar-thumb {
     background-color: #d4711380;
-    border-radius: var(--offset-l);
+    border-radius: 2rem;
 
 }
 
@@ -231,7 +231,7 @@
 }
 
 .todo::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 2px var(--additional-color-2-darker);
+    box-shadow: inset 0 0 0.2rem var(--additional-color-2-darker);
 }
 
 .todo::-webkit-scrollbar-thumb {
@@ -243,7 +243,7 @@
 }
 
 .complete::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 2px var(--secondary-color);
+    box-shadow: inset 0 0 0.2rem var(--secondary-color);
 }
 
 .complete::-webkit-scrollbar-thumb {
@@ -254,16 +254,16 @@
     text-transform: uppercase;
     background-color: var(--secondary-color);
     color: var(--white);
-    padding: var(--offset-m) var(--offset-l);
+    padding: 1rem 2rem;
     position: absolute;
-    bottom: 52px;
+    bottom: 5.2rem;
     left: 50vw;
     transform: translateX(-50%);
 }
 
 @media (max-width:1319px) {
     .card__box {
-        padding: var(--offset-m) var(--offset-m);
+        padding: 1rem 1rem;
         width: 100%;
     }
 }
@@ -272,15 +272,15 @@
     .card__status {
         justify-self: flex-start;
         line-height: 1rem;
-        min-width: 46px;
+        min-width: 4.6rem;
     }
 
     .cards__wrapper {
-        gap: var(--offset-m);
+        gap: 1rem;
     }
 
     .cards-container {
-        padding: var(--offset-m) var(--offset-m);
+        padding: 1rem 1rem;
     }
 
     .card__priority {
@@ -312,13 +312,13 @@
 
     .card__comments {
         font-size: 1.4rem;
-        gap: 2px;
+        gap: 0.2rem;
     }
 
     .comments {
         background-size: contain;
         width: var(--offset-l);
-        height: 16px;
+        height: 1.6rem;
     }
 
     .card__private {
@@ -335,8 +335,8 @@
     .edit {
         background-image: url("../assets/icon/edit_dark.svg");
         background-size: contain;
-        width: 20px;
-        height: 20px;
+        width: 2rem;
+        height: 2rem;
     }
 }
 
@@ -380,24 +380,24 @@
 
     .card__wrapper-to768 {
         position: absolute;
-        left: calc((100vw - 400px) / 2);
-        top: 54px;
-        width: 400px;
-        padding: var(--offset-m) var(--offset-s);
+        left: calc((100vw - 40rem) / 2);
+        top: 5.4rem;
+        width: 40rem;
+        padding: 1rem 0.5rem;
         min-height: fit-content;
-        height: calc(100vh - 250px - 42px);
+        height: calc(100vh - 25rem - 4.2rem);
         overflow-y: scroll;
     }
 
     ::-webkit-scrollbar {
-        width: 8px;
+        width: 0.8rem;
         background-color: var(--black-o05);
-        border-radius: 4px;
+        border-radius: 0.4rem;
     }
 
     ::-webkit-scrollbar-track {
-        box-shadow: inset 0 0 2px var(--primary-color);
-        border-radius: 4px;
+        box-shadow: inset 0 0 0.2rem var(--primary-color);
+        border-radius: 0.4rem;
     }
 
     ::-webkit-scrollbar-thumb {
@@ -405,7 +405,7 @@
     }
 
     .button_show-more {
-        top: calc(100vh - 250px - 42px);
-        padding: var(--offset-l) var(--offset-l);
+        top: calc(100vh - 2.5rem - 4.2rem);
+        padding: 2rem 2rem;
     }
 }

@@ -21,14 +21,14 @@
                 </div>
                 <div class="modal-body">
                     <form class="task__form" method="post" action="">
-                        <label class="label-for-title" for="title">Title</label>
-                        <input class="input-title" type="text" placeholder="Type title..." name="title" required>
+                        <label class="label-for-title" for="taskTitle">Title</label>
+                        <input class="input-title" type="text" placeholder="Type title..." name="title" id="taskTitle" required>
                         <label class="label-for-description" for="description">Description</label>
                         <input class="input-description" type="text" id="description" name="description "
                             placeholder="Type description..." maxlength="280" required>
                         <div class="task__assignee select-box">
-                            <label for="assignee">Assignee:</label>
-                            <select id="assignee" name="assignee">
+                            <label for="taskAssignee">Assignee:</label>
+                            <select id="taskAssignee" name="assignee">
                                 <option value="Livia Aminoff">Livia Aminoff</option>
                                 <option selected value="Katerina Shchablovskaya">Katerina Shchablovskaya</option>
                                 <option value="Lincoln Dorwart">Lincoln Dorwart</option>
@@ -40,8 +40,8 @@
                         </div>
 
                         <div class="task__status select-box">
-                            <label for="status">Status:</label>
-                            <select id="status" name="status">
+                            <label for="taskStatus">Status:</label>
+                            <select id="taskStatus" name="status">
                                 <option selected value="Public">To do</option>
                                 <option value="Private">In progress</option>
                                 <option value="Private">Complete</option>
@@ -49,25 +49,25 @@
                             <div class="optional">optional</div>
                         </div>
                         <div class="task__priority select-box">
-                            <label for="priority">Priority:</label>
-                            <select id="priority" name="priority" required>
+                            <label for="taskPriority">Priority:</label>
+                            <select id="taskPriority" name="priority" required>
                                 <option value="Low">Low</option>
                                 <option value="Medium">Medium</option>
                                 <option value="High">High</option>
                             </select>
                         </div>
                         <div class="task__privacy select-box">
-                            <input checked class="input-public" type="radio" name="Public">
-                            <label class="label-for-public" for="Public">Public</label>
-                            <input class="input-private" type="radio" name="Private">
-                            <label class="label-for-private" for="Private">Private</label>
+                            <input checked class="input-public" type="radio" name="taskPablic" id="taskPablic">
+                            <label class="label-for-public" for="taskPablic">Public</label>
+                            <input class="input-private" type="radio" name="Privacy"  id="taskPrivate">
+                            <label class="label-for-private" for="taskPrivate">Private</label>
                             <div class="optional">optional</div>
                         </div>
                         <div class="forms-buttons">
-                            <button class="reset">
+                            <button disabled class="reset">
                                 Reset
                             </button>
-                            <button class="submit">
+                            <button disabled class="submit">
                                 Save
                             </button>
                         </div>
