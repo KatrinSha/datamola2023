@@ -4,7 +4,7 @@ const tasks = [
     name: "Создать логотип приложения",
     description: "Формат изображения – svg, размеры - 100х100px",
     createdAt: new Date("2023-03-09T23:00:00"),
-    assignee: "Иванов Иван",
+    assignee: "Барановска Устинья",
     status: "To Do",
     priority: "High",
     isPrivate: false,
@@ -12,7 +12,7 @@ const tasks = [
   },
   {
     id: "2",
-    name: "Переименовать константу DELAY_TIME ",
+    name: "Переименовать константу DELAY_TIME",
     description:
       "Необходимо переименовать константу с DELAY_TIME на DELAY_API_TIME",
     createdAt: new Date("2023-03-09T23:00:05"),
@@ -22,37 +22,37 @@ const tasks = [
     isPrivate: false,
     comments: [
       {
-        id: "912",
+        id: "1029",
         text: "Будет сделано!",
         createdAt: new Date("2023-03-09T23:00:05"),
-        author: "Иванов Иван",
+        author: "Барановска Устинья",
       },
     ],
   },
   {
     id: "3",
-    name: "Переименовать константу DELAY_TIME ",
+    name: "Elit at imperdiet dui accumsan",
     description:
-      "Необходимо переименовать константу с DELAY_TIME на DELAY_API_TIME",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut tellus elementum sagittis vitae et. Porta lorem mollis aliquam ut.",
     createdAt: new Date("2022-12-25T23:55:30"),
-    assignee: "Иванов Иван",
+    assignee: "Игнатьева Жозефина",
     status: "To Do",
     priority: "Medium",
     isPrivate: true,
     comments: [
       {
-        id: "912",
+        id: "1000",
         text: "Будет сделано!",
         createdAt: new Date("2023-03-09T23:00:05"),
-        author: "Иванов Иван",
+        author: "Барановска Устинья",
       },
     ],
   },
   {
     id: "4",
-    name: "Переименовать константу DELAY_TIME ",
+    name: "Lectus sit amet est placerat in egestas erat imperdiet sed",
     description:
-      "Необходимо переименовать константу с DELAY_TIME на DELAY_API_TIME",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Laoreet sit amet cursus sit amet dictum sit amet justo. Diam maecenas sed enim ut sem viverra aliquet eget sit.",
     createdAt: new Date("2023-01-14T23:04:48"),
     assignee: "Иванов Иван",
     status: "Complete",
@@ -60,26 +60,26 @@ const tasks = [
     isPrivate: false,
     comments: [
       {
-        id: "912",
+        id: "1001",
         text: "Будет сделано!",
         createdAt: new Date("2023-03-09T23:00:05"),
         author: "Иванов Иван",
       },
     ],
-  },/*
+  } /*
   {
     id: "5",
-    name: "Переименовать константу DELAY_TIME ",
+    name: "Tincidunt augue interdum velit euismod in pellentesque massa placerat duis",
     description:
-      "Необходимо переименовать константу с DELAY_TIME на DELAY_API_TIME",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Porttitor leo a diam sollicitudin. Natoque penatibus et magnis dis.",
     createdAt: new Date("2023-02-27T10:51:10"),
-    assignee: "Иванов Иван",
+    assignee: "Игнатьева Жозефина",
     status: "To Do",
     priority: "Low",
     isPrivate: true,
     comments: [
       {
-        id: "912",
+        id: "1002",
         text: "Будет сделано!",
         createdAt: new Date("2023-03-09T23:00:05"),
         author: "Иванов Иван",
@@ -88,9 +88,9 @@ const tasks = [
   },
   {
     id: "6",
-    name: "Переименовать константу DELAY_TIME ",
+    name: "Nulla at volutpat diam ut venenatis tellus in metus vulputate",
     description:
-      "Необходимо переименовать константу с DELAY_TIME на DELAY_API_TIME",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Porttitor leo a diam sollicitudin. Natoque penatibus et magnis dis.",
     createdAt: new Date("2022-12-01T17:01:16"),
     assignee: "Иванов Иван",
     status: "Complete",
@@ -98,7 +98,7 @@ const tasks = [
     isPrivate: false,
     comments: [
       {
-        id: "912",
+        id: "1003",
         text: "Будет сделано!",
         createdAt: new Date("2023-03-09T23:00:05"),
         author: "Иванов Иван",
@@ -107,9 +107,9 @@ const tasks = [
   },
   {
     id: "7",
-    name: "Переименовать константу DELAY_TIME ",
+    name: "Vestibulum lectus mauris ultrices eros in cursus turpis massa tincidunt",
     description:
-      "Необходимо переименовать константу с DELAY_TIME на DELAY_API_TIME",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Porttitor leo a diam sollicitudin. Natoque penatibus et magnis dis.",
     createdAt: new Date("2022-12-08T00:44:07"),
     assignee: "Иванов Иван",
     status: "To Do",
@@ -117,26 +117,26 @@ const tasks = [
     isPrivate: false,
     comments: [
       {
-        id: "912",
+        id: "1004",
         text: "Будет сделано!",
         createdAt: new Date("2023-03-09T23:00:05"),
-        author: "Иванов Иван",
+        author: "Захарченко Олеся",
       },
     ],
   },
   {
     id: "8",
-    name: "Переименовать константу DELAY_TIME ",
+    name: "Placerat in egestas erat imperdiet sed euismod nisi porta lorem",
     description:
-      "Необходимо переименовать константу с DELAY_TIME на DELAY_API_TIME",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Porttitor leo a diam sollicitudin. Natoque penatibus et magnis dis.",
     createdAt: new Date("2022-12-29T21:18:05"),
-    assignee: "Иванов Иван",
+    assignee: "Игнатьева Жозефина",
     status: "Complete",
     priority: "Low",
     isPrivate: true,
     comments: [
       {
-        id: "912",
+        id: "1005",
         text: "Будет сделано!",
         createdAt: new Date("2023-03-09T23:00:05"),
         author: "Иванов Иван",
@@ -145,9 +145,9 @@ const tasks = [
   },
   {
     id: "9",
-    name: "Переименовать константу DELAY_TIME ",
+    name: "Massa sapien faucibus et molestie ac feugiat sed lectus vestibulum",
     description:
-      "Необходимо переименовать константу с DELAY_TIME на DELAY_API_TIME",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Porttitor leo a diam sollicitudin. Natoque penatibus et magnis dis.",
     createdAt: new Date("2023-02-21T07:17:55"),
     assignee: "Иванов Иван",
     status: "To Do",
@@ -155,26 +155,26 @@ const tasks = [
     isPrivate: false,
     comments: [
       {
-        id: "912",
+        id: "1006",
         text: "Будет сделано!",
         createdAt: new Date("2023-03-09T23:00:05"),
-        author: "Иванов Иван",
+        author: "Захарченко Олеся",
       },
     ],
   },
   {
     id: "10",
-    name: "Переименовать константу DELAY_TIME ",
+    name: "Cursus turpis massa tincidunt dui ut ornare lectus sit amet",
     description:
-      "Необходимо переименовать константу с DELAY_TIME на DELAY_API_TIME",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Porttitor leo a diam sollicitudin. Natoque penatibus et magnis dis.",
     createdAt: new Date("2023-02-06T21:15:16"),
-    assignee: "Иванов Иван",
+    assignee: "Чухрай Зоя",
     status: "To Do",
     priority: "High",
     isPrivate: false,
     comments: [
       {
-        id: "912",
+        id: "1007",
         text: "Будет сделано!",
         createdAt: new Date("2023-03-09T23:00:05"),
         author: "Иванов Иван",
@@ -183,9 +183,9 @@ const tasks = [
   },
   {
     id: "11",
-    name: "Переименовать константу DELAY_TIME ",
+    name: Netus et malesuada fames ac turpis egestas maecenas pharetra convallis",
     description:
-      "Необходимо переименовать константу с DELAY_TIME на DELAY_API_TIME",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Porttitor leo a diam sollicitudin. Natoque penatibus et magnis dis.",
     createdAt: new Date("2023-01-25T03:12:33"),
     assignee: "Иванов Иван",
     status: "In progress",
@@ -193,7 +193,7 @@ const tasks = [
     isPrivate: false,
     comments: [
       {
-        id: "912",
+        id: "1008",
         text: "Будет сделано!",
         createdAt: new Date("2023-03-09T23:00:05"),
         author: "Иванов Иван",
@@ -202,36 +202,36 @@ const tasks = [
   },
   {
     id: "12",
-    name: "Переименовать константу DELAY_TIME ",
+    name: "Placerat vestibulum lectus mauris ultrices eros in cursus turpis massa",
     description:
-      "Необходимо переименовать константу с DELAY_TIME на DELAY_API_TIME",
+      "Diam vulputate ut pharetra sit amet aliquam id diam. Condimentum id venenatis a condimentum.",
     createdAt: new Date("2023-02-06T21:15:16"),
-    assignee: "Иванов Иван",
+    assignee: "Никитина Любовь",
     status: "Complete",
     priority: "Low",
     isPrivate: false,
     comments: [
       {
-        id: "912",
+        id: "1009",
         text: "Будет сделано!",
         createdAt: new Date("2023-03-09T23:00:05"),
-        author: "Иванов Иван",
+        author: "Чухрай Зоя",
       },
     ],
   },
   {
     id: "13",
-    name: "Переименовать константу DELAY_TIME ",
+    name: "Auctor neque vitae tempus quam pellentesque nec nam aliquam sem",
     description:
-      "Необходимо переименовать константу с DELAY_TIME на DELAY_API_TIME",
+      "Ellus in metus vulputate eu scelerisque felis imperdiet proin. Eget est lorem ipsum dolor.",
     createdAt: new Date("2023-01-30T13:18:32"),
-    assignee: "Иванов Иван",
+    assignee: "Лановой Святослав",
     status: "To Do",
     priority: "High",
     isPrivate: false,
     comments: [
       {
-        id: "912",
+        id: "1010",
         text: "Будет сделано!",
         createdAt: new Date("2023-03-09T23:00:05"),
         author: "Иванов Иван",
@@ -240,9 +240,9 @@ const tasks = [
   },
   {
     id: "14",
-    name: "Переименовать константу DELAY_TIME ",
+    name: "Ultrices gravida dictum fusce ut placerat orci nulla pellentesque dignissim",
     description:
-      "Необходимо переименовать константу с DELAY_TIME на DELAY_API_TIME",
+      "Orci porta non pulvinar neque laoreet. Ut diam quam nulla porttitor.",
     createdAt: new Date("2023-01-05T05:06:34"),
     assignee: "Иванов Иван",
     status: "In progress",
@@ -250,18 +250,18 @@ const tasks = [
     isPrivate: false,
     comments: [
       {
-        id: "912",
+        id: "1011",
         text: "Будет сделано!",
         createdAt: new Date("2023-03-09T23:00:05"),
-        author: "Иванов Иван",
+        author: "Чухрай Зоя",
       },
     ],
   },
   {
     id: "15",
-    name: "Переименовать константу DELAY_TIME ",
+    name: "Tempor nec feugiat nisl pretium fusce id velit ut tortor",
     description:
-      "Необходимо переименовать константу с DELAY_TIME на DELAY_API_TIME",
+      "Adipiscing elit ut aliquam purus. Libero id faucibus nisl tincidunt.",
     createdAt: new Date("2023-01-05T05:08:34"),
     assignee: "Иванов Иван",
     status: "Complete",
@@ -269,26 +269,26 @@ const tasks = [
     isPrivate: false,
     comments: [
       {
-        id: "912",
+        id: "1012",
         text: "Будет сделано!",
         createdAt: new Date("2023-03-09T23:00:05"),
-        author: "Иванов Иван",
+        author: "Савенко Богдан",
       },
     ],
   },
   {
     id: "16",
-    name: "Переименовать константу DELAY_TIME ",
+    name: "Risus ultricies tristique nulla aliquet enim tortor at auctor urna",
     description:
       "Необходимо переименовать константу с DELAY_TIME на DELAY_API_TIME",
     createdAt: new Date("2022-12-10T15:33:23"),
-    assignee: "Иванов Иван",
+    assignee: "Щабловская Катерина",
     status: "High",
     priority: "Medium",
     isPrivate: false,
     comments: [
       {
-        id: "912",
+        id: "1013",
         text: "Будет сделано!",
         createdAt: new Date("2023-03-09T23:00:05"),
         author: "Иванов Иван",
@@ -297,17 +297,17 @@ const tasks = [
   },
   {
     id: "17",
-    name: "Переименовать константу DELAY_TIME ",
+    name: "Urna et pharetra pharetra massa massa ultricies mi quis hendrerit",
     description:
-      "Необходимо переименовать константу с DELAY_TIME на DELAY_API_TIME",
+      "Adipiscing elit ut aliquam purus. Libero id faucibus nisl tincidunt. Et molestie ac feugiat sed lectus vestibulum. Quis vel eros donec ac odio tempor orci dapibus ultrices. Tellus at urna condimentum mattis. Donec ac odio tempor orci.",
     createdAt: new Date("2022-12-17T05:46:49"),
-    assignee: "Иванов Иван",
+    assignee: "Савенко Богдан",
     status: "In progress",
     priority: "Medium",
     isPrivate: false,
     comments: [
       {
-        id: "912",
+        id: "1014",
         text: "Будет сделано!",
         createdAt: new Date("2023-03-09T23:00:05"),
         author: "Иванов Иван",
@@ -316,9 +316,9 @@ const tasks = [
   },
   {
     id: "18",
-    name: "Переименовать константу DELAY_TIME ",
+    name: "Tortor consequat id porta nibh venenatis cras sed felis eget",
     description:
-      "Необходимо переименовать константу с DELAY_TIME на DELAY_API_TIME",
+      "Pellentesque pulvinar pellentesque habitant morbi tristique senectus et netus et. Elementum nibh tellus molestie nunc non. ",
     createdAt: new Date("2023-02-25T21:09:34"),
     assignee: "Иванов Иван",
     status: "To Do",
@@ -326,7 +326,7 @@ const tasks = [
     isPrivate: true,
     comments: [
       {
-        id: "912",
+        id: "1015",
         text: "Будет сделано!",
         createdAt: new Date("2023-03-09T23:00:05"),
         author: "Иванов Иван",
@@ -335,17 +335,17 @@ const tasks = [
   },
   {
     id: "19",
-    name: "Переименовать константу DELAY_TIME ",
+    name: "Tortor consequat id porta nibh venenatis cras sed felis eget",
     description:
-      "Необходимо переименовать константу с DELAY_TIME на DELAY_API_TIME",
+      "Elementum nibh tellus molestie nunc non. Pretium viverra suspendisse potenti nullam ac tortor vitae.",
     createdAt: new Date("2022-12-03T01:52:57"),
-    assignee: "Иванов Иван",
+    assignee: "Щабловская Катерина",
     status: "Complete",
     priority: "High",
     isPrivate: false,
     comments: [
       {
-        id: "912",
+        id: "1016",
         text: "Будет сделано!",
         createdAt: new Date("2023-03-09T23:00:05"),
         author: "Иванов Иван",
@@ -354,9 +354,9 @@ const tasks = [
   },
   {
     id: "20",
-    name: "Переименовать константу DELAY_TIME ",
+    name: "Pellentesque habitant morbi tristique senectus et netus et malesuada fames",
     description:
-      "Необходимо переименовать константу с DELAY_TIME на DELAY_API_TIME",
+      "Pellentesque pulvinar pellentesque habitant morbi tristique senectus et netus et. Elementum nibh tellus molestie nunc non. ",
     createdAt: new Date("2023-01-31T01:58:39"),
     assignee: "Иванов Иван",
     status: "In progress",
@@ -364,7 +364,7 @@ const tasks = [
     isPrivate: false,
     comments: [
       {
-        id: "912",
+        id: "1017",
         text: "Будет сделано!",
         createdAt: new Date("2023-03-09T23:00:05"),
         author: "Иванов Иван",
@@ -373,17 +373,17 @@ const tasks = [
   },
   {
     id: "21",
-    name: "Переименовать константу DELAY_TIME ",
+    name: In egestas erat imperdiet sed euismod nisi porta lorem mollis",
     description:
-      "Необходимо переименовать константу с DELAY_TIME на DELAY_API_TIME",
+      "Tincidunt eget nullam non nisi. Sollicitudin tempor id eu nisl. Libero volutpat sed cras ornare arcu.",
     createdAt: new Date("2022-12-28T17:44:31"),
-    assignee: "Иванов Иван",
+    assignee: "Щабловская Катерина",
     status: "Complete",
     priority: "Low",
     isPrivate: false,
     comments: [
       {
-        id: "912",
+        id: "1018",
         text: "Будет сделано!",
         createdAt: new Date("2023-03-09T23:00:05"),
         author: "Иванов Иван",
@@ -392,7 +392,7 @@ const tasks = [
   },
   {
     id: "22",
-    name: "Переименовать константу DELAY_TIME ",
+    name: "Augue ut lectus arcu bibendum at varius vel pharetra vel",
     description:
       "Необходимо переименовать константу с DELAY_TIME на DELAY_API_TIME",
     createdAt: new Date("2022-12-27T10:14:49"),
@@ -402,7 +402,7 @@ const tasks = [
     isPrivate: true,
     comments: [
       {
-        id: "912",
+        id: "1019",
         text: "Будет сделано!",
         createdAt: new Date("2023-03-09T23:00:05"),
         author: "Иванов Иван",
@@ -411,17 +411,17 @@ const tasks = [
   },
   {
     id: "23",
-    name: "Переименовать константу DELAY_TIME ",
+    name: "Ac odio tempor orci dapibus ultrices in iaculis nunc sed",
     description:
-      "Необходимо переименовать константу с DELAY_TIME на DELAY_API_TIME",
+      "Massa sed elementum tempus egestas sed. Orci porta non pulvinar neque laoreet. Ut diam quam nulla porttitor",
     createdAt: new Date("2022-12-07T22:38:10"),
-    assignee: "Иванов Иван",
+    assignee: "Щабловская Катерина",
     status: "In progress",
     priority: "Medium",
     isPrivate: false,
     comments: [
       {
-        id: "912",
+        id: "1020",
         text: "Будет сделано!",
         createdAt: new Date("2023-03-09T23:00:05"),
         author: "Иванов Иван",
@@ -430,55 +430,55 @@ const tasks = [
   },
   {
     id: "24",
-    name: "Переименовать константу DELAY_TIME ",
+    name: Pellentesque sit amet porttitor eget dolor morbi non arcu risus",
     description:
-      "Необходимо переименовать константу с DELAY_TIME на DELAY_API_TIME",
+      "Donec ac odio tempor orci.",
     createdAt: new Date("2022-12-13T07:41:45"),
-    assignee: "Иванов Иван",
+    assignee: "Медяник Злата",
     status: "Complete",
     priority: "Low",
     isPrivate: false,
     comments: [
       {
-        id: "912",
+        id: "1021",
         text: "Будет сделано!",
         createdAt: new Date("2023-03-09T23:00:05"),
-        author: "Иванов Иван",
+        author: "Передрий Таисия",
       },
     ],
   },
   {
     id: "25",
-    name: "Переименовать константу DELAY_TIME ",
+    name: "Ullamcorper malesuada proin libero nunc consequat interdum varius sit amet",
     description:
-      "Необходимо переименовать константу с DELAY_TIME на DELAY_API_TIME",
+      "Elementum nibh tellus molestie nunc non.",
     createdAt: new Date("2023-01-25T00:35:07"),
-    assignee: "Иванов Иван",
+    assignee: "Медяник Злата",
     status: "To Do",
     priority: "High",
     isPrivate: false,
     comments: [
       {
-        id: "912",
+        id: "1022",
         text: "Будет сделано!",
         createdAt: new Date("2023-03-09T23:00:05"),
-        author: "Иванов Иван",
+        author: "Передрий Таисия",
       },
     ],
   },
   {
     id: "26",
-    name: "Переименовать константу DELAY_TIME ",
+    name: "Mi ipsum faucibus vitae aliquet nec ullamcorper sit amet risus",
     description:
-      "Необходимо переименовать константу с DELAY_TIME на DELAY_API_TIME",
+      "Libero volutpat sed cras ornare arcu. Tristique risus nec feugiat in fermentum.",
     createdAt: new Date("2022-12-17T17:13:36"),
-    assignee: "Иванов Иван",
+    assignee: "Бачей Чеслава",
     status: "In progress",
     priority: "Medium",
     isPrivate: false,
     comments: [
       {
-        id: "912",
+        id: "1023",
         text: "Будет сделано!",
         createdAt: new Date("2023-03-09T23:00:05"),
         author: "Иванов Иван",
@@ -487,117 +487,141 @@ const tasks = [
   },
   {
     id: "27",
-    name: "Переименовать константу DELAY_TIME ",
+    name: "Id leo in vitae turpis massa sed elementum tempus egestas",
     description:
-      "Необходимо переименовать константу с DELAY_TIME на DELAY_API_TIME",
+      "Bibendum at varius vel pharetra vel. Lorem ipsum dolor sit amet.",
     createdAt: new Date("2023-01-06T02:27:11"),
-    assignee: "Иванов Иван",
+    assignee: "Бондаренко Платон",
     status: "Complete",
     priority: "Medium",
     isPrivate: false,
     comments: [
       {
-        id: "912",
+        id: "1024",
         text: "Будет сделано!",
         createdAt: new Date("2023-03-09T23:00:05"),
-        author: "Иванов Иван",
+        author: "Чухрай Зоя",
       },
     ],
   },
   {
     id: "28",
-    name: "Переименовать константу DELAY_TIME ",
+    name: "Sed velit dignissim sodales ut eu sem integer vitae justo",
     description:
-      "Необходимо переименовать константу с DELAY_TIME на DELAY_API_TIME",
+      "Praesent tristique magna sit amet. Orci dapibus ultrices in iaculis nunc sed augue.",
     createdAt: new Date("2022-12-31T16:01:50"),
-    assignee: "Иванов Иван",
+    assignee: "Карпов Влад",
     status: "To Do",
     priority: "High",
     isPrivate: false,
     comments: [
       {
-        id: "912",
+        id: "1025",
         text: "Будет сделано!",
         createdAt: new Date("2023-03-09T23:00:05"),
-        author: "Иванов Иван",
+        author: "Попов Даниил",
       },
     ],
   },
   {
     id: "29",
-    name: "Переименовать константу DELAY_TIME ",
+    name: "Ut lectus arcu bibendum at varius vel pharetra vel turpis",
     description:
-      "Необходимо переименовать константу с DELAY_TIME на DELAY_API_TIME",
+      "Praesent tristique magna sit amet.",
     createdAt: new Date("2022-12-14T13:04:57"),
-    assignee: "Иванов Иван",
+    assignee: "Карпов Влад",
     status: "In progress",
     priority: "Medium",
     isPrivate: false,
     comments: [
       {
-        id: "912",
+        id: "1026",
         text: "Будет сделано!",
         createdAt: new Date("2023-03-09T23:00:05"),
-        author: "Иванов Иван",
+        author: Евсеев Спартак",
       },
     ],
   },
   {
     id: "30",
-    name: "Переименовать константу DELAY_TIME ",
+    name: "Nulla facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum",
     description:
-      "Необходимо переименовать константу с DELAY_TIME на DELAY_API_TIME",
+      "Tortor vitae purus faucibus ornare suspendisse sed nisi lacus sed. Libero id faucibus nisl tincidunt.",
     createdAt: new Date("2023-02-04T01:36:16"),
-    assignee: "Иванов Иван",
+    assignee: "Никифорова Таисия",
     status: "To Do",
     priority: "Low",
     isPrivate: true,
     comments: [
       {
-        id: "912",
+        id: "1027",
         text: "Будет сделано!",
         createdAt: new Date("2023-03-09T23:00:05"),
-        author: "Иванов Иван",
+        author: "Васильев Ждан",
       },
     ],
   },
   {
     id: "31",
-    name: "Переименовать константу DELAY_TIME ",
+    name: "Non blandit massa enim nec dui nunc mattis enim ut",
     description:
-      "Необходимо переименовать константу с DELAY_TIME на DELAY_API_TIME",
+      "Erat pellentesque adipiscing commodo elit.",
     createdAt: new Date("2022-12-04T23:12:24"),
-    assignee: "Иванов Иван",
+    assignee: "Бачей Чеслава",
     status: "In progress",
     priority: "Medium",
     isPrivate: false,
     comments: [
       {
-        id: "912",
+        id: "1028",
         text: "Будет сделано!",
         createdAt: new Date("2023-03-09T23:00:05"),
-        author: "Иванов Иван",
+        author: "Тимошенко Марк",
       },
     ],
-  },*/
+  },*/,
 ];
 
-let neName = "holly";
+let module = (function () {
+  function sort(array) {
+    array.sort((a, b) => {
+      return a.age - b.age;
+    });
+    console.log(array);
+    return array;
+  }
+  return {
+    getTask: (skip, top, filterConfig) => {
+      let {
+        assigne: filterAssignee,
+        dateFrom: filterdateFrom,
+        dateTo: filterdateTo,
+        status: filterStatus,
+        priority: filterPriority,
+        isPrivate: filterIsPrivate,
+        description: filterDescription,
+      } = filterConfig;
+      let result = [];
+      if (filterAssignee !== undefined) {
+        result = users.filter((item) => {
+          return item. assigne.includes(filterAssignee);
+        });
+      }
 
-const myModule = (function (usernane) {
-  let user = "Kat";
-  const module = {};
-
-  module.getTask = function (skip = 0, top = 10, filterConfig = {}) {
-    arr.sort((prev, next) => prev. createdAt - next. createdAt);
+      console.log(sort(result).slice(skip, top));
+    },
   };
-
-  module.setName = function (username) {
-    user = username;
-    console.log(user);
-  };
-
-  return module;
 })();
 
-myModule.getTask();
+module.getTask(0, 7, {
+  assigne: "elit",
+});
+let filterConfig = {
+  assigne: "",
+  dateFrom: new Date("2023-02-04T01:36:16"),
+  dateTo: new Date("2023-01-04T01:36:16"),
+  status: "",
+  priority: "",
+  isPrivate: false,
+  description: "",
+};
