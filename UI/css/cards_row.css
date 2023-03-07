@@ -1,3 +1,7 @@
+
+main{
+    height: 100%;
+}
 .cards__wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -9,7 +13,7 @@
     display: flex;
     flex-direction: column;
     height: fit-content;
-    max-height: calc(100vh - 1.6rem - 4.2rem - 4rem);
+    max-height: calc(100vh - 22rem);
     border-radius: 1rem;
     padding: 1.5rem 2rem;
     gap: 1rem;
@@ -350,6 +354,7 @@
     .cards-container {
         overflow: hidden;
         padding: var(--offset-s) var(--offset-s);
+        max-height: calc(100vh - 14rem);
     }
 
     .cards__title {
@@ -385,7 +390,7 @@
         width: 40rem;
         padding: 1rem 0.5rem;
         min-height: fit-content;
-        height: calc(100vh - 25rem - 4.2rem);
+        height: calc(100vh - 14rem);
         overflow-y: scroll;
     }
 

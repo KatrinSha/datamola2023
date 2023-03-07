@@ -1,3 +1,12 @@
+body {
+    height: 100%;
+    overflow: hidden;
+}
+
+main {
+    height: 100vh;
+}
+
 .task__wrapper {
     display: flex;
     justify-content: flex-start;
@@ -25,7 +34,9 @@
     justify-content: flex-start;
     align-items: center;
     margin-left: calc(((132rem - 80rem) / 2) - 17rem);
+    height: calc(100vh - 15rem);
     margin-top: 4rem;
+
 }
 
 .button__to-main {
@@ -168,7 +179,7 @@
     text-transform: uppercase;
     align-self: center;
     justify-self: flex-end;
-    padding: 1.2rem 20rem;
+    padding: 1.2rem 2rem;
     display: flex;
     align-items: center;
     line-height: 120%;
@@ -187,10 +198,9 @@
     flex-direction: column;
     width: 80rem;
     margin: 0 auto;
-    background: var(--additional-color-2-o10);
+    background: var(--additional-color-2-o50);
     border-top: 0.1rem solid var(--secondary-color-o30);
     box-shadow: 0rem 0rem 0.4rem var(--secondary-color-o20), 0.2rem 0.2rem 0.4rem var(--secondary-color-o20);
-    max-height: 30rem;
     min-height: fit-content;
     overflow-y: scroll;
 }
@@ -275,10 +285,12 @@
     flex: 80%;
     background: var(--additional-color-1-darker-o10);
     border: 0.1rem solid var(--additional-color-1-darker-o50);
+    border-radius: 1rem;
 }
 
 .comment__input::placeholder {
     color: var(--black-o50);
+    padding: 0.5rem;
 }
 
 ::-webkit-scrollbar {
@@ -390,6 +402,7 @@
 
     .task__title {
         text-align: center;
+        font-size: 1.6rem;
     }
 
     .task__priority {
@@ -401,6 +414,10 @@
     }
 
     .task__assignee {
+        font-size: 1rem;
+    }
+
+    .task__assignee span {
         font-size: 1.2rem;
     }
 
@@ -409,7 +426,7 @@
         font-size: 0;
         padding: 0;
         box-shadow: none;
-        border: none;
+        border: none; 
     }
 
     .task__edit-button {
