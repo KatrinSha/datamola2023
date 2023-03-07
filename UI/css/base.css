@@ -1,14 +1,31 @@
 :root {
-    --white: #fff;
-    --black: #333;
+    --white: #ffffff;
+    --black: #333333;
+    --black-o05: #3333330d;
+    --black-o10: #3333331a;
+    --black-o25: #33333340;
+    --black-o50: #33333380;
     --primary-color: #cae4ff;
     --secondary-color: #4273a6;
+    --secondary-color-o10: #4273a61a;
+    --secondary-color-o20: #4273a633;
+    --secondary-color-o30: #4273a64d;
+    --secondary-color-o50: #4273a680;
+    --secondary-color-o85: #4273a6d9;
     --additional-color-1: #f9e8cc;
     --additional-color-1-darker: #d47113;
+    --additional-color-1-darker-o10: #d471131a;
+    --additional-color-1-darker-o20: #d4711333;
+    --additional-color-1-darker-o50: #d4711380;
     --additional-color-2: #d4cdff;
+    --additional-color-2-o10: #d3ccff1a;
+    --additional-color-2-o50: #d4cdff80;
     --additional-color-2-darker: #5043a6;
+    --additional-color-2-darker-o10: #5043a61a;
+    --additional-color-2-darker-o50: #5043a680;
     --additional-color-3: #fcc6c6;
     --additional-color-3-darker: #a44040;
+    --valid-input-color: #598234;
 }
 
 
@@ -24,10 +41,16 @@ body {
     line-height: 120%;
     font-weight: 600;
     font-style: normal;
+    --offset-xs:0.1rem;
+    --offset-s:0.5rem;
+    --offset-m:1.0rem;
+    --offset-m-15:1.5rem;
+    --offset-l:2.0rem;
+    --offset-l-30:3.0rem;
 }
 
 .wrapper {
-    width: 1320px;
+    width: 132.0rem;
     margin: 0 auto;
 }
 
@@ -45,9 +68,8 @@ body {
 
 button {
     font-size: 1.6rem;
-    background: var(--);
-    border: 1px solid rgba(66, 115, 166, 0.3);
-    box-shadow: 0px 4px 4px rgba(66, 115, 166, 0.2);
-    border-radius: 10px;
+    border: 0.1rem solid var(--secondary-color-o30);
+    box-shadow: 0px 0.4rem 0.4rem var(--secondary-color-o20);
+    border-radius: 1rem;
 
 }

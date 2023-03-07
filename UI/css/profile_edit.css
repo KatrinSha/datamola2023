@@ -1,167 +1,93 @@
 .profile-edit__wrapper {
     display: flex;
-    gap: 130px;
-}
-
-@media (max-width:1319px) {
-    .profile-edit__wrapper {
-        padding: 0 10px;
-    }
-}
-
-@media (max-width:1024px) {
-    .profile-edit__wrapper {
-        gap: 50px;
-    }
-}
-@media (max-width:768px) {
-    .profile-edit__wrapper {
-        flex-direction: column;
-        align-items: center;
-        gap: 2vw;
-    }
+    gap: 13rem;
 }
 
 .arrow-back_dark {
     background-image: url("../assets/icon/arrow-back-dark.svg");
-    width: 16px;
-    height: 16px;
-}
-@media (max-width:768px) {
-    .path-to{
-        align-self: flex-start;
-    }
+    width: 1.6rem;
+    height: 1.6rem;
 }
 
 .path {
-    margin-top: 10px;
+    margin-top: 1rem;
     display: flex;
-    gap: 5px;
+    gap: 0.5rem;
 }
+
 @media (max-width:768px) {
     .path {
         font-size: 1.2rem;
-        gap: 2px;
+        gap: 0.2rem;
     }
 }
+
 .button__to-main {
     display: flex;
     align-items: center;
-    gap: 10px;
-    width: 170px;
-    padding: 10px 20px;
+    gap: 1rem;
+    width: 17rem;
+    padding: 1rem 2rem;
     text-transform: uppercase;
     font-weight: 400;
     color: var(--white);
     background-color: var(--secondary-color);
-    margin-top: 10px;
+    margin-top: 1rem;
 }
-@media (max-width:768px) {
-    .button__to-main {
-        width: 50px;
-        padding: 5px 5px;
-        font-size: 0rem;
-    }
-}
+
 .arrow-back {
     background-image: url("../assets/icon/arrow-back.svg");
-    width: 24px;
-    height: 24px;
+    width: 2.4rem;
+    height: 2.4rem;
 }
 
 .profile__container {
     display: flex;
-    gap: 55px;
-    padding: 40px 0;
-}
-
-@media (max-width:1024px) {
-    .profile__container {
-        flex-direction: column;
-        gap: 10px;
-    }
-}
-@media (max-width:768px) {
-    .profile__container {
-        padding: 0;
-    }
-}
-
-@media (max-width:600px) {
-    .profile__container {
-        padding: 0 10px;
-    }
+    gap: 5.5rem;
+    padding: 4rem 0rem;
 }
 
 .photo__container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 2rem;
     flex: 83%;
 }
-@media (max-width:768px) {
-    .photo__container {
-        flex-direction: row;
-        gap: 30px;
-        align-items: flex-end;
-    }
-}
+
 .photo {
     background-image: url("../assets/img/user.jpg");
-    width: 150px;
-    height: 150px;
+    width: 15rem;
+    height: 15rem;
     border-radius: 50%;
-}
-@media (max-width:768px) {
-    .photo {
-        background-size: contain;
-        width: 100px;
-        height: 100px
-    }
 }
 
 .button__add-photo {
     background-color: var(--secondary-color);
-    width: 75px;
-    padding: 5px 20px;
-    border-radius: 25px;
+    width: 7.5rem;
+    padding: 0.5rem 2rem;
+    border-radius: 2.5rem;
 }
 
 .photo-camera {
     background-image: url("../assets/icon/camera.svg");
-    width: 22px;
-    height: 20px;
+    width: 2.2rem;
+    height: 2rem;
 }
 
 .profile__form {
-    margin-top: 20px;
+    margin-top: 2rem;
     display: flex;
     flex-direction: column;
 }
 
 .profile__form input {
-    height: 55px;
-    width: 555px;
-    margin-bottom: 40px;
-    border: 2px solid #598234;
-    box-shadow: inset 0px 0px 3px rgba(13, 96, 111, 0.08), inset 0px 2px 3px rgba(13, 96, 111, 0.16);
-    border-radius: 10px;
-}
-
-@media (max-width:1024px) {
-    .profile__form input {
-        max-height:45px;
-        max-width: 400px;
-        margin-bottom: 20px;
-    }
-}
-@media (max-width:600px) {
-    .profile__form input {
-        max-height:45px;
-        max-width: 300px;
-        margin-bottom: 15px;
-    }
+    height: 5.5rem;
+    width: 55.5rem;
+    margin-bottom: 4rem;
+    border: 0.2rem solid var(--valid-input-color);
+    box-shadow: inset 0rem 0rem 0.3rem var(--secondary-color-o10), inset 0rem 0.2rem 0.3rem var(--secondary-color-o30);
+    border-radius: 1rem;
 }
 
 .profile__form input::placeholder {
@@ -170,24 +96,92 @@
 
 .profile__form label {
     font-weight: 400;
-    margin-bottom: 5px;
+    margin-bottom: 0.5rem;
 }
 
 .forms-buttons {
     align-self: flex-end;
     display: flex;
-    gap: 30px;
-
+    gap: 3rem;
 }
 
 .forms-buttons .reset {
-    padding: 8px 25px;
+    padding: 0.8rem 2.5rem;
     text-transform: uppercase;
 }
 
 .forms-buttons .submit {
-    padding: 8px 20px;
+    padding: 0.8rem 2rem;
     background-color: var(--secondary-color);
     color: var(--white);
     text-transform: uppercase;
+}
+
+@media (max-width:1319px) {
+    .profile-edit__wrapper {
+        padding: 0 1rem;
+    }
+}
+
+@media (max-width:1024px) {
+    .profile-edit__wrapper {
+        gap: 5rem;
+    }
+
+    .profile__container {
+        flex-direction: column;
+        gap: var(--offset-m);
+    }
+
+    .profile__form input {
+        max-height: 4.5rem;
+        max-width: 40rem;
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width:768px) {
+    .profile-edit__wrapper {
+        flex-direction: column;
+        align-items: center;
+        gap: 2vw;
+    }
+
+    .path-to {
+        align-self: flex-start;
+    }
+
+    .button__to-main {
+        width: 5rem;
+        padding: 0.5rem 0.5rem;
+        font-size: 0rem;
+    }
+
+    .profile__container {
+        padding: 0;
+    }
+
+    .photo__container {
+        flex-direction: row;
+        gap: 3rem;
+        align-items: flex-end;
+    }
+
+    .photo {
+        background-size: contain;
+        width: 10rem;
+        height: 10rem
+    }
+}
+
+@media (max-width:600px) {
+    .profile__container {
+        padding: 0 1rem;
+    }
+
+    .profile__form input {
+        max-height: 4.5rem;
+        max-width: 30rem;
+        margin-bottom: 1.5rem;
+    }
 }
