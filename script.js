@@ -591,7 +591,7 @@ let module = (function () {
     return array;
   }
   return {
-    getTask: (skip, top, filterConfig) => {
+    getTasks: (skip, top, filterConfig) => {
       let {
         assigne: filterAssignee,
         dateFrom: filterdateFrom,
@@ -604,16 +604,111 @@ let module = (function () {
       let result = [];
       if (filterAssignee !== undefined) {
         result = users.filter((item) => {
-          return item. assigne.includes(filterAssignee);
+          return item.assigne.includes(filterAssignee);
         });
       }
-
+      if (filterdateFrom !== undefined && filterdateTo !== undefined) {
+        result = users.filter((item) => {
+          return createdAt < filterdateTo && createdAt < filterdateFrom;
+        });
+      }
+      if (filterStatus !== undefined) {
+        result = users.filter((item) => {
+          return item.status === filterStatus;
+        });
+      }
+      if (filterPriority !== undefined) {
+        result = users.filter((item) => {
+          return item.priority === filterPriority;
+        });
+      }
+      if (isPrivate !== undefined) {
+        result = users.filter((item) => {
+          return item.isPrivate === filterIsPrivate;
+        });
+      }
+      if (filterDescription !== undefined) {
+        result = users.filter((item) => {
+          return item.description.includes(filterDescription);
+        });
+      }
       console.log(sort(result).slice(skip, top));
     },
+    getTask: (filterId) => {
+      let task;
+      if (filterId !== undefined) {
+        task = users.find((item) => {
+          return item.id === filterId;
+        });
+      }
+      console.log(task);
+      return task;
+    },
+    validateTask: (task) => {
+      let isValid = false;
+      if (typeof task.id == "string" && task.id !== "") {
+        isValid = true;
+      }
+      if (
+        typeof task.name == "string" &&
+        task.name !== "" &&
+        task.name.length <= 100
+      ) {
+        isValid = true;
+      }
+      if (
+        typeof task.description == "string" &&
+        task.description !== "" &&
+        task.description.length <= 280
+      ) {
+        isValid = true;
+      }
+      if (typeof task.assignee == "string" && task.assignee !== "") {
+        isValid = true;
+      }
+      if (
+        typeof task.status == "string" &&
+        task.status !== "" &&
+        (task.status == "To Do" ||
+          task.status == "In progress" ||
+          task.status == "Complete")
+      ) {
+        isValid = true;
+      }
+      if (
+        typeof task.priority == "string" &&
+        task.priority !== "" &&
+        (task.priority == "Low" ||
+          task.priority == "Medium" ||
+          task.priority == "High")
+      ) {
+        isValid = true;
+      }
+      if (
+        typeof task.isPrivate == "boolean" &&
+        task.isPrivate !== "" &&
+        (task.isPrivate === false || task.isPrivate === true)
+      ) {
+        isValid = true;
+      }
+      if (Array.isArray(task.comments)) {
+        isValid = true;
+      }
+      if (isValid) {
+        console.log(`${isValid} - Task is valid `);
+      } else
+        console.log(
+          `${isValid} - Task is invalid, check the value of the fields`
+        );
+    },
+    addTask:((name, description, assignee, status, priority, isPrivate)=>{
+      let id = Math.floor(1 + Math.random() * (1000 + 1 - 1));
+      let newTask={id,name, description, assignee, status, priority, isPrivate, comments=[], date=new Date(Date.now()).toISOString(), assignee=user}
+    }
   };
 })();
 
-module.getTask(0, 7, {
+module.getTasks(0, 7, {
   assigne: "elit",
 });
 let filterConfig = {
