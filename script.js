@@ -701,10 +701,108 @@ let module = (function () {
           `${isValid} - Task is invalid, check the value of the fields`
         );
     },
-    addTask:((name, description, assignee, status, priority, isPrivate)=>{
+    addTask: (name, description, assignee, status, priority, isPrivate) => {
       let id = Math.floor(1 + Math.random() * (1000 + 1 - 1));
-      let newTask={id,name, description, assignee, status, priority, isPrivate, comments=[], date=new Date(Date.now()).toISOString(), assignee=user}
-    }
+      let newTask = {
+        id,
+        name,
+        description,
+        assignee,
+        status,
+        priority,
+        isPrivate,
+        comments: [],
+        date: new Date(Date.now()).toISOString(),
+        assignee: user,
+      };
+      console.log(newTask);
+      if (module.validateTask(newTask)) {
+        users.push(newTask);
+        console.log(`task added`);
+        return true;
+      } else {
+        console.log(`task not added`);
+        return false;
+      }
+    },
+    editTask: (
+      id,
+      name,
+      description,
+      assignee,
+      status,
+      priority,
+      isPrivate
+    ) => {
+      let editTask = module.getTask(id);
+      if (editTask.assignee == user) {
+        if (editTask.assignee !== undefined) {
+          editTask.assignee = assignee;
+        }
+        if (editTask.name !== undefined) {
+          editTask.name = name;
+        }
+        if (editTask.description !== undefined) {
+          editTask.description = description;
+        }
+        if (editTask.status !== undefined) {
+          editTask.status = status;
+        }
+        if (editTask.priority !== undefined) {
+          editTask.priority = priority;
+        }
+        if (editTask.isPrivate !== undefined) {
+          editTask.isPrivate = isPrivate;
+        }
+        console.log(module.validateTask(editTask));
+        return module.validateTask(editTask);
+      } else {
+        console.log("You do not have user rights");
+        return false;
+      }
+    },
+    removeTask: (id) => {
+      let deletedTask = module.getTask(id);
+      let index;
+      if (deletedTask.assignee == user) {
+        index = users.findIndex((item) => {
+          return item.id == id;
+        });
+        console.log(index);
+        users.splice(index, 1);
+        console.log(`You deleted task from id:${id}`);
+        return true;
+      } else {
+        console.log("You do not have user rights");
+        return false;
+      }
+    },
+    validateComment: (com) => {
+      let isValid = false;
+      if (typeof com.id == "string" && com.id !== "") {
+        isValid = true;
+      }
+      if (typeof com.text == "string" && com.text.length <= 280) {
+        isValid = true;
+      }
+      if (
+        com.createdAt instanceof Date == true &&
+        com.createdAt !== "" &&
+        com.createdAt.length <= 280
+      ) {
+        isValid = true;
+      }
+      if (typeof com.author == "string" && com.author !== "") {
+        isValid = true;
+      }
+      if (isValid) {
+        console.log(`${isValid} - Comment is valid `);
+      } else
+        console.log(
+          `${isValid} - Comment is invalid, check the value of the fields`
+        );
+    },
+    
   };
 })();
 
