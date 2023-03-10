@@ -1,4 +1,4 @@
-const tasks = [
+let tasks = [
   {
     id: "1",
     name: "Создать логотип приложения",
@@ -66,7 +66,7 @@ const tasks = [
         author: "Иванов Иван",
       },
     ],
-  } /*
+  },
   {
     id: "5",
     name: "Tincidunt augue interdum velit euismod in pellentesque massa placerat duis",
@@ -183,7 +183,7 @@ const tasks = [
   },
   {
     id: "11",
-    name: Netus et malesuada fames ac turpis egestas maecenas pharetra convallis",
+    name: "Netus et malesuada fames ac turpis egestas maecenas pharetra convallis",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Porttitor leo a diam sollicitudin. Natoque penatibus et magnis dis.",
     createdAt: new Date("2023-01-25T03:12:33"),
@@ -373,7 +373,7 @@ const tasks = [
   },
   {
     id: "21",
-    name: In egestas erat imperdiet sed euismod nisi porta lorem mollis",
+    name: "In egestas erat imperdiet sed euismod nisi porta lorem mollis",
     description:
       "Tincidunt eget nullam non nisi. Sollicitudin tempor id eu nisl. Libero volutpat sed cras ornare arcu.",
     createdAt: new Date("2022-12-28T17:44:31"),
@@ -430,9 +430,8 @@ const tasks = [
   },
   {
     id: "24",
-    name: Pellentesque sit amet porttitor eget dolor morbi non arcu risus",
-    description:
-      "Donec ac odio tempor orci.",
+    name: "Pellentesque sit amet porttitor eget dolor morbi non arcu risus",
+    description: "Donec ac odio tempor orci.",
     createdAt: new Date("2022-12-13T07:41:45"),
     assignee: "Медяник Злата",
     status: "Complete",
@@ -450,8 +449,7 @@ const tasks = [
   {
     id: "25",
     name: "Ullamcorper malesuada proin libero nunc consequat interdum varius sit amet",
-    description:
-      "Elementum nibh tellus molestie nunc non.",
+    description: "Elementum nibh tellus molestie nunc non.",
     createdAt: new Date("2023-01-25T00:35:07"),
     assignee: "Медяник Злата",
     status: "To Do",
@@ -526,8 +524,7 @@ const tasks = [
   {
     id: "29",
     name: "Ut lectus arcu bibendum at varius vel pharetra vel turpis",
-    description:
-      "Praesent tristique magna sit amet.",
+    description: "Praesent tristique magna sit amet.",
     createdAt: new Date("2022-12-14T13:04:57"),
     assignee: "Карпов Влад",
     status: "In progress",
@@ -538,7 +535,7 @@ const tasks = [
         id: "1026",
         text: "Будет сделано!",
         createdAt: new Date("2023-03-09T23:00:05"),
-        author: Евсеев Спартак",
+        author: "Евсеев Спартак",
       },
     ],
   },
@@ -564,8 +561,7 @@ const tasks = [
   {
     id: "31",
     name: "Non blandit massa enim nec dui nunc mattis enim ut",
-    description:
-      "Erat pellentesque adipiscing commodo elit.",
+    description: "Erat pellentesque adipiscing commodo elit.",
     createdAt: new Date("2022-12-04T23:12:24"),
     assignee: "Бачей Чеслава",
     status: "In progress",
@@ -579,10 +575,11 @@ const tasks = [
         author: "Тимошенко Марк",
       },
     ],
-  },*/,
+  },
 ];
 
 let module = (function () {
+let user="Иванов Иван"
   function sort(array) {
     array.sort((a, b) => {
       return a.age - b.age;
@@ -603,33 +600,33 @@ let module = (function () {
       } = filterConfig;
       let result = [];
       if (filterAssignee !== undefined) {
-        result = users.filter((item) => {
-          return item.assigne.includes(filterAssignee);
+        result = tasks.filter((item) => {
+          return item[assignee].includes(filterAssignee);
         });
       }
       if (filterdateFrom !== undefined && filterdateTo !== undefined) {
-        result = users.filter((item) => {
-          return createdAt < filterdateTo && createdAt < filterdateFrom;
+        result = tasks.filter((item) => {
+          return item.createdAt < filterdateTo && item.createdAt > filterdateFrom;
         });
       }
       if (filterStatus !== undefined) {
-        result = users.filter((item) => {
+        result = tasks.filter((item) => {
           return item.status === filterStatus;
         });
       }
       if (filterPriority !== undefined) {
-        result = users.filter((item) => {
+        result = tasks.filter((item) => {
           return item.priority === filterPriority;
         });
       }
       if (isPrivate !== undefined) {
-        result = users.filter((item) => {
+        result = tasks.filter((item) => {
           return item.isPrivate === filterIsPrivate;
         });
       }
       if (filterDescription !== undefined) {
-        result = users.filter((item) => {
-          return item.description.includes(filterDescription);
+        result = tasks.filter((item) => {
+          return item[description].includes(filterDescription);
         });
       }
       console.log(sort(result).slice(skip, top));
@@ -637,7 +634,7 @@ let module = (function () {
     getTask: (filterId) => {
       let task;
       if (filterId !== undefined) {
-        task = users.find((item) => {
+        task = tasks.find((item) => {
           return item.id === filterId;
         });
       }
@@ -707,7 +704,6 @@ let module = (function () {
         id,
         name,
         description,
-        assignee,
         status,
         priority,
         isPrivate,
@@ -717,11 +713,11 @@ let module = (function () {
       };
       console.log(newTask);
       if (module.validateTask(newTask)) {
-        users.push(newTask);
-        console.log(`task added`);
+        tasks.push(newTask);
+        console.log(`Task added`);
         return true;
       } else {
-        console.log(`task not added`);
+        console.log(`Task not added`);
         return false;
       }
     },
@@ -732,7 +728,7 @@ let module = (function () {
       assignee,
       status,
       priority,
-      isPrivate
+      isPrivate = false
     ) => {
       let editTask = module.getTask(id);
       if (editTask.assignee == user) {
@@ -765,11 +761,11 @@ let module = (function () {
       let deletedTask = module.getTask(id);
       let index;
       if (deletedTask.assignee == user) {
-        index = users.findIndex((item) => {
+        index = tasks.findIndex((item) => {
           return item.id == id;
         });
         console.log(index);
-        users.splice(index, 1);
+        tasks.splice(index, 1);
         console.log(`You deleted task from id:${id}`);
         return true;
       } else {
@@ -802,19 +798,33 @@ let module = (function () {
           `${isValid} - Comment is invalid, check the value of the fields`
         );
     },
-    
+    addComment: (id, text) => {
+      let task = module.getTask(id);
+      let newComm = {
+        id: Math.floor(1 + Math.random() * (1000 + 1 - 1)),
+        text,
+        createdAt: new Date(Date.now()).toISOString(),
+        author: user,
+      };
+      if (module.validateComment(newComm)) {
+        task.comments.push(newComm);
+        console.log("Comment added");
+        return true;
+      } else {
+        console.log("Comment not added");
+        return false;
+      }
+    },
+    changeUser: (usr) => {
+      if (typeof usr == "string" && comm !== "") {
+        user = usr;
+      }
+    },
   };
 })();
 
-module.getTasks(0, 7, {
-  assigne: "elit",
+
+
+module.getTasks(0, 10, {
+  assignee: "elit",
 });
-let filterConfig = {
-  assigne: "",
-  dateFrom: new Date("2023-02-04T01:36:16"),
-  dateTo: new Date("2023-01-04T01:36:16"),
-  status: "",
-  priority: "",
-  isPrivate: false,
-  description: "",
-};
