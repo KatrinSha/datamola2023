@@ -586,7 +586,7 @@ let module = (function () {
       return b.createdAt - a.createdAt;
     });
     return array;
-  };
+  }
   function getId() {
     let id = Math.floor(1 + Math.random() * 1000).toString();
     let idArray = tasks.map((item) => {
@@ -598,10 +598,11 @@ let module = (function () {
     if (hasThisId) {
       return getId();
     } else {
-      return id
+      return id;
     }
   }
   return {
+    user,
     getTasks: (skip = 0, top = 10, filterConfig = {}) => {
       let {
         assignee: filterAssignee,
@@ -652,13 +653,19 @@ let module = (function () {
     },
     getTask: (id) => {
       let index;
-      if (id !== undefined) {
+      if (
+        id !== undefined &&
+        typeof id == "string" &&
+        id !== "" &&
+        typeof Number(id) == "number" &&
+        id <= tasks.length
+      ) {
         index = tasks.findIndex((item) => {
           return item.id == id;
         });
-      }
-      console.log(tasks[index]);
-      return tasks[index];
+        console.log(tasks[index]);
+        return tasks[index];
+      } else console.log("The id must be a string with a number");
     },
     validateTask: (task) => {
       let isValid = [];
@@ -679,7 +686,7 @@ let module = (function () {
       ) {
         isValid.push(true);
       }
-      if ((task.createdAt instanceof Date) == true) {
+      if (task.createdAt instanceof Date == true) {
         isValid.push(true);
       }
       if (typeof task.assignee == "string" && task.assignee !== "") {
@@ -719,17 +726,17 @@ let module = (function () {
     },
     addTask: (name, description, assignee, status, priority, isPrivate) => {
       const taskAssignee = assignee ?? user;
-      let id = getId()
+      let id = getId();
       const newTask = {
-      id,
-      name,
-      description,
-      status,
-      priority,
-      isPrivate,
-      comments: [],
-      date: new Date(),
-      assignee:taskAssignee,
+        id,
+        name,
+        description,
+        status,
+        priority,
+        isPrivate,
+        comments: [],
+        createdAt: new Date(),
+        assignee: taskAssignee,
       };
       console.log(newTask);
       if (module.validateTask(newTask)) {
@@ -748,28 +755,28 @@ let module = (function () {
       assignee,
       status,
       priority,
-      isPrivate
+      isPrivate = false
     ) => {
       let editTask = module.getTask(id);
       if (editTask.assignee == user) {
-          if (assignee !== undefined) {
-            editTask.assignee = assignee;
-          }
-          if (name !== undefined) {
-            editTask.name = name;
-          }
-          if (description !== undefined) {
-            editTask.description = description;
-          }
-          if (status !== undefined) {
-            editTask.status = status;
-          }
-          if (priority !== undefined) {
-            editTask.priority = priority;
-          }
-          if (isPrivate !== undefined) {
-            editTask.isPrivate = isPrivate;
-          }
+        if (assignee !== undefined) {
+          editTask.assignee = assignee;
+        }
+        if (name !== undefined) {
+          editTask.name = name;
+        }
+        if (description !== undefined) {
+          editTask.description = description;
+        }
+        if (status !== undefined) {
+          editTask.status = status;
+        }
+        if (priority !== undefined) {
+          editTask.priority = priority;
+        }
+        if (isPrivate !== undefined) {
+          editTask.isPrivate = isPrivate;
+        }
         console.log(editTask);
         console.log(module.validateTask(editTask));
         return module.validateTask(editTask);
@@ -781,17 +788,25 @@ let module = (function () {
     removeTask: (id) => {
       let deletedTask = module.getTask(id);
       let index;
-      if (deletedTask.assignee == user) {
-        index = tasks.findIndex((item) => {
-          return item.id == id;
-        });
-        tasks.splice(index, 1);
-        console.log(`You deleted task from id: ${id}`);
-        return true;
-      } else {
-        console.log("You do not have user rights");
-        return false;
-      }
+      if (
+        id !== undefined &&
+        typeof id == "string" &&
+        id !== "" &&
+        typeof Number(id) == "number" &&
+        id <= tasks.length
+      ) {
+        if (deletedTask.assignee == user) {
+          index = tasks.findIndex((item) => {
+            return item.id == id;
+          });
+          tasks.splice(index, 1);
+          console.log(`You deleted task from id: ${id}`);
+          return true;
+        } else {
+          console.log("You do not have user rights");
+          return false;
+        }
+      } else console.log("The id must be a string with a number");
     },
     validateComment: (com) => {
       let isValid = [];
@@ -801,7 +816,7 @@ let module = (function () {
       if (typeof com.text == "string" && com.text.length <= 280) {
         isValid.push(true);
       }
-      if ((com.createdAt instanceof Date) == true) {
+      if (com.createdAt instanceof Date == true) {
         isValid.push(true);
       }
       if (typeof com.author == "string" && com.author !== "") {
@@ -816,35 +831,155 @@ let module = (function () {
       }
     },
     addComment: (id, text) => {
-      let task = module.getTask(id);
-      let newComm = {
-        id: getId(),
-        text,
-        createdAt: new Date(),
-        author: user,
-      };
-      if (module.validateComment(newComm)) {
-        task.comments.push(newComm);
-        console.log("Comment added");
-        return true;
-      } else {
-        console.log("Comment not added");
-        return false;
-      }
+      let newComm = {};
+      if (
+        id !== undefined &&
+        typeof id == "string" &&
+        id !== "" &&
+        typeof Number(id) == "number" &&
+        id <= tasks.length
+      ) {
+        let task = module.getTask(id);
+        if (text !== undefined) {
+          newComm = {
+            id: getId(),
+            text,
+            createdAt: new Date(),
+            author: user,
+          };
+        } else console.log("Add text");
+        if (module.validateComment(newComm)) {
+          task.comments.push(newComm);
+          console.log("Comment added");
+          return true;
+        } else {
+          console.log("Comment not added");
+          return false;
+        }
+      } else console.log("The id must be a string with a number");
     },
     changeUser: (usr) => {
-      if (typeof usr == "string" && comm !== "") {
+      if (typeof usr == "string" && usr !== "") {
         user = usr;
       }
     },
   };
 })();
+//-------------------------------CHECKING FUNCTIONS--------------------------------
+//                           ADD/REMOVE comment     ctr + /
 
-module.getTasks(0, 10, {
-  assignee: "elit",
-});
-module.getTasks(1, 10, {
-  dateFrom: "2023-01-01",
-  dateTo: "2023-03-31",
-});
-module.addTask('Cursus turpis massa tincidunt', 'Cursus turpis massa tincidunt',user, "To Do", "Low", false);
+//GETTASKS
+
+// module.getTasks(0, 10, {
+//   assignee: "Иван",
+// });
+// module.getTasks(1, 10, {
+//   dateFrom: "2023-01-01",
+//   dateTo: "2023-03-31",
+// })
+// module.getTasks(1, 10, {
+// status: "Complete"
+// })
+// module.getTasks(1, 10, {
+//  priority: "Low",
+// })
+// module.getTasks(1, 10, {
+//  isPrivate: false,
+// })
+// module.getTasks(1, 10, {
+// description: "Lorem",
+// })
+
+//GETTASK
+
+//module.getTask('2');
+//module.getTask('');
+//module.getTask(8);
+
+//VALIDATETASK
+
+// let task = {
+//   id: "3",
+//   name: "Elit at imperdiet dui accumsan",
+//   description: "Lorem ipsum dol.",
+//   createdAt: new Date("2022-12-25T23:55:30"),
+//   assignee: "Игнатьева Жозефина",
+//   status: "To Do",
+//   priority: "Medium",
+//   isPrivate: true,
+//   comments: [],
+// };
+// let taskInval = {
+//   id: 3,
+//   name: "Elit at imperdiet dui accumsan",
+//   description: "Lorem ipsum dol.",
+//   createdAt: new Date("2022-12-25T23:55:30"),
+//   assignee: "Игнатьева Жозефина",
+//   status: "To",
+//   priority: "Medium",
+//   isPrivate: true,
+//   comments: [],
+// };
+// module.validateTask(task);
+// module.validateTask(taskInval);
+
+//ADDTASK
+
+// module.addTask(
+//   "Cursus ",
+//   "Cursus turpis massa tincidunt",
+//   module.user,
+//   "To Do",
+//   "Low",
+//   false
+// );
+// module.addTask(
+//   "Cursus ",
+//   "Cursus turpis massa tincidunt",
+//   'user',
+//   "To Do",
+//   "",
+//   'false'
+// );
+
+//EDITTASK
+
+// module.editTask('7','check');
+// module.editTask('7','');
+// module.editTask('5','');
+// module.editTask('7','feed the cats','some task about cats','Mothers of cats','Complete','High', true);
+
+//REMOVETASK
+
+// module.removeTask('7');
+// module.removeTask('5');
+// module.removeTask('');
+// module.removeTask('two');
+
+//VALIDATECOMMENT
+
+// let com = {
+//  id: "789",
+//  text: "text",
+//  createdAt: new Date("2022-12-29T21:18:05"),
+//  author: "linna"
+// }
+// let comInval= {
+//  id: "789",
+//  text: "text",
+//  createdAt: '15-10-2022',
+//  author: "linna"
+// }
+// module.validateComment(com);
+// module.validateComment(comInval);
+
+//ADDCOMMENT
+
+//module.addComment("10", "trewetswetswert");
+//module.addComment("11", "trewetswetswert");
+//module.addComment("10", );
+
+//CHANGEUSER
+
+//module.changeUser('kate');
+//module.changeUser('')
