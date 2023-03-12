@@ -41,12 +41,6 @@ body {
     line-height: 120%;
     font-weight: 600;
     font-style: normal;
-    --offset-xs:0.1rem;
-    --offset-s:0.5rem;
-    --offset-m:1.0rem;
-    --offset-m-15:1.5rem;
-    --offset-l:2.0rem;
-    --offset-l-30:3.0rem;
 }
 
 .wrapper {
