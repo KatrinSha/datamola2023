@@ -622,8 +622,8 @@ let module = (function () {
       if (filterdateFrom !== undefined && filterdateTo !== undefined) {
         result = result.filter((item) => {
           return (
-            item.createdAt < new Date(filterdateTo) &&
-            item.createdAt > new Date(filterdateFrom)
+            item.createdAt <= new Date(filterdateTo) &&
+            item.createdAt >= new Date(filterdateFrom)
           );
         });
       }
@@ -647,7 +647,7 @@ let module = (function () {
           return item.description.includes(filterDescription);
         });
       }
-      let sortedArr = sort(result).slice(skip, top);
+      let sortedArr = sort(result).splice(skip, top);
       console.log(sortedArr);
       return sortedArr;
     },
