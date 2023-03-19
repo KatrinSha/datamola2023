@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-plusplus */
 function getSubArrMax(arr) {
   let maxSum = 0;
   let sum = 0;
@@ -11,7 +13,7 @@ function getSubArrMax(arr) {
   }
   return maxSum;
 }
-console.log(getSubArrMax([-2, 1, -3, 4, -1, 2, 1, -5, 4]));
+// console.log(getSubArrMax([-2, 1, -3, 4, -1, 2, 1, -5, 4]));
 
 // function getMaxProfit(pricesArray) {
 //   if (pricesArray.length < 2) {

@@ -1,3 +1,9 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable max-len */
+/* eslint-disable no-underscore-dangle */
+/* eslint-disable class-methods-use-this */
+/* eslint-disable no-shadow */
+// eslint-disable-next-line max-classes-per-file
 const tasks = [
   {
     id: '1',
@@ -578,115 +584,107 @@ const tasks = [
   },
 ];
 
-const module = (
-  function myMod() {
-    let user = 'Иванов Иван';
+class Task {
+  #id;
 
-    function sortCollection(array) {
-      array.sort((a, b) => b.createdAt - a.createdAt);
-      return array;
+  #createdAt;
+
+  constructor(
+    id,
+    name,
+    description,
+    status,
+    priority,
+    isPrivate,
+    comments,
+    createdAt,
+    assignee,
+  ) {
+    this.#id = this.#setId();
+    this.name = name;
+    this.description = description;
+    this.status = status;
+    this.priority = priority;
+    this.isPrivate = isPrivate;
+    this.comments = comments;
+    this.#createdAt = new Date();
+    this.assignee = assignee;
+  }
+
+  #setId() {
+    const id = Math.floor(1 + Math.random() * 1000).toString();
+    const idArray = tasks.map((item) => item.id);
+    const hasThisId = idArray.some((item) => item === id);
+    if (hasThisId) {
+      return this.#setId();
+    }
+    return id;
+  }
+
+  get id() {
+    return this.#setId();
+  }
+
+  get createdAt() {
+    return this.#createdAt;
+  }
+
+  static validate(task) {
+    function isIdvalid() {
+      return typeof task.id === 'string' && task.id !== '';
     }
 
-    function getUniqueId() {
-      const id = Math.floor(1 + Math.random() * 1000).toString();
-      const idArray = tasks.map((item) => item.id);
-      const hasThisId = idArray.some((item) => item === id);
-      if (hasThisId) {
-        return getUniqueId();
-      }
-      return id;
+    function isNameValid() {
+      return (
+        typeof task.name === 'string'
+        && task.name !== ''
+        && task.name.length <= 100
+      );
     }
-    return {
-      user,
-      getTasks: (skip = 0, top = 10, filterConfig = {}) => {
-        const {
-          assignee: filterAssignee,
-          dateFrom: filterdateFrom,
-          dateTo: filterdateTo,
-          status: filterStatus,
-          priority: filterPriority,
-          isPrivate: filterIsPrivate,
-          description: filterDescription,
-        } = filterConfig;
-        let result = tasks;
-        if (filterAssignee !== undefined) {
-          result = result.filter((item) => item.assignee.includes(filterAssignee));
-        }
-        if (filterdateFrom !== undefined) {
-          result = result.filter((item) => item.createdAt >= new Date(filterdateFrom));
-        }
-        if (filterdateTo !== undefined) {
-          result = result.filter((item) => item.createdAt <= new Date(filterdateTo));
-        }
-        if (filterStatus !== undefined) {
-          result = result.filter((item) => item.status === filterStatus);
-        }
-        if (filterPriority !== undefined) {
-          result = result.filter((item) => item.priority === filterPriority);
-        }
-        if (filterIsPrivate !== undefined) {
-          result = result.filter((item) => item.isPrivate === filterIsPrivate);
-        }
-        if (filterDescription !== undefined) {
-          result = result.filter((item) => item.description.includes(filterDescription));
-        }
-        const sortedArr = sortCollection(result).splice(skip, top);
-        // console.log(sortedArr);
-        return sortedArr;
-      },
-      getTask: (id) => {
-        const idArray = tasks.map((item) => item.id);
-        let index;
-        if (idArray.includes(id)) {
-          index = tasks.findIndex((item) => item.id === id);
-          // console.log(tasks[index]);
-          return tasks[index];
-        }
-        // console.log('The id must be a string with a number');
-        return false;
-      },
-      validateTask: (task) => {
-        function isIdvalid() {
-          return typeof task.id === 'string' && task.id !== '';
-        }
 
-        function isNameValid() {
-          return typeof task.name === 'string' && task.name !== '' && task.name.length <= 100;
-        }
+    function isDescriptionValid() {
+      return (
+        typeof task.description === 'string'
+        && task.description !== ''
+        && task.description.length <= 280
+      );
+    }
 
-        function isDescriptionValid() {
-          return typeof task.description === 'string'
-          && task.description !== ''
-          && task.description.length <= 280;
-        }
+    function isDateValid() {
+      return task.createdAt instanceof Date;
+    }
 
-        function isDateValid() {
-          return task.createdAt instanceof Date;
-        }
+    function isAssigneeValid() {
+      return typeof task.assignee === 'string' && task.assignee !== '';
+    }
 
-        function isAssigneeValid() {
-          return typeof task.assignee === 'string' && task.assignee !== '';
-        }
+    function isStatusValid() {
+      return (
+        typeof task.status === 'string'
+        && task.status !== ''
+        && ['To Do', 'In progress', 'Complete'].includes(task.status)
+      );
+    }
 
-        function isStatusValid() {
-          return typeof task.status === 'string'
-          && task.status !== '' && ['To Do', 'In progress', 'Complete'].includes(task.status);
-        }
+    function isPriorityValid() {
+      return (
+        typeof task.priority === 'string'
+        && task.priority !== ''
+        && ['Low', 'Medium', 'High'].includes(task.priority)
+      );
+    }
 
-        function isPriorityValid() {
-          return typeof task.priority === 'string'
-          && task.priority !== '' && ['Low', 'Medium', 'High'].includes(task.priority);
-        }
+    function isPrivateValid() {
+      return typeof task.isPrivate === 'boolean';
+    }
 
-        function isPrivateValid() {
-          return typeof task.isPrivate === 'boolean';
-        }
+    function isArrayValid() {
+      return Array.isArray(task.comments);
+    }
 
-        function isArrayValid() {
-          return Array.isArray(task.comments);
-        }
-
-        if (isIdvalid()
+    // eslint-disable-next-line max-len
+    if (
+      isIdvalid()
       && isNameValid()
       && isDescriptionValid()
       && isDateValid()
@@ -694,264 +692,381 @@ const module = (
       && isStatusValid()
       && isPriorityValid()
       && isPrivateValid()
-      && isArrayValid()) {
-        // console.log('Task is valid');
-          return true;
-        }
-        // console.log('Task is invalid, check the value of the fields');
-        return false;
-      },
-      addTask: (name, description, assignee, status, priority, isPrivate) => {
-        const id = getUniqueId();
-        const newTask = {
-          id,
-          name,
-          description,
-          status,
-          priority,
-          isPrivate,
-          comments: [],
-          createdAt: new Date(),
-          assignee: assignee || user,
-        };
-        // console.log(newTask);
-        if (module.validateTask(newTask)) {
-          tasks.push(newTask);
-          // console.log('Task added');
-          return true;
-        }
-        // console.log('Task not added');
-        return false;
-      },
-      editTask: (
-        id,
-        name,
-        description,
-        assignee,
-        status,
-        priority,
-        isPrivate = false,
-      ) => {
-        const editTask = module.getTask(id);
-        if (editTask.assignee === user) {
-          if (assignee !== undefined) {
-            editTask.assignee = assignee;
-          }
-          if (name !== undefined) {
-            editTask.name = name;
-          }
-          if (description !== undefined) {
-            editTask.description = description;
-          }
-          if (status !== undefined) {
-            editTask.status = status;
-          }
-          if (priority !== undefined) {
-            editTask.priority = priority;
-          }
-          if (isPrivate !== undefined) {
-            editTask.isPrivate = isPrivate;
-          }
-          // console.log(editTask);
-          // console.log(module.validateTask(editTask));
-          return module.validateTask(editTask);
-        }
-        // console.log('You do not have user rights');
-        return false;
-      },
-      removeTask: (id) => {
-        const idArray = tasks.map((item) => item.id);
-        const deletedTask = module.getTask(id);
-        let index;
-        if (idArray.includes(id)) {
-          if (deletedTask.assignee === user) {
-            index = tasks.findIndex((item) => item.id === id);
-            tasks.splice(index, 1);
-            // console.log(`You deleted task from id: ${id}`);
-            return true;
-          }
-          // console.log('You do not have user rights');
-          return false;
-        }
-        // console.log('The id must be a string with a number');
-        return false;
-      },
-      validateComment: (com) => {
-        function isIdValid() {
-          return typeof com.id === 'string' && com.id !== '';
-        }
+      && isArrayValid()
+    ) {
+      // console.log('Task is valid');
+      return true;
+    }
+    // console.log('Task is invalid, check the value of the fields');
+    return false;
+  }
+}
 
-        function isTextValid() {
-          return typeof com.text === 'string' && com.text.length <= 280;
-        }
+// const task = new Task();
+// task.print();
+// Task.validate(task);
 
-        function isDateValid() {
-          return com.createdAt instanceof Date;
-        }
+class Comment {
+  #id;
 
-        function isAuthorvalid() {
-          return typeof com.author === 'string' && com.author !== '';
-        }
+  #createdAt;
 
-        if (isIdValid() && isTextValid() && isDateValid() && isAuthorvalid()) {
-        // console.log('Comment is valid');
-          return true;
-        }
-        // console.log('Comment is invalid, check the value of the fields');
-        return false;
-      },
-      addComment: (id, text) => {
-        const idArray = tasks.map((item) => item.id);
-        let newComm = {};
-        if (idArray.includes(id)) {
-          const task = module.getTask(id);
-          if (text !== undefined) {
-            newComm = {
-              id: getUniqueId(),
-              text,
-              createdAt: new Date(),
-              author: user,
-            };
-          } else // console.log('Add text');
-          if (module.validateComment(newComm)) {
-            task.comments.push(newComm);
-            // console.log('Comment added');
-            return true;
-          }
-          // console.log('Comment not added');
-          return false;
-        }
-        // console.log('The id must be a string with a number');
-        return false;
-      },
-      changeUser: (usr) => {
-        if (typeof usr === 'string' && usr !== '') {
-          user = usr;
-        }
-      },
+  #author;
+
+  #user;
+
+  constructor(text, author) {
+    this.#id = this.#setId();
+    this.#createdAt = new Date();
+    this.text = text;
+    this.#author = author;
+  }
+
+  #setId() {
+    return Math.floor(1 + Math.random() * 1000).toString();
+  }
+
+  get id() {
+    return this.#id;
+  }
+
+  get createdAt() {
+    return this.#createdAt;
+  }
+
+  set author(value) {
+    this.#author = value;
+  }
+
+  get author() {
+    return this.#author;
+  }
+
+  static validate(com) {
+    const isValid = [];
+    if (typeof com.id === 'string' && com.id !== '') {
+      isValid.push(true);
+    }
+    if (typeof com.text === 'string' && com.text.length <= 280) {
+      isValid.push(true);
+    }
+    if (com.createdAt instanceof Date) {
+      isValid.push(true);
+    }
+    if (typeof com.author === 'string' && com.author !== '') {
+      isValid.push(true);
+    }
+    if (isValid.length === 4) {
+      // console.log('Comment is valid');
+      return true;
+    }
+    // console.log('Comment is invalid, check the value of the fields');
+    return false;
+  }
+}
+
+// const com = new Comment("ftghfyktgykt", "lala");
+
+// Comment.validate(com)
+
+class TaskCollection {
+  constructor(tasks) {
+    this.tasks = tasks;
+    this.validCollection = tasks;
+    this.user = 'Иванов Иван';
+    this.invalidCollection = [];
+  }
+
+  #setId() {
+    const id = Math.floor(1 + Math.random() * 1000).toString();
+    const idArray = tasks.map((item) => item.id);
+    const hasThisId = idArray.some((item) => item === id);
+    if (hasThisId) {
+      return this.#setId();
+    }
+    return id;
+  }
+
+  get id() {
+    return this.#setId();
+  }
+
+  getPage(skip = 0, top = 10, filterConfig = {}) {
+    function sortCollection(array) {
+      array.sort((a, b) => b.createdAt - a.createdAt);
+      return array;
+    }
+    const {
+      assignee: filterAssignee,
+      dateFrom: filterdateFrom,
+      dateTo: filterdateTo,
+      status: filterStatus,
+      priority: filterPriority,
+      isPrivate: filterIsPrivate,
+      description: filterDescription,
+    } = filterConfig;
+    let result = tasks;
+    if (filterAssignee !== undefined) {
+      result = result.filter((item) => item.assignee.includes(filterAssignee));
+    }
+    if (filterdateFrom !== undefined) {
+      result = result.filter(
+        (item) => item.createdAt >= new Date(filterdateFrom),
+      );
+    }
+    if (filterdateTo !== undefined) {
+      result = result.filter(
+        (item) => item.createdAt <= new Date(filterdateTo),
+      );
+    }
+    if (filterStatus !== undefined) {
+      result = result.filter((item) => item.status === filterStatus);
+    }
+    if (filterPriority !== undefined) {
+      result = result.filter((item) => item.priority === filterPriority);
+    }
+    if (filterIsPrivate !== undefined) {
+      result = result.filter((item) => item.isPrivate === filterIsPrivate);
+    }
+    if (filterDescription !== undefined) {
+      result = result.filter((item) => item.description.includes(filterDescription));
+    }
+    const sortedArr = sortCollection(result).splice(skip, top);
+    // console.log(sortedArr);
+    return sortedArr;
+  }
+
+  get(id) {
+    const idArray = this.tasks.map((item) => item.id);
+
+    let index;
+    if (idArray.includes(id)) {
+      index = this.tasks.findIndex((item) => item.id === id);
+      // console.log(this.tasks[index]);
+      return this.tasks[index];
+    }
+    // console.log('The id must be a string with a number and matches the existing number');
+    return false;
+  }
+
+  _validateTask(task) {
+    function isIdvalid() {
+      return typeof task.id === 'string' && task.id !== '';
+    }
+
+    function isNameValid() {
+      return (
+        typeof task.name === 'string'
+        && task.name !== ''
+        && task.name.length <= 100
+      );
+    }
+
+    function isDescriptionValid() {
+      return (
+        typeof task.description === 'string'
+        && task.description !== ''
+        && task.description.length <= 280
+      );
+    }
+
+    function isDateValid() {
+      return task.createdAt instanceof Date;
+    }
+
+    function isAssigneeValid() {
+      return typeof task.assignee === 'string' && task.assignee !== '';
+    }
+
+    function isStatusValid() {
+      return (
+        typeof task.status === 'string'
+        && task.status !== ''
+        && ['To Do', 'In progress', 'Complete'].includes(task.status)
+      );
+    }
+
+    function isPriorityValid() {
+      return (
+        typeof task.priority === 'string'
+        && task.priority !== ''
+        && ['Low', 'Medium', 'High'].includes(task.priority)
+      );
+    }
+
+    function isPrivateValid() {
+      return typeof task.isPrivate === 'boolean';
+    }
+
+    function isArrayValid() {
+      return Array.isArray(task.comments);
+    }
+
+    if (
+      isIdvalid()
+      && isNameValid()
+      && isDescriptionValid()
+      && isDateValid()
+      && isAssigneeValid()
+      && isStatusValid()
+      && isPriorityValid()
+      && isPrivateValid()
+      && isArrayValid()
+    ) {
+      // console.log('Task is valid');
+      return true;
+    }
+    // console.log('Task is invalid, check the value of the fields');
+    return false;
+  }
+
+  add(name, description, assignee, status, priority, isPrivate) {
+    const correctId = this.#setId();
+    const newTask = {
+      id: correctId,
+      name,
+      description,
+      status,
+      priority,
+      isPrivate,
+      comments: [],
+      createdAt: new Date(),
+      assignee: assignee ?? this.user,
     };
-  }());
-// -------------------------------CHECKING FUNCTIONS--------------------------------
-//                           ADD/REMOVE comment     ctr + /
+    // console.log(newTask);
+    if (this._validateTask(newTask)) {
+      this.tasks.push(newTask);
+      // console.log('Task added');
+      return true;
+    }
+    // console.log('Task not added');
+    return false;
+  }
 
-// GETTASKS
+  edit(id, name, description, assignee, status, priority, isPrivate = false) {
+    const editTask = this.get(id);
+    if (editTask.assignee === this.user) {
+      if (assignee !== undefined) {
+        editTask.assignee = assignee;
+      }
+      if (name !== undefined) {
+        editTask.name = name;
+      }
+      if (description !== undefined) {
+        editTask.description = description;
+      }
+      if (status !== undefined) {
+        editTask.status = status;
+      }
+      if (priority !== undefined) {
+        editTask.priority = priority;
+      }
+      if (isPrivate !== undefined) {
+        editTask.isPrivate = isPrivate;
+      }
+      // console.log(editTask);
+      // console.log(this._validateTask(editTask));
+      return this._validateTask(editTask);
+    }
+    // console.log('You do not have user rights');
+    return false;
+  }
 
-// module.getTasks(0, 10, {
-//   assignee: "Иван",
-// });
-// module.getTasks(1, 10, {
-//   dateFrom: "2023-01-01",
-//   dateTo: "2023-03-31",
-// })
-// module.getTasks(1, 10, {
-// status: "Complete"
-// })
-// module.getTasks(1, 10, {
-//  priority: "Low",
-// })
-// module.getTasks(1, 10, {
-//  isPrivate: false,
-// })
-// module.getTasks(1, 10, {
-// description: "Lorem",
-// })
+  removeTask(id) {
+    const deletedTask = this.get(id);
+    const idArray = this.tasks.map((item) => item.id);
+    let index;
+    if (idArray.includes(id)) {
+      if (deletedTask.assignee === this.user) {
+        index = tasks.findIndex((item) => item.id === id);
+        tasks.splice(index, 1);
+        // console.log(`You deleted task from id: ${id}`);
+        return true;
+      }
+      // console.log('You do not have user rights');
+      return false;
+    }
+    return false;
+    // console.log('The id must be a string with a number and matches the existing number');
+  }
 
-// GETTASK
+  _validateComment(com) {
+    function isIdValid() {
+      return typeof com.id === 'string' && com.id !== '';
+    }
 
-// module.getTask('2');
-// module.getTask('');
-// module.getTask(8);
+    function isTextValid() {
+      return typeof com.text === 'string' && com.text.length <= 280;
+    }
 
-// VALIDATETASK
+    function isDateValid() {
+      return com.createdAt instanceof Date;
+    }
 
-// let task = {
-//   id: "3",
-//   name: "Elit at imperdiet dui accumsan",
-//   description: "Lorem ipsum dol.",
-//   createdAt: new Date("2022-12-25T23:55:30"),
-//   assignee: "Игнатьева Жозефина",
-//   status: "To Do",
-//   priority: "Medium",
-//   isPrivate: true,
-//   comments: [],
-// };
-// let taskInval = {
-//   id: 3,
-//   name: "Elit at imperdiet dui accumsan",
-//   description: "Lorem ipsum dol.",
-//   createdAt: new Date("2022-12-25T23:55:30"),
-//   assignee: "Игнатьева Жозефина",
-//   status: "To",
-//   priority: "Medium",
-//   isPrivate: true,
-//   comments: [],
-// };
-// module.validateTask(task);
-// module.validateTask(taskInval);
+    function isAuthorvalid() {
+      return typeof com.author === 'string' && com.author !== '';
+    }
 
-// ADDTASK
+    if (isIdValid() && isTextValid() && isDateValid() && isAuthorvalid()) {
+      // console.log('Comment is valid');
+      return true;
+    }
+    // console.log('Comment is invalid, check the value of the fields');
+    return false;
+  }
 
-// module.addTask(
-//   "Cursus ",
-//   "Cursus turpis massa tincidunt",
-//   module.user,
-//   "To Do",
-//   "Low",
-//   false
-// );
-// module.addTask(
-//   "Cursus ",
-//   "Cursus turpis massa tincidunt",
-//   'user',
-//   "To Do",
-//   "",
-//   'false'
-// );
+  addComment(id, text) {
+    const idArray = this.tasks.map((item) => item.id);
+    let newComm = {};
+    if (idArray.includes(id)) {
+      const task = this.get(id);
 
-// EDITTASK
+      newComm = {
+        id: this.#setId(),
+        text,
+        createdAt: new Date(),
+        author: this.user,
+      };
 
-// module.editTask('7','check');
-// module.editTask('7','');
-// module.editTask('5','');
-// module.editTask(
-// '7',
-// 'feed the cats',
-// 'some task about cats',
-// 'Mothers of cats','Complete',
-// 'High',
-//  true);
+      if (this._validateComment(newComm)) {
+        // console.log(task.comments);
+        task.comments.push(newComm);
+        // console.log('Comment added');
+        return true;
+      }
+      // console.log('Comment not added');
+      return false;
+    }
+    // console.log('The id must be a string with a number');
+    return false;
+  }
 
-// REMOVETASK
+  addAll(someTasks) {
+    this.invalidCollection = someTasks.filter(
+      (item) => !this._validateTask(item),
+    );
+    const validTask = someTasks.filter((item) => this._validateTask(item));
+    this.validCollection = [...this.validCollection, ...validTask];
+    // console.log(this.invalidCollection);
+    return this.invalidCollection;
+  }
 
-// module.removeTask('7');
-// module.removeTask('5');
-// module.removeTask('');
-// module.removeTask('two');
+  clear() {
+    this.validCollection = [];
+    // console.log(this.invalidCollection);
+  }
+}
 
-// VALIDATECOMMENT
+// const array = new TaskCollection(tasks);
 
-// let com = {
-//  id: "789",
-//  text: "text",
-//  createdAt: new Date("2022-12-29T21:18:05"),
-//  author: "linna"
-// }
-// let comInval= {
-//  id: "789",
-//  text: "text",
-//  createdAt: '15-10-2022',
-//  author: "linna"
-// }
-// module.validateComment(com);
-// module.validateComment(comInval);
+// array.addAll(tasks);
+// array.clear()
+// array.getPage(2,5,)
 
-// ADDCOMMENT
+// array.get("10")
 
-// module.addComment("10", "trewetswetswert");
-// module.addComment("11", "trewetswetswert");
-// module.addComment("10", );
+// array.add("Vestibulum lectus mauris ultrices eros in cursus turpis massa tincidunt", "Lo//rem ipsum dolor .","Иванов Иван", "To Do", "Low", true)
 
-// CHANGEUSER
+// array.edit('7','feed the cats','some task about cats','Mothers of cats','Complete','Hig//h', true)
 
-// module.changeUser('kate');
-// module.changeUser('')
+// array.addComment('1', 'zeryzetuz');
