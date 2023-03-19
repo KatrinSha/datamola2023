@@ -1,4 +1,3 @@
-
 function getSubArrMax(arr) {
   let maxSum = 0;
   let sum = 0;
@@ -14,9 +13,6 @@ function getSubArrMax(arr) {
 }
 console.log(getSubArrMax([-2, 1, -3, 4, -1, 2, 1, -5, 4]));
 
-
-
-
 // function getMaxProfit(pricesArray) {
 //   if (pricesArray.length < 2) {
 //     console.log('Not enough values');
@@ -31,6 +27,5 @@ console.log(getSubArrMax([-2, 1, -3, 4, -1, 2, 1, -5, 4]));
 //   }
 //   return maxProfit;
 // }
-
 
 // console.log(getMaxProfit([7, 1, 5, 3, 6, 4])); - 5????
