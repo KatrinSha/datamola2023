@@ -4,7 +4,7 @@
 > 
 > [mockups](https://github.com/KatrinSha/datamola2023/tree/main/mockups) - application layout images
 > 
-> [src](https://github.com/KatrinSha/datamola2023/tree/task4_update) - JavaScript files
+> [src](https://github.com/KatrinSha/datamola2023/tree/main/src) - JavaScript files
 > 
 > [UI](https://github.com/KatrinSha/datamola2023/tree/main/UI) - html and styles
 #### Navigation:
@@ -16,4 +16,5 @@
 
 
 * Task 4 - JS Intro [Pull request](https://github.com/KatrinSha/datamola2023/pull/6);
-* Task 5 - JS Deep Dive and Best Practices
+* Task 4 - Update [Pull request](https://github.com/KatrinSha/datamola2023/pull/7);
+* Task 5 - JS Deep Dive and Best Practices [Pull reqeuest](https://github.com/KatrinSha/datamola2023/pull/8)
