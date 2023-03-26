@@ -49,9 +49,9 @@ console.log(d);
 
 function pipe(...arguments) {
   return (arg) => {
-    let args = arguments;
+    let argsA = arguments;
     let result = arg;
-    args.forEach((item) => {
+    argsA.forEach((item) => {
       result = item(result);
       return result;
     });
