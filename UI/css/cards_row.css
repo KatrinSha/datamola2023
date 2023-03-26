@@ -24,6 +24,7 @@ main{
     display: flex;
     gap: var(--offset-m);
     align-items: center;
+    gap:1rem;
 }
 
 .cards__count {

@@ -1,3 +1,7 @@
+/* eslint-disable max-classes-per-file */
+/* eslint-disable no-plusplus */
+/* eslint-disable consistent-return */
+/* eslint-disable no-console */
 class Node {
   constructor(value = null, next = null) {
     this.value = value;
@@ -9,14 +13,14 @@ class List {
     this.head = value;
     this.length = 1;
   }
-  
+
   insertFirst(value) {
     this.head = new Node(value, this.head);
     this.length++;
   }
 
   insertLast(value) {
-    let node = new Node(value);
+    const node = new Node(value);
     let current;
     if (!this.head) {
       this.head = node;
@@ -54,7 +58,8 @@ class List {
       return true;
     }
     const node = new Node(value);
-    let current, previous;
+    let current; let
+      previous;
     current = this.head;
     let count = 0;
     while (count < i) {
@@ -67,6 +72,7 @@ class List {
     this.length++;
     return true;
   }
+
   removeNode(i) {
     if (i > 0 && i >= this.length) {
       return false;
@@ -87,6 +93,7 @@ class List {
     this.length--;
     return true;
   }
+
   print() {
     let current = this.head;
     while (current) {
@@ -96,19 +103,19 @@ class List {
   }
 }
 const list = new List({
-  value: "root",
+  value: 'root',
   next: null,
 });
-//list.addNode(1, 0);
+// list.addNode(1, 0);
 list.addNode(100, 1);
 list.addNode(101, 2);
 list.addNode(102, 3);
-//list.addNode(122);
-//console.log(list.print());
+// list.addNode(122);
+// console.log(list.print());
 console.log(JSON.stringify(list));
 list.removeNode();
 console.log(JSON.stringify(list));
 
-//list.removeNode( 2);
-//console.log(JSON.stringify(list));
+// list.removeNode( 2);
+// console.log(JSON.stringify(list));
 console.log(list.print());
