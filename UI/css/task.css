@@ -211,6 +211,7 @@ main {
     grid-template-areas:
         "username comment-date . ."
         "comment-text comment-text comment-text comment-text";
+        grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 0.5rem;
     align-items: flex-end;
 }

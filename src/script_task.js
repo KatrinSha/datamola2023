@@ -2,7 +2,7 @@ const tasks = [
   {
     id: '1',
     name: 'Создать логотип приложения',
-    description: 'Формат изображения – svg, размеры - 100х100px',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut tellus elementum sagittis vitae et. Porta lorem mollis aliquam ut.',
     createdAt: new Date('2023-03-09T23:00:00'),
     assignee: 'Барановска Устинья',
     status: 'To Do',
@@ -24,6 +24,24 @@ const tasks = [
       id: '1033',
       text: 'Gorem ipsum dolor sit amet, consectetur adipiscing elit. Nuncvulputate libero velit interdum, ac aliquet odio mattis. Nunc vulputate libero etvelit interdum, ac aliquet, odio mattis. Gorem ipsum dolor sit amet, consecteturadipiscing elit Gorem ipsum dolor adipiscing elit amet.',
       createdAt: new Date('2022-12-20T23:00:05'),
+      author: 'Игнатьева Жозефина',
+    },
+    {
+      id: '1034',
+      text: 'Gorem ipsum dolor sit amet, consectetur adipiscing elit. Nuncvulputate libero velit interdum, ac aliquet odio mattis. Nunc vulputate libero etvelit interdum, ac aliquet, odio mattis. Gorem ipsum dolor sit amet, consecteturadipiscing elit Gorem ipsum dolor adipiscing elit amet.',
+      createdAt: new Date('2022-12-19T23:00:05'),
+      author: 'Иванов Иван',
+    },
+    {
+      id: '1035',
+      text: 'Gorem ipsum dolor sit amet, consectetur adipiscing elit. Nuncvulputate libero velit interdum, ac aliquet odio mattis. Nunc vulputate libero etvelit interdum, ac aliquet, odio mattis. Gorem ipsum dolor sit amet, consecteturadipiscing elit Gorem ipsum dolor adipiscing elit amet.',
+      createdAt: new Date('2022-12-18T23:00:05'),
+      author: 'Чухрай Зоя',
+    },
+    {
+      id: '1036',
+      text: 'Gorem ipsum dolor sit amet, consectetur adipiscing elit. Nuncvulputate libero velit interdum, ac aliquet odio mattis. Nunc vulputate libero etvelit interdum, ac aliquet, odio mattis. Gorem ipsum dolor sit amet, consecteturadipiscing elit Gorem ipsum dolor adipiscing elit amet.',
+      createdAt: new Date('2022-12-17T23:00:05'),
       author: 'Игнатьева Жозефина',
     },
     ],
@@ -915,8 +933,7 @@ class TaskCollection {
     this.#tasks = [];
   }
 }
-const array = new TaskCollection(tasks);
-array.get('1');
+const collection = new TaskCollection(tasks);
 class TaskView {
   id;
 
@@ -992,26 +1009,6 @@ class TaskView {
       cardDeleteBtn,
       cardEditBtn,
     );
-    //     taskBox.innerHTML = `<div class="task__status">
-    //   <div class="status__wrapper">${task.status}</div>
-    //   </div>
-    //   <div class="task__title">${task.name}</div>
-    //   <div class="task__priority">
-    //   <div class="task__wrapper">${task.priority}</div>
-    //   </div>
-    //   <div class="task__description">${task.description}</div>
-    //   <div class="task__assignee">Assigne:<span>${task.assignee}</span></div>
-    //   <div class="task__date">${task.createdAt.getFullYear()}-${task.createdAt.getMonth() + 1}-${task.createdAt.getDate()} ${task.createdAt.toLocaleTimeString().slice(0, -3)}</div>
-    //   <div class="task__comments"><span class="ico comments"></span>${task.comments.length}</div>
-    //   <div class="task__private">${task.isPrivate}</div>
-    //   <button class="task__delete-button">
-    //   Delete
-    //   <span class="ico delete"></span>
-    //   </button>
-    //   <button class="task__edit-button">
-    //   0Edit<span class="ico edit"></span>
-    //   </button>`;
-    console.log('lklklklkl');
     taskBox.classList.add('task__box');
     taskContainer.prepend(taskBox);
 
@@ -1033,19 +1030,44 @@ class TaskView {
       comment.append(username, commentDate, commentText);
       commentsBox.append(comment);
     });
-    taskContainer.append(commentsBox);
-
+   
+    taskBox.insertAdjacentElement('afterend', commentsBox);
   }
 }
 const taskView = new TaskView('task__container');
 
 function showTask(id) {
   console.log(id);
-  const task = array.get(id);
+  const task = collection.get(id);
   taskView.display(task);
 }
 showTask('1');
-const but = document.querySelector('.header__button');
-but.addEventListener('click', () => {
-  console.log('test');
-});
+
+class HeaderView {
+  id;
+
+  constructor(containerId) {
+    this.id = containerId;
+  }
+
+  display(user) {
+    const profileName = document.getElementById(this.id);
+    profileName.innerText = user;
+    console.log(user);
+  }
+}
+
+
+console.log(collection.user);
+const headerView = new HeaderView('profile-name');
+
+function setCurrentUser(user) {
+  collection.user = user;
+  headerView.display(user);
+}
+function addTask(task) {
+  collection.add(task);
+
+}
+ setCurrentUser('Katerina ');
+ console.log(collection.user);
