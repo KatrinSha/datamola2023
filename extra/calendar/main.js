@@ -1,5 +1,15 @@
+
+
+
+
 function createCalendar(elem, year, month) {
+const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+
   let current_month = month - 1;
+  let name = months[current_month];
+  const monthname=document.querySelector(".title");
+   monthname.innerText=name;
   let current_date = new Date(year, current_month);
   let last_day = new Date(year, month);
   let table = document.createElement("table");
@@ -24,4 +34,4 @@ function createCalendar(elem, year, month) {
   }
   elem.append(table);
 }
-createCalendar(calendar, 2023, 4);
+createCalendar(calendar, 2023, 3);
