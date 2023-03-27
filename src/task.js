@@ -1,13 +1,12 @@
-import { TaskArray, TaskModel } from "./model/index.js";
-import{HeaderView, FilterView, TaskFeedView, TaskView } from './view/index.js'
+import { TaskArray, TaskModel } from './model/index.js';
+import {
+  HeaderView, FilterView, TaskFeedView, TaskView,
+} from './view/index.js';
+
 const array = new TaskModel.TaskCollection(TaskArray);
 
-
-
-
-console.log(array)
+console.log(array);
 array.get('1');
-
 
 const taskView = new TaskView('task__container');
 
@@ -18,4 +17,4 @@ function showTask(id) {
 }
 showTask('1');
 
-console.log(123)
+console.log(123);

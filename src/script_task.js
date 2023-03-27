@@ -1030,7 +1030,7 @@ class TaskView {
       comment.append(username, commentDate, commentText);
       commentsBox.append(comment);
     });
-   
+
     taskBox.insertAdjacentElement('afterend', commentsBox);
   }
 }
@@ -1057,7 +1057,6 @@ class HeaderView {
   }
 }
 
-
 console.log(collection.user);
 const headerView = new HeaderView('profile-name');
 
@@ -1067,7 +1066,6 @@ function setCurrentUser(user) {
 }
 function addTask(task) {
   collection.add(task);
-
 }
- setCurrentUser('Katerina ');
- console.log(collection.user);
+setCurrentUser('Katerina ');
+console.log(collection.user);
