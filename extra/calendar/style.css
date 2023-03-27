@@ -1,0 +1,28 @@
+table {
+    border-collapse: collapse;
+    margin: 0 auto;
+    width: 20%;
+  }
+
+  td,
+  th {
+    border: 1px solid black;
+    padding: 5px;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  td:hover {
+    transform: scale(120%);
+    font-weight: bold;
+  }
+
+  th {
+    font-weight: bold;
+    background-color: #e99ec9;
+    cursor: pointer;
+  }
+  .title {
+    width: 100px;
+    margin: 0 auto;
+  }
