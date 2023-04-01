@@ -952,38 +952,38 @@ class TaskView {
     statusWrapper.classList.add('status__wrapper');
     cardStatus.classList.add('task__status');
     console.log(task.status);
-    statusWrapper.innerText = task.status;
+    statusWrapper.textContent = task.status;
     cardStatus.append(statusWrapper);
 
     const cardTitle = document.createElement('div');
     cardTitle.classList.add('task__title');
-    cardTitle.innerText = task.name;
+    cardTitle.textContent = task.name;
 
     const cardPriority = document.createElement('div');
     cardPriority.classList.add('task__priority');
     const priorityWrapper = document.createElement('div');
     priorityWrapper.classList.add('task__wrapper');
-    priorityWrapper.innerText = task.priority;
+    priorityWrapper.textContent = task.priority;
     cardPriority.append(priorityWrapper);
     const cardDescription = document.createElement('div');
     cardDescription.classList.add('task__description');
-    cardDescription.innerText = task.description;
+    cardDescription.textContent = task.description;
     const cardAssignee = document.createElement('div');
     cardAssignee.classList.add('task__assignee');
-    cardAssignee.innerText = task.assignee;
+    cardAssignee.textContent = task.assignee;
     const cardDate = document.createElement('div');
     cardDate.classList.add('task__date');
-    cardDate.innerText = `${task.createdAt.getFullYear()}-${task.createdAt.getMonth() + 1}-${task.createdAt.getDate()} ${task.createdAt.toLocaleTimeString().slice(0, -3)}`;
+    cardDate.textContent = `${task.createdAt.getFullYear()}-${task.createdAt.getMonth() + 1}-${task.createdAt.getDate()} ${task.createdAt.toLocaleTimeString().slice(0, -3)}`;
     const cardComments = document.createElement('div');
     cardComments.classList.add('task__comments');
-    cardComments.innerText = task.comments.length;
+    cardComments.textContent = task.comments.length;
     const comments = document.createElement('span');
     comments.classList.add('ico', 'comments');
     cardComments.append(comments);
     const cardPrivate = document.createElement('div');
     cardPrivate.classList.add('task__private');
     if (task.isPrivate) {
-      cardPrivate.innerText = 'Private';
+      cardPrivate.textContent = 'Private';
     }
 
     const cardDeleteBtn = document.createElement('button');
@@ -993,7 +993,7 @@ class TaskView {
     cardDeleteBtn.append(deleteBtn);
     const cardEditBtn = document.createElement('button');
     cardEditBtn.classList.add('task__edit-button');
-    cardEditBtn.innerText = 'Edit';
+    cardEditBtn.textContent = 'Edit';
     const editBtn = document.createElement('span');
     editBtn.classList.add('ico', 'edit');
     cardEditBtn.append(editBtn);
@@ -1019,13 +1019,13 @@ class TaskView {
       comment.classList.add('comment');
       const username = document.createElement('div');
       username.classList.add('username');
-      username.innerText = com.author;
+      username.textContent = com.author;
       const commentDate = document.createElement('div');
       commentDate.classList.add('comment__date');
-      commentDate.innerText = `${com.createdAt.getFullYear()}-${com.createdAt.getMonth() + 1}-${com.createdAt.getDate()} ${com.createdAt.toLocaleTimeString().slice(0, -3)}`;
+      commentDate.textContent = `${com.createdAt.getFullYear()}-${com.createdAt.getMonth() + 1}-${com.createdAt.getDate()} ${com.createdAt.toLocaleTimeString().slice(0, -3)}`;
       const commentText = document.createElement('div');
       commentText.classList.add('comment__text');
-      commentText.innerText = com.text;
+      commentText.textContent = com.text;
 
       comment.append(username, commentDate, commentText);
       commentsBox.append(comment);
@@ -1034,6 +1034,7 @@ class TaskView {
     taskBox.insertAdjacentElement('afterend', commentsBox);
   }
 }
+
 const taskView = new TaskView('task__container');
 
 function showTask(id) {
@@ -1052,7 +1053,7 @@ class HeaderView {
 
   display(user) {
     const profileName = document.getElementById(this.id);
-    profileName.innerText = user;
+    profileName.textContent = user;
     console.log(user);
   }
 }

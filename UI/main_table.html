@@ -22,8 +22,8 @@
             </div>
         </div>
     </header>
-    <main class="main">
-        <section class="filters">
+   
+        <section class="filters" id="filters">
             <div class="filters__wrapper wrapper">
                 <div class="filters__container">
                     <div class="filters__name filters-box">
@@ -59,21 +59,22 @@
 
                     <div class="filters__date">
                         <button class="button-date" name="Date">Date<span class="ico arrow"></span></button>
-                        <div class="calendars visibility">
+                        <div class="calendars visibilityDate">
                             <div class="from">
                                 <label for="dateFrom">From: </label>
                                 <input type="date" id="date1" name="dateFrom" />
                             </div>
                             <div class="to">
-                                <label for="dateTo">to: </label>
+                                <label for="dateTo">To: </label>
                                 <input type="date" id="date2" name="dateTo" />
                             </div>
+                            <input type="submit" id="calSub" value="Enter" class="calSub"/>
                         </div>
                     </div>
-                    <div>
+                    <div class="filters__search">
                         <form class="form__search" action="" method="post">
                             <input type="text" placeholder="Title" name="search">
-                            <button class="button-search" type=""><span class="ico search"></span></button>
+                            <button class="button-search" type="submit"><span class="ico search"></span></button>
                         </form>
                     </div>
                 </div>
@@ -814,7 +815,7 @@
                    
                 </div>
         </section> <button class="button_show-more">Show more task</button>
-    </main>
+
     <footer class="footer">
         <div class="footer__wrapper wrapper">
             <div class="author">

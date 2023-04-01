@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <header class="header">
+    <header class="header" id="header">
         <div class="header__wrapper wrapper">
             <div class="header-logo">
                 <span class="ico logo"></span>
@@ -53,17 +53,18 @@
 
                     <div class="filters__date">
                         <button class="button-date" name="Date">Date<span class="ico arrow"></span></button>
-                        <div class="calendars visibility">
+                        <div class="calendars visibilityDate">
                             <div class="from">
                                 <label for="dateFrom">From: </label>
                                 <input type="date" id="date1" name="dateFrom" />
                             </div>
                             <div class="to">
-                                <label for="dateTo">to: </label>
+                                <label for="dateTo">To: </label>
                                 <input type="date" id="date2" name="dateTo" />
                             </div>
+                            <input type="submit" id="calSub" value="Enter" class="calSub"/>
                         </div>
-                    </div>
+                    </div>>
                     <div>
                         <form class="form__search" action="" method="post">
                             <input type="text" placeholder="Title" name="search">

@@ -4,7 +4,7 @@ function createCalendar(elem, year, month) {
   const currentMonth = month - 1;
   const name = months[currentMonth];
   const monthname = document.querySelector('.title');
-  monthname.innerText = name;
+  monthname.textContent = name;
   const currentDate = new Date(year, currentMonth);
   const lastDay = new Date(year, month);
   const table = document.createElement('table');
@@ -19,7 +19,7 @@ function createCalendar(elem, year, month) {
     for (let i = 0; i <= 6; i++) {
       const td = document.createElement('td');
       if (currentDate.getMonth() == currentMonth) {
-        td.innerText = currentDate.getDate();
+        td.textContent = currentDate.getDate();
       }
       tr.append(td);
       currentDate.setDate(currentDate.getDate() + 1);

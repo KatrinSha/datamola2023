@@ -9,8 +9,8 @@
     align-items: center;
 }
 
-.visibility {
-    display: none;
+.visibilityDate {
+    display: block;
 }
 
 .filters__container {
@@ -29,7 +29,7 @@
 select {
     font-size: 1.6rem;
     font-weight: 600;
-    width:9rem;
+    width: 9rem;
     color: var(--black);
     color: var(--secondary-color);
     text-align: start;
@@ -55,6 +55,7 @@ input::placeholder {
 
 .button-date {
     display: flex;
+    
     align-items: flex-start;
     gap: 0.5rem;
     font-size: 1.6rem;
@@ -62,11 +63,53 @@ input::placeholder {
     border: 0.1rem solid var(--secondary-color-o50);
     box-shadow: 0rem 0.4rem 0.4rem var(--secondary-color-o10);
     border-radius: 0.5rem;
-    padding:1.1rem 0.5rem 1.1rem 1rem;
+    padding: 1.1rem 0.5rem 1.1rem 1rem;
     width: 8rem;
     text-align: start;
 }
 
+.calendars {
+    color: var(--black);
+    margin-top: 10px;
+    font-size: 12px;
+    width: 200px;
+    height: fit-content;
+    padding: 20px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+    background-color: var(--white);
+    border: 1px solid var(--secondary-color-o50);
+    border-radius: 10px;
+    z-index: 3;
+    box-shadow: 0px 4px 4px rgba(51, 51, 51, 0.25);
+}
+.from .to{
+   display: flex;
+   justify-content: space-between;
+}
+::-webkit-datetime-edit {
+  font-size: 10px;
+}
+
+::-webkit-calendar-picker-indicator {
+    transform: scale(1.2);
+    padding-bottom: 0;
+}
+::-webkit-datetime-edit-fields-wrapper{
+    border: 1px solid var(--secondary-color-o50);
+    padding: 5px;
+    border-radius: 5px;
+}
+.calSub{
+    background-color: var(--secondary-color);
+    color: var(--white);
+    padding: 8px 16px;
+    border-radius: 10px;
+}
 .arrow {
     background-image: url("../assets/icon/arrow.svg");
     width: 1.9rem;
@@ -80,15 +123,15 @@ input::placeholder {
 .form__search input {
     min-width: 20rem;
     padding: 1.05rem 1.2rem;
-    border-top-right-radius:0rem;
+    border-top-right-radius: 0rem;
     border-bottom-right-radius: 0rem;
     border: 0.1rem solid var(--secondary-color-o50);
     box-shadow: 0rem 0.4rem 0.4rem var(--secondary-color-o10);
-    width:9rem;
+    width: 9rem;
     border-radius: 0.5rem;
-    border-top-right-radius:0rem;
+    border-top-right-radius: 0rem;
     border-bottom-right-radius: 0rem;
-    padding:1.3rem 1.2rem;
+    padding: 1.3rem 1.2rem;
 }
 
 .form__search input::placeholder {
@@ -107,7 +150,7 @@ input::placeholder {
 .search {
     background-image: url("../assets/icon/search.svg");
     width: 3.5rem;
-    height:3.5rem;
+    height: 3.5rem;
 }
 
 .view {
@@ -130,7 +173,7 @@ input::placeholder {
 .button__view-table {
     background-color: var(--secondary-color);
     border-top-right-radius: 0rem;
-    border-bottom-right-radius:0rem;
+    border-bottom-right-radius: 0rem;
 }
 
 .table-view {
@@ -167,13 +210,13 @@ input::placeholder {
 
 @media (max-width:1024px) {
     .filters__container {
-        gap:2rem;
+        gap: 2rem;
         flex-wrap: wrap;
     }
 
     .filters-box {
         height: 3rem;
-        padding:0.5rem 0.5rem;
+        padding: 0.5rem 0.5rem;
     }
 
     select {
@@ -194,7 +237,7 @@ input::placeholder {
     .button-date {
         width: 6.5rem;
         font-size: 1.4rem;
-        padding: 0.5rem  0.5rem  0.5rem  1rem;
+        padding: 0.5rem 0.5rem 0.5rem 1rem;
         gap: 0.1rem;
     }
 

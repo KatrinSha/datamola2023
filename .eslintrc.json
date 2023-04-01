@@ -23,7 +23,15 @@
         "no-bitwise":"off",
         "eqeqeq":"off",
         "no-plusplus":"off",
-        "no-undef":"off"
-    }
+        "no-undef":"off",
+        "import/extensions":"off"
+    },
+    "settings": {
+        "import/resolver": {
+          "node": {
+            "extensions": [".js", ".jsx", ".ts", ".tsx"]
+          }
+        }
+      }
 }
 
