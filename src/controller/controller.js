@@ -11,36 +11,23 @@ import tasks from '../model/Tasks.js';
 const collection = new TaskCollection(tasks);
 
 class Controller {
-  collect = new TaskCollection(tasks);
+  collection = new TaskCollection(tasks);
 
   headerView = new HeaderView('header');
 
-  constructor(
-    TaskCollection,
-    Task,
-    Comment,
-    FilterView,
-    HeaderView,
-    TaskFeedView,
-    TaskView,
-  ) {
-    this.TaskCollection = TaskCollection;
-    this.Task = Task;
-    this.Comment = Comment;
-    this.FilterView = FilterView;
-    this.HeaderView = HeaderView;
-    this.TaskFeedView = TaskFeedView;
-    this.TaskView = TaskView;
-  }
+  filterView = new FilterView('filters');
+
+  taskFeedView = new TaskFeedView('cards');
+
+  taskView = new TaskView('task');
 
   editTask(id, task) {
     return array.edit(id, task);
   }
 
   setCurrentUser(user) {
-    collection.user = user;
-    console.log(collection.user);
-    console.log(this.collect.user);
+    this.collection.user = user;
+    console.log(this.collection.user);
     this.headerView.display(user);
   }
 
@@ -50,13 +37,14 @@ class Controller {
 
   showTask(id) {
     console.log(id);
-    const task = collection.get(id);
-    taskView.display(task);
+    console.log(this.collection);
+    const task = this.collection.get(id);
+    this.taskView.display(task);
   }
 
   getFeed(skip, top, filter) {
     const collect = collection.getPage(skip, top, filter);
-    taskFeedView.display(collect);
+    this.taskFeedView.display(collect);
   }
 
   removeTask(id) {
@@ -64,10 +52,15 @@ class Controller {
     taskFeedView.display(collect);
   }
 
-  showPage() {
+  getFilter(array) {
+    this.filterView.display(array);
+    console.log(this.collection);
+  }
 
+  loadAllTasks(array) {
+    this.taskFeedView.display(array);
   }
 }
 export default Controller;
-//const headerView = new HeaderView('header');
-//headerView.display('')
+// const headerView = new HeaderView('header');
+// headerView.display('')

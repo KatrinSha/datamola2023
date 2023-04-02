@@ -6,18 +6,77 @@ class TaskFeedView {
   }
 
   display(collect) {
+    console.log('test test');
     const array = collect;
     const headerButton = document.querySelector('.header__button');
     // -------------------------------------
     const cards = document.createElement('section');
     cards.classList.add('cards');
     cards.setAttribute('id', this.id);
-    const cardsWrapper = document.createElement('cards__wrapper', 'wrapper');
+    const cardsWrapper = document.createElement('div');
+    cardsWrapper.classList.add('cards__wrapper', 'wrapper');
     cardsWrapper.setAttribute('id', 'cards__wrapper');
     const btnShowMore = document.createElement('button');
     btnShowMore.classList.add('button_show-more');
     btnShowMore.textContent = 'Show more task';
 
+    // --------------create table's header
+    const tableHeader1 = document.createElement('div');
+    tableHeader1.classList.add('table__header');
+    const tableHeader2 = document.createElement('div');
+    tableHeader2.classList.add('table__header');
+    const tableHeader3 = document.createElement('div');
+    tableHeader3.classList.add('table__header');
+
+    const arrHeaderTab = ['To Do', 'In progress', 'Complete'];
+    arrHeaderTab.forEach((item) => {
+      const tableName = document.createElement('div');
+      tableName.classList.add('table__name');
+      tableName.textContent = item;
+      const tableStatus = document.createElement('div');
+      tableStatus.classList.add('table__status');
+      tableStatus.textContent = 'Status';
+      const tableTitle = document.createElement('div');
+      tableTitle.classList.add('table__title');
+      tableTitle.textContent = 'Title';
+      const tablePriority = document.createElement('div');
+      tablePriority.classList.add('table__priority');
+      tablePriority.textContent = 'Priority';
+      const tableDiscription = document.createElement('div');
+      tableDiscription.classList.add('table__discription');
+      tableDiscription.textContent = 'Discription';
+      const tableAssignee = document.createElement('div');
+      tableAssignee.classList.add('table__assignee');
+      tableAssignee.textContent = 'Assignee';
+      const tableDate = document.createElement('div');
+      tableDate.classList.add('table__date');
+      tableDate.textContent = 'Date';
+      const tableComments = document.createElement('div');
+      tableComments.classList.add('table__comments');
+      tableComments.textContent = 'Comments';
+      const tablePrivacy = document.createElement('div');
+      tablePrivacy.classList.add('table__privacy');
+      tablePrivacy.textContent = 'Privacy';
+      const tableEdit = document.createElement('div');
+      tableEdit.classList.add('table__edit');
+      tableEdit.textContent = 'Edit';
+      const tableDelete = document.createElement('div');
+      tableDelete.classList.add('table__delete');
+      tableDelete.textContent = 'Delete';
+      if (item === 'To Do') {
+        tableHeader1.append(tableName, tableStatus, tableTitle, tablePriority, tableDiscription, tableAssignee, tableDate, tableComments, tablePrivacy, tableEdit, tableDelete);
+      }
+      if (item === 'In progress') {
+        tableHeader2.append(tableName, tableStatus, tableTitle, tablePriority, tableDiscription, tableAssignee, tableDate, tableComments, tablePrivacy, tableEdit, tableDelete);
+      }
+      if (item === 'Complete') {
+        tableHeader3.append(tableName, tableStatus, tableTitle, tablePriority, tableDiscription, tableAssignee, tableDate, tableComments, tablePrivacy, tableEdit, tableDelete);
+      }
+    });
+
+    // tableHeader1.append(tableName, tableStatus, tableTitle, tablePriority, tableDiscription, tableAssignee, tableDate, tableComments, tablePrivacy, tableEdit, tableDelete);
+    // tableHeader2.append(tableName, tableStatus, tableTitle, tablePriority, tableDiscription, tableAssignee, tableDate, tableComments, tablePrivacy, tableEdit, tableDelete);
+    // tableHeader3.append(tableName, tableStatus, tableTitle, tablePriority, tableDiscription, tableAssignee, tableDate, tableComments, tablePrivacy, tableEdit, tableDelete);
     // --------------create column's header
     // TODO
     const cardsContainerTodo = document.createElement('div');
@@ -31,7 +90,7 @@ class TaskFeedView {
     cardsTitleTodo.classList.add('cards__title');
     cardsTitleTodo.textContent = 'TO DO';
     cardsInfoTodo.append(cardsCountTodo, cardsTitleTodo);
-    cardsContainerTodo.append(cardsInfoTodo);
+    cardsContainerTodo.append(cardsInfoTodo,tableHeader1);
     cardsWrapper.append(cardsContainerTodo);
 
     // INPROGRESS
@@ -46,10 +105,11 @@ class TaskFeedView {
     cardsTitleInprogress.classList.add('cards__title');
     cardsTitleInprogress.textContent = 'IN PROGRESS';
     cardsInfoInprogress.append(cardsCountInprogress, cardsTitleInprogress);
-    cardsContainerInprogress.append(cardsInfoInprogress);
+    cardsContainerInprogress.append(cardsInfoInprogress,tableHeader2);
     cardsWrapper.append(cardsContainerInprogress);
 
     // COMPLETE
+
     const cardsContainerComplete = document.createElement('div');
     cardsContainerComplete.classList.add('cards-container', 'complete');
     const cardsInfoComplete = document.createElement('div');
@@ -61,9 +121,8 @@ class TaskFeedView {
     cardsTitleComplete.classList.add('cards__title');
     cardsTitleComplete.textContent = 'COMPLETE';
     cardsInfoComplete.append(cardsCountComplete, cardsTitleComplete);
-    cardsContainerComplete.append(cardsInfoComplete);
+    cardsContainerComplete.append(cardsInfoComplete,tableHeader3);
     cardsWrapper.append(cardsContainerComplete);
-
     // create tasks boxes
     const todoBox = document.createElement('div');
     todoBox.classList.add('card__wrapper-to768');
@@ -202,6 +261,10 @@ class TaskFeedView {
     cardsContainerInprogress.append(inprogressBox);
     cardsContainerComplete.append(completeBox);
     cards.append(cardsWrapper, btnShowMore);
+    const filters = document.querySelector('.filters');
+    const body = document.querySelector('body');
+    body.append(cards);
+    filters.insertAdjacentElement('afterend', cards);
   }
 }
 export default TaskFeedView;

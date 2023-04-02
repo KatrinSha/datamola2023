@@ -1,5 +1,3 @@
-
-
 function getUniqId() {
   return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
     const r = (Math.random() * 16) | 0;
@@ -89,9 +87,9 @@ class TaskCollection {
   }
 
   get(id) {
-    const index = tasks.findIndex((item) => item.id === id);
+    const index = this.#tasks.findIndex((item) => item.id === id);
     if (index >= 0) {
-      return tasks[index];
+      return this.#tasks[index];
     }
     return false;
   }

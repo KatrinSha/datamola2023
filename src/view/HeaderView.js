@@ -26,7 +26,7 @@ class HeaderView {
     profileName.textContent = user;
     profileName.setAttribute('id', 'profile-name');
     const headerButton = document.createElement('button');
-    headerButton.classList.add('eader__button', 'button');
+    headerButton.classList.add('header__button', 'button');
     if (user === '') {
       console.log(`${user}222`);
       headerButton.textContent = 'Log in';
@@ -37,7 +37,7 @@ class HeaderView {
     headerBox.append(profileName, headerButton);
     headerWrapper.append(headerLogo, headerBox);
     header.replaceChildren(headerWrapper);
-    body.append(header);
+    body.prepend(header);
   }
 }
 export default HeaderView;

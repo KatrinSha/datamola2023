@@ -9,13 +9,12 @@
     align-items: center;
 }
 
-.visibilityDate {
-    display: block;
-}
+
 
 .filters__container {
     display: flex;
     gap: 3.5rem;
+    width: 100%;
 }
 
 .filters-box {
@@ -24,6 +23,8 @@
     box-shadow: 0px 0.4rem 0.4rem var(--secondary-color-o10);
     border-radius: 0.5rem;
     padding: 1rem 0.5rem;
+    height:40px;
+
 }
 
 select {
@@ -87,6 +88,9 @@ input::placeholder {
     z-index: 3;
     box-shadow: 0px 4px 4px rgba(51, 51, 51, 0.25);
 }
+.visibilityDate {
+    display:none;
+}
 .from .to{
    display: flex;
    justify-content: space-between;
@@ -109,6 +113,8 @@ input::placeholder {
     color: var(--white);
     padding: 8px 16px;
     border-radius: 10px;
+    width: 50%;
+    text-align: center;
 }
 .arrow {
     background-image: url("../assets/icon/arrow.svg");
@@ -152,7 +158,13 @@ input::placeholder {
     width: 3.5rem;
     height: 3.5rem;
 }
-
+.button-reset{
+    background-color: var(--secondary-color);
+    color: var(--white);
+    font-weight: 400;
+    padding: 0rem 2rem;
+    height: 4.4rem;
+}
 .view {
     display: inline-flex;
 }

@@ -6,10 +6,39 @@ class TaskView {
   }
 
   display(task) {
-    const taskContainer = document.getElementById(this.id);
-    console.log(taskContainer);
+    console.log('ghtfj');
+    const taskPage = document.createElement('section');
+
+    taskPage.classList.add('task');
+    taskPage.setAttribute('id', this.id);
+    const taskWrapper = document.createElement('div');
+    taskWrapper.classList.add('task__wrapper', 'wrapper');
+    // -------------link and button
+    const pathTo = document.createElement('div');
+    pathTo.classList.add('path-to');
+    const path = document.createElement('div');
+    path.classList.add('path');
+    const linkToMain = document.createElement('a');
+    linkToMain.setAttribute('href', '');
+    linkToMain.textContent = 'Main';
+    const icoArrowBack = document.createElement('span');
+    icoArrowBack.classList.add('ico', 'arrow-back_dark');
+    const linkToTask = document.createElement('a');
+    linkToTask.setAttribute('href', '');
+    linkToTask.textContent = 'Task';
+    const buttonToMain = document.createElement('button');
+    buttonToMain.classList.add('button__to-main');
+    buttonToMain.textContent = 'Main page';
+    const icoArrowBackToMain = document.createElement('span');
+    icoArrowBackToMain.classList.add('ico', 'arrow-back');
+    buttonToMain.append(icoArrowBackToMain);
+    path.append(linkToMain, icoArrowBack, linkToTask);
+    pathTo.append(path, buttonToMain);
+    
+    // --------TASK
+    const taskContainer = document.createElement('div');
+    taskContainer.classList.add('task__container');
     const taskBox = document.createElement('div');
-    console.log('lklklklkl');
     const statusWrapper = document.createElement('div');
     const cardStatus = document.createElement('div');
 
@@ -74,6 +103,7 @@ class TaskView {
       cardEditBtn,
     );
     taskBox.classList.add('task__box');
+    console.log(taskBox);
     taskContainer.prepend(taskBox);
 
     const commentsBox = document.createElement('div');
@@ -93,9 +123,31 @@ class TaskView {
 
       comment.append(username, commentDate, commentText);
       commentsBox.append(comment);
+      
     });
+    console.log(commentsBox);
+    const formComm = document.createElement('form');
 
-    taskBox.insertAdjacentElement('afterend', commentsBox);
+    formComm.classList.add('comment__form');
+    formComm.setAttribute('method', 'post');
+    formComm.setAttribute('action', ' ');
+    console.log(formComm);
+    const commInput = document.createElement('input');
+    commInput.classList.add('comment__input');
+    commInput.setAttribute('placeholder', 'Add comment...');
+    console.log(commInput);
+    const addCommBtn = document.createElement('button');
+    addCommBtn.classList.add('submit');
+    addCommBtn.textContent = 'Enter';
+    console.log(addCommBtn);
+    formComm.prepend(commInput, addCommBtn);
+    console.log(formComm);
+ taskContainer.append(commentsBox, formComm);
+    taskWrapper.append(pathTo, taskContainer);
+    taskPage.append(taskWrapper);
+    const filters = document.querySelector('.filters');
+    filters.insertAdjacentElement('afterend', taskPage);
+    console.log(taskPage);
   }
 }
 export default TaskView;

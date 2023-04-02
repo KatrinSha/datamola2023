@@ -6,8 +6,13 @@ class FilterView {
   }
 
   display(collect) {
-    const filters = document.createElement(this.id);
+    
+    const header = document.querySelector('header');
+
+    const filters = document.createElement('section');
     filters.classList.add('filters');
+    filters.setAttribute('id', this.id);
+
     const filtersWrapper = document.createElement('div');
     filtersWrapper.classList.add('filters__wrapper', 'wrapper');
     const filtersContainer = document.createElement('div');
@@ -23,11 +28,23 @@ class FilterView {
     optionDisName.textContent = 'Name';
     selectName.append(optionDisName);
     filtersName.append(selectName);
+    const array = collect.tasks;
+    const nameArray = [];
+    collect.forEach((item) => {
+      nameArray.push(item.assignee);
+    });
+    new Set([...nameArray]).forEach((item) => {
+      const option = document.createElement('option');
+      option.value = item;
+      option.textContent = item;
+      selectName.append(option);
+    });
+
     // ---------------------------filter Privacy
     const filterPrivacy = document.createElement('div');
-    filterPrivacy.classList.add('filters__privacy filters-box');
+    filterPrivacy.classList.add('filters__privacy', 'filters-box');
     const selectPrivacy = document.createElement('select');
-    selectPrivacy.setAttribute('privacy');
+    selectPrivacy.setAttribute('id', 'privacy');
     const optionDisPrivacy = document.createElement('option');
     optionDisPrivacy.setAttribute('disabled', 'disabled');
     optionDisPrivacy.setAttribute('selected', 'selected');
@@ -40,11 +57,12 @@ class FilterView {
     optionPrivacy2.textContent = 'Privat';
     selectPrivacy.append(optionDisPrivacy, optionPrivacy1, optionPrivacy2);
     filterPrivacy.append(selectPrivacy);
+
     // ---------------------------filter Priority
     const filterPriority = document.createElement('div');
-    filterPriority.classList.add('filters__priority filters-box');
+    filterPriority.classList.add('filters__priority', 'filters-box');
     const selectPriority = document.createElement('select');
-    selectPrivacy.setAttribute('priority');
+    selectPriority.setAttribute('id', 'priority');
     const optionDisPriority = document.createElement('option');
     optionDisPriority.setAttribute('disabled', 'disabled');
     optionDisPriority.setAttribute('selected', 'selected');
@@ -58,23 +76,26 @@ class FilterView {
     const optionPriority3 = document.createElement('option');
     optionPriority3.setAttribute('value', 'High');
     optionPriority3.textContent = 'High';
-    selectPrivacy.append(optionDisPriority, optionPriority1, optionPriority2, optionPriority3);
-    filterPriority.append(selectPrivacy);
+    selectPriority.append(optionDisPriority, optionPriority1, optionPriority2, optionPriority3);
+    filterPriority.append(selectPriority);
 
     // ---------------------------filter Date
     const filterDate = document.createElement('div');
     filterDate.classList.add('filters__date');
+
     const btnDate = document.createElement('button');
     btnDate.classList.add('button-date');
     btnDate.setAttribute('name', 'Date');
     btnDate.textContent = 'Date';
+
     const icoArrow = document.createElement('span');
     icoArrow.classList.add('ico', 'arrow');
     btnDate.append(icoArrow);
     const calendar = document.createElement('div');
-    calendar.classList('calendars', 'visibilityDate');
+    calendar.classList.add('calendars', 'visibilityDate');
+
     const from = document.createElement('div');
-    from.classList.add = 'from';
+    from.classList.add('from');
     const labelFrom = document.createElement('label');
     labelFrom.setAttribute('for', 'dateFrom');
     labelFrom.textContent = 'From:';
@@ -85,7 +106,7 @@ class FilterView {
     from.append(labelFrom, inputFrom);
 
     const to = document.createElement('div');
-    to.classList.add = 'to';
+    to.classList.add('to');
     const labelTo = document.createElement('label');
     labelTo.setAttribute('for', 'dateFrom');
     labelTo.textContent = 'From:';
@@ -101,11 +122,13 @@ class FilterView {
     inputSub.setAttribute('value', 'Enter');
     calendar.append(from, to, inputSub);
     filterDate.append(btnDate, calendar);
+
     // ---------------------------filter Search
     const filtersSearch = document.createElement('div');
     filtersSearch.classList.add('filters__search');
     const formSearch = document.createElement('form');
-    formSearch.setAttribute('action', '""');
+    formSearch.classList.add('form__search');
+    formSearch.setAttribute('action', '');
     formSearch.setAttribute('method', 'post');
     const inputSearch = document.createElement('input');
     inputSearch.setAttribute('placeholder', 'Title');
@@ -118,42 +141,40 @@ class FilterView {
     buttonSearch.append(icoSearch);
     formSearch.append(inputSearch, buttonSearch);
     filtersSearch.append(formSearch);
+    // ---------------------------filter Search
+    const buttonReset = document.createElement('button');
+    buttonReset.classList.add('button-reset');
+    buttonReset.textContent = 'Reset all filters';
     // ---------------------------View
     const view = document.createElement('div');
     view.classList.add('view');
     const buttonViewTable = document.createElement('button');
     buttonViewTable.classList.add('button__view-table');
+
     const icoTable = document.createElement('span');
     icoTable.classList.add('ico', 'table-view');
     const buttonViewRow = document.createElement('button');
     buttonViewRow.classList.add('button__view-row');
     const icoRow = document.createElement('span');
-    icoRow.classList.add('ico', 'table-view');
+    icoRow.classList.add('ico', 'row-view');
     buttonViewTable.append(icoTable);
     buttonViewRow.append(icoRow);
+ 
     view.append(buttonViewTable, buttonViewRow);
 
     const buttonAdd = document.createElement('button');
     buttonAdd.classList.add('button__add-new-task');
+    buttonAdd.textContent = 'Add new task';
     const icoAdd = document.createElement('span');
     icoAdd.classList.add('ico', 'add');
     buttonAdd.append(icoAdd);
 
-    filtersContainer.append(filtersName, filterPrivacy, filterPriority, filterDate, filtersSearch, view, buttonAdd);
+    filtersContainer.append(filtersName, filterPrivacy, filterPriority, filterDate, filtersSearch, buttonReset, view, buttonAdd);
     filtersWrapper.append(filtersContainer);
     filters.append(filtersWrapper);
 
-    const array = collect.tasks;
-    const nameArray = [];
-    array.forEach((item) => {
-      nameArray.push(item.assignee);
-    });
-    new Set([...nameArray]).forEach((item) => {
-      const option = document.createElement('option');
-      option.value = item;
-      option.textContent = item;
-      selectName.append(option);
-    });
+
+    header.insertAdjacentElement('afterend', filters);
   }
 }
 export default FilterView;
