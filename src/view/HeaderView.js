@@ -6,7 +6,6 @@ class HeaderView {
   }
 
   display(user) {
-    console.log(user);
     const body = document.querySelector('body');
     const header = document.createElement('header');
     header.classList.add('header');

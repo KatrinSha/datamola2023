@@ -8,137 +8,10 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Alkatra:wght@400;500;600&display=swap" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="tictac.js" />
-
-	<style>
-		BODY {
-			background: url('points_cubes.jpg');
-		}
-
-		table {
-			width: 40%;
-			margin: 0 auto;
-			height: 50vh;
-			border-collapse: collapse;
-
-		}
-
-
-		td {
-			background-color: rgba(248, 248, 255, 0.8);
-			color: #323653;
-			height: 120px;
-			font-family: 'Alkatra', cursive;
-			font-size: 8vh;
-			text-align: center;
-			width: 50px;
-			border-radius: 5px;
-			box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
-		}
-
-		td:hover {
-			/* Start the shake animation and make the animation last for 0.5 seconds */
-			animation: shake 0.5s;
-
-			/* When the animation is finished, start again */
-			animation-iteration-count: infinite;
-		}
-
-		@keyframes shake {
-			0% {
-				transform: translate(1px, 1px) rotate(0deg);
-			}
-
-			10% {
-				transform: translate(-1px, -2px) rotate(-1deg);
-			}
-
-			20% {
-				transform: translate(-3px, 0px) rotate(1deg);
-			}
-
-			30% {
-				transform: translate(3px, 2px) rotate(0deg);
-			}
-
-			40% {
-				transform: translate(1px, -1px) rotate(1deg);
-			}
-
-			50% {
-				transform: translate(-1px, 2px) rotate(-1deg);
-			}
-
-			60% {
-				transform: translate(-3px, 1px) rotate(0deg);
-			}
-
-			70% {
-				transform: translate(3px, 1px) rotate(-1deg);
-			}
-
-			80% {
-				transform: translate(-1px, -1px) rotate(1deg);
-			}
-
-			90% {
-				transform: translate(1px, 2px) rotate(0deg);
-			}
-
-			100% {
-				transform: translate(1px, -2px) rotate(-1deg);
-			}
-		}
-
-		.row2 {
-			border-bottom: 1px solid #333;
-			border-top: 1px solid #333;
-		}
-
-		#square1,
-		#square4,
-		#square7 {
-			border-right: 1px solid #333;
-		}
-
-		#square3,
-		#square6,
-		#square9 {
-			border-left: 1px solid #333;
-		}
-
-		h1 {
-			text-align: center;
-			vertical-align: middle;
-			color: rgb(248, 248, 255);
-			position: relative;
-			font-size: 200%;
-		}
-
-		button {
-			margin-top: 20px;
-			margin-left: calc(50vw - 75px);
-			width: 150px;
-			height: 35px;
-			font-size: 120%;
-		}
-
-		.unselectable {
-			cursor: not-allowed;
-			
-		}
-	</style>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
-
-
-
 	<h1 id="h1"> Tic tac toe</h1>
-
-
-
 	<table class="table">
 		<tr class="row1">
 			<td id="square1"></td>
@@ -156,9 +29,7 @@
 			<td id="square9"></td>
 		</tr>
 	</table>
-
-	<button id="button" onclick="restart()">Reset!</button>
-
+	<button id="button">Reset!</button>
 	<script src="tictac.js"></script>
 </body>
 

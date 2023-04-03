@@ -958,7 +958,6 @@ const task = new Task(
   true,
   [],
   'Иванов Иван',
-
 );
 const task2 = new Task(
   'NameNameName',

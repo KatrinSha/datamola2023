@@ -1,3 +1,5 @@
+
+import Task from "./Task.js";
 function getUniqId() {
   return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
     const r = (Math.random() * 16) | 0;
@@ -98,6 +100,7 @@ class TaskCollection {
     // console.log(task);
     if (Task.validate(task)) {
       this.#tasks.push(task);
+      console.log(this.#tasks.length)
       return true;
     }
     return false;
@@ -105,7 +108,6 @@ class TaskCollection {
 
   edit(id, task) {
     console.log('test');
-
     const editTask = this.get(id);
 
     if (editTask.assignee === this.#user) {
@@ -139,8 +141,9 @@ class TaskCollection {
     console.log(deletedTask);
     if (deletedTask.assignee === this.user) {
       index = this.#tasks.findIndex((item) => item.id === id);
-      this.#tasks = [...this.#tasks.slice(0, index), ...this.#tasks.slice(index + 1)];
-      return this.#tasks;
+      this.#tasks = this.#tasks.filter((item,i)=>{return i!==index})
+      console.log(this.#tasks);
+      return true;
     }
     return false;
   }
@@ -160,3 +163,4 @@ class TaskCollection {
   }
 }
 export default TaskCollection;
+
