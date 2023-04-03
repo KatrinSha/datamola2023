@@ -9,7 +9,7 @@ function createCalendar(elem, year, month) {
   const lastDay = new Date(year, month);
   const table = document.createElement('table');
 
-  table.textContent= '<tr><th>пн</th><th>вт</th><th>ср</th><th>чт</th><th>пт</th><th>сб</th><th>вс</th></tr>';
+  table.textContent = '<tr><th>пн</th><th>вт</th><th>ср</th><th>чт</th><th>пт</th><th>сб</th><th>вс</th></tr>';
 
   while (currentDate.getDay() !== 1) {
     currentDate.setDate(currentDate.getDate() - 1);

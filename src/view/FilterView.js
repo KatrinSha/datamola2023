@@ -6,7 +6,6 @@ class FilterView {
   }
 
   display(collect) {
-    
     const header = document.querySelector('header');
 
     const filters = document.createElement('section');
@@ -159,7 +158,7 @@ class FilterView {
     icoRow.classList.add('ico', 'row-view');
     buttonViewTable.append(icoTable);
     buttonViewRow.append(icoRow);
- 
+
     view.append(buttonViewTable, buttonViewRow);
 
     const buttonAdd = document.createElement('button');
@@ -172,7 +171,6 @@ class FilterView {
     filtersContainer.append(filtersName, filterPrivacy, filterPriority, filterDate, filtersSearch, buttonReset, view, buttonAdd);
     filtersWrapper.append(filtersContainer);
     filters.append(filtersWrapper);
-
 
     header.insertAdjacentElement('afterend', filters);
   }

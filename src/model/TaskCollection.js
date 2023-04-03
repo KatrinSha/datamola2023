@@ -1,5 +1,5 @@
+import Task from './Task.js';
 
-import Task from "./Task.js";
 function getUniqId() {
   return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
     const r = (Math.random() * 16) | 0;
@@ -27,7 +27,8 @@ class TaskCollection {
 
   addAll(someTasks) {
     const validTask = someTasks.filter((item) => Task.validate(item));
-    this.#tasks = [...this.#tasks, ...validTask];
+    console.log(this.#tasks);
+    this.#tasks = [...this.#tasks || [], ...validTask];
     return someTasks.filter((item) => !Task.validate(item));
   }
 
@@ -84,7 +85,7 @@ class TaskCollection {
       result = result.filter((item) => item.description.includes(filterDescription));
     }
     const sortedArr = sortCollection(result).slice(skip, top + skip);
-
+    console.log(sortedArr);
     return sortedArr;
   }
 
@@ -100,7 +101,7 @@ class TaskCollection {
     // console.log(task);
     if (Task.validate(task)) {
       this.#tasks.push(task);
-      console.log(this.#tasks.length)
+      console.log(this.#tasks.length);
       return true;
     }
     return false;
@@ -141,7 +142,7 @@ class TaskCollection {
     console.log(deletedTask);
     if (deletedTask.assignee === this.user) {
       index = this.#tasks.findIndex((item) => item.id === id);
-      this.#tasks = this.#tasks.filter((item,i)=>{return i!==index})
+      this.#tasks = this.#tasks.filter((item, i) => i !== index);
       console.log(this.#tasks);
       return true;
     }
@@ -163,4 +164,3 @@ class TaskCollection {
   }
 }
 export default TaskCollection;
-
