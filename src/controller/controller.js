@@ -5,6 +5,7 @@ import {
   HeaderView,
   TaskFeedView,
   TaskView,
+  LoginView, RegistView, NewTaskView,
 } from '../view/index.js';
 import tasks from '../model/Tasks.js';
 
@@ -63,6 +64,18 @@ class Controller {
   removeTask(id) {
     this.collection.removeTask(id);
     this.taskFeedView.display(tasks, this.collection.user);
+  }
+
+  showRegistPage(id) {
+    this.RegistView.display(this.collection.user);
+  }
+
+  showLoginPage(id) {
+    this.LoinView.display(this.collection.user);
+  }
+
+  showNewTaskPage(id) {
+    this.NewTaskView.display(this.collection.user);
   }
 }
 export default Controller;

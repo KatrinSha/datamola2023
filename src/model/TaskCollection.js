@@ -19,12 +19,12 @@ class TaskCollection {
   }
 
   addAll(someTasks) {
-    console.log(this.#tasks)
+    console.log(this.#tasks);
     console.log(someTasks);
     const validTask = someTasks.filter((item) => Task.validate(item));
-    console.log(validTask );
+    console.log(validTask);
     this.#tasks = [...this.#tasks ?? [], ...validTask];
-    console.log(this.#tasks)
+    console.log(this.#tasks);
     return someTasks.filter((item) => !Task.validate(item));
   }
 
@@ -101,7 +101,6 @@ class TaskCollection {
   }
 
   edit(id, task) {
-
     const editTask = this.get(id);
 
     if (editTask.assignee === this.#user) {
@@ -156,7 +155,6 @@ class TaskCollection {
 }
 export default TaskCollection;
 
-
-//const col=new TaskCollection();
-//const sub=tasks.map((item)=>{return new Task(item.id,item.description,item.name,item.status,item.priority,item.isPrivate,item.comments,item.assignee,item.createdAt)});
-//const tasks1=col.addAll(sub);
+// const col=new TaskCollection();
+// const sub=tasks.map((item)=>{return new Task(item.id,item.description,item.name,item.status,item.priority,item.isPrivate,item.comments,item.assignee,item.createdAt)});
+// const tasks1=col.addAll(sub);

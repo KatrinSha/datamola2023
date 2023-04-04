@@ -66,10 +66,10 @@ createList('Linked list', list);
 
 // -------------Homework--------------
 
-const ul = document.querySelector("ul");
-ul.addEventListener("click", (e) => {
-  let li = e.target;
-  if (li.lastChild.tagName == "UL") {
-    li.lastChild.style.display = "none";
+const ul = document.querySelector('ul');
+ul.addEventListener('click', (e) => {
+  const li = e.target;
+  if (li.lastChild.tagName == 'UL') {
+    li.lastChild.style.display = 'none';
   }
 });
