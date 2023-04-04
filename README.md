@@ -2,11 +2,11 @@
 ### Project structure:
 > [extra](https://github.com/KatrinSha/datamola2023/tree/main/extraTask) - additional tasks
 > 
-> [mockups](https://github.com/KatrinSha/datamola2023/tree/main/mockups) - application layout images
-> 
 > [src](https://github.com/KatrinSha/datamola2023/tree/task4_update) - JavaScript files
 > 
 > [UI](https://github.com/KatrinSha/datamola2023/tree/main/UI) - html and styles
+>
+> [Main Html](https://github.com/KatrinSha/datamola2023/blob/main/test.html) - test.html
 #### Navigation:
 * Task 2 [Figma](<https://www.figma.com/file/OJFBjYSI1lBkOCKt2FZEN0/DATAMOLA-JS-TASK-MANAGER?node-id=2%3A5&t=ulYOppPiEajQR3Kx-0gi>);
    + [Pull request](https://github.com/KatrinSha/datamola2023/pull/2/)
@@ -16,4 +16,5 @@
 
 
 * Task 4 - JS Intro [Pull request](https://github.com/KatrinSha/datamola2023/pull/6);
-* Task 5 - JS Deep Dive and Best Practices
+* Task 5 - JS Deep Dive [Pull request](https://github.com/KatrinSha/datamola2023/pull/10)
+* Task 6 - DOM, BOM [Pull request](https://github.com/KatrinSha/datamola2023/pull/12)

@@ -38,86 +38,87 @@ function unclick() {
     document.getElementById(`square${i}`).onclick = false;
   }
 }
-function userO() {
-  if (square1 == 'O' && square2 == 'O' && square3 == 'O') {
-    document.getElementById('h1').textContent = 'AI WINS!';
-    unclick();
-  }
 
-  if (square4 == 'O' && square5 == 'O' && square6 == 'O') {
-    document.getElementById('h1').textContent = 'AI WINS!';
-    unclick();
-  }
-
-  if (square7 == 'O' && square8 == 'O' && square9 == 'O') {
-    document.getElementById('h1').textContent = 'AI WINS!';
-    unclick();
-  }
-
-  if (square1 == 'O' && square5 == 'O' && square9 == 'O') {
-    document.getElementById('h1').textContent = 'AI WINS!';
-    unclick();
-  }
-
-  if (square1 == 'O' && square4 == 'O' && square7 == 'O') {
-    document.getElementById('h1').textContent = 'AI WINS!';
-    unclick();
-  }
-  if (square2 == 'O' && square5 == 'O' && square8 == 'O') {
-    document.getElementById('h1').textContent = 'AI WINS!';
-    unclick();
-  }
-  if (square3 == 'O' && square6 == 'O' && square9 == 'O') {
-    document.getElementById('h1').textContent = 'AI WINS!';
-    unclick();
-  }
-
-  if (square7 == 'O' && square5 == 'O' && square3 == 'O') {
-    document.getElementById('h1').textContent = 'AI WINS!';
-    unclick();
-  }
-}
 function userX() {
   state();
 
   if (square1 == 'X' && square2 == 'X' && square3 == 'X') {
-    document.getElementById('h1').textContent = 'USER X WINS!';
+    document.getElementById('h1').textContent = 'YOU HAVE WON!';
     unclick();
   }
 
   if (square4 == 'X' && square5 == 'X' && square6 == 'X') {
-    document.getElementById('h1').textContent = 'USER X WINS!';
+    document.getElementById('h1').textContent = 'YOU HAVE WON!';
     unclick();
   }
 
   if (square7 == 'X' && square8 == 'X' && square9 == 'X') {
-    document.getElementById('h1').textContent = 'USER X WINS!';
+    document.getElementById('h1').textContent = 'YOU HAVE WON!';
     unclick();
   }
 
   if (square1 == 'X' && square5 == 'X' && square9 == 'X') {
-    document.getElementById('h1').textContent = 'USER X WINS!';
+    document.getElementById('h1').textContent = 'YOU HAVE WON!';
     unclick();
   }
 
   if (square1 == 'X' && square4 == 'X' && square7 == 'X') {
-    document.getElementById('h1').textContent = 'USER X WINS!';
+    document.getElementById('h1').textContent = 'YOU HAVE WON!';
     unclick();
   }
   if (square2 == 'X' && square5 == 'X' && square8 == 'X') {
-    document.getElementById('h1').textContent = 'USER X WINS!';
+    document.getElementById('h1').textContent = 'YOU HAVE WON!';
     unclick();
   }
   if (square3 == 'X' && square6 == 'X' && square9 == 'X') {
-    document.getElementById('h1').textContent = 'USER X WINS!';
+    document.getElementById('h1').textContent = 'YOU HAVE WON!';
     unclick();
   }
 
   if (square7 == 'X' && square5 == 'X' && square3 == 'X') {
-    document.getElementById('h1').textContent = 'USER X WINS!';
+    document.getElementById('h1').textContent = 'YOU HAVE WON!';
     unclick();
   }
   userO();
+}
+function userO() {
+  if (square1 == 'O' && square2 == 'O' && square3 == 'O') {
+    document.getElementById('h1').textContent = 'AI HAVE WON!';
+    unclick();
+  }
+
+  if (square4 == 'O' && square5 == 'O' && square6 == 'O') {
+    document.getElementById('h1').textContent = 'AI HAVE WON!';
+    unclick();
+  }
+
+  if (square7 == 'O' && square8 == 'O' && square9 == 'O') {
+    document.getElementById('h1').textContent = 'AI HAVE WON!';
+    unclick();
+  }
+
+  if (square1 == 'O' && square5 == 'O' && square9 == 'O') {
+    document.getElementById('h1').textContent = 'AI HAVE WON!';
+    unclick();
+  }
+
+  if (square1 == 'O' && square4 == 'O' && square7 == 'O') {
+    document.getElementById('h1').textContent = 'AI HAVE WON!';
+    unclick();
+  }
+  if (square2 == 'O' && square5 == 'O' && square8 == 'O') {
+    document.getElementById('h1').textContent = 'AI HAVE WON!';
+    unclick();
+  }
+  if (square3 == 'O' && square6 == 'O' && square9 == 'O') {
+    document.getElementById('h1').textContent = 'AI HAVE WON!';
+    unclick();
+  }
+
+  if (square7 == 'O' && square5 == 'O' && square3 == 'O') {
+    document.getElementById('h1').textContent = 'AI HAVE WON!';
+    unclick();
+  }
 }
 
 function AI() {
@@ -153,11 +154,12 @@ function clickerAI(id) {
     AI();
   }
 
-  if (moves > 8 || moves === 8) {
+  if (moves == 9) {
     document.getElementById('h1').textContent = 'IT IS A DRAW!';
     unclick();
   }
   moves++;
+  userX();
 }
 
 table.addEventListener('click', addClicker);
