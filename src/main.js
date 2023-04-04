@@ -41,3 +41,5 @@ tableView.addEventListener("click", () => {
 rowView.addEventListener("click", () => {
   link.setAttribute("href", "/datamola2023/UI/css/styles_main-row.css");
 });
+
+
