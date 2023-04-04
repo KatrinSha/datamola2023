@@ -201,7 +201,7 @@ main {
     background: var(--additional-color-2-o50);
     border-top: 0.1rem solid var(--secondary-color-o30);
     box-shadow: 0rem 0rem 0.4rem var(--secondary-color-o20), 0.2rem 0.2rem 0.4rem var(--secondary-color-o20);
-    min-height: fit-content;
+    height: calc(100vh - 70rem);
     overflow-y: scroll;
 }
 
@@ -211,7 +211,7 @@ main {
     grid-template-areas:
         "username comment-date . ."
         "comment-text comment-text comment-text comment-text";
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 0.5rem;
     align-items: flex-end;
 }
@@ -427,7 +427,7 @@ main {
         font-size: 0;
         padding: 0;
         box-shadow: none;
-        border: none; 
+        border: none;
     }
 
     .task__edit-button {

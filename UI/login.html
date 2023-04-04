@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles_task.css">
+    <link rel="stylesheet" href="css/styles_login.css">
     <title>Document</title>
 </head>
 
@@ -23,23 +23,22 @@
         </div>
     </header>
     <main class="main">
-        <section class="task">
-            <div class="task__wrapper wrapper">
+        <section class="login">
+            <div class="login__wrapper wrapper">
                 <div class="path-to">
-                    <div class="path">
-                        <a href="">Main</a>
-                        <span class="ico arrow-back_dark"></span>
-                        <a href="">Task</a>
-                    </div>
-                    <button class="button__to-main"><span class="ico arrow-back"></span> Main page</button>
+                    <a class="button__to-main"><span class="ico arrow-back"></span>< Main page</a>
                 </div>
-                <div class="task__container" id="task__container">
-                    <form class="comment__form" method="post" action="">
-                        <input class="comment__input" placeholder="Add comment..."></input>
-                        <button class="submit">
-                            Enter
-                        </button>
-                    </form>
+                <div class="login__container" id="login__container">
+                    <form class="modal-content" action="../action_page.php">
+                          <h1 class="login__header">Log in to your account</h1>
+                          <label for="login">Login</label>
+                          <input type="text" placeholder="Type Email" name="login" required>
+                          <label for="psw">Password</label>
+                          <input type="password" placeholder="Type password" name="psw" required>
+                          <button type="submit" class="signupbtn">Log in</button>
+                          <hr>
+                          <div class="linktoreg">Don’t have an account?<a href="registration.html">Registration</a></div>
+                      </form>
                 </div>
             </div>
         </section>

@@ -37,7 +37,7 @@ const list = [
 const { body } = document;
 function createListItem(item) {
   const listItem = document.createElement('li');
-  listItem.innerText = item.value;
+  listItem.textContent = item.value;
   if (item.children) {
     const sublist = document.createElement('ul');
     item.children.forEach((child) => {
@@ -51,7 +51,7 @@ function createListItem(item) {
 }
 function createList(title, list) {
   const heading = document.createElement('h2');
-  heading.innerText = title;
+  heading.textContent = title;
 
   const listElement = document.createElement('ul');
   list.forEach((item) => {

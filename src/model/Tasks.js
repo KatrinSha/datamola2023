@@ -4,17 +4,54 @@ const tasks = [
     name: 'Создать логотип приложения',
     description: 'Формат изображения – svg, размеры - 100х100px',
     createdAt: new Date('2023-03-09T23:00:00'),
-    assignee: 'Барановска Устинья',
+    assignee: 'Иванов Иван',
     status: 'To Do',
     priority: 'High',
     isPrivate: false,
-    comments: [],
+    comments: [
+      {
+        id: '1031',
+        text: 'Будет сделано!',
+        createdAt: new Date('2023-03-09T23:00:05'),
+        author: 'Иванов Иван',
+      },
+      {
+        id: '1032',
+        text: 'Gorem ipsum dolor sit amet, consectetur adipiscing elit. Nuncvulputate libero velit interdum, ac aliquet odio mattis. Nunc vulputate libero etvelit interdum, ac aliquet, odio mattis. Gorem ipsum dolor sit amet, consecteturadipiscing elit Gorem ipsum dolor adipiscing elit amet.',
+        createdAt: new Date('2023-02-20T23:00:05'),
+        author: 'Барановска Устинья',
+      },
+      {
+        id: '1033',
+        text: 'Gorem ipsum dolor sit amet, consectetur adipiscing elit. Nuncvulputate libero velit interdum, ac aliquet odio mattis. Nunc vulputate libero etvelit interdum, ac aliquet, odio mattis. Gorem ipsum dolor sit amet, consecteturadipiscing elit Gorem ipsum dolor adipiscing elit amet.',
+        createdAt: new Date('2022-12-20T23:00:05'),
+        author: 'Игнатьева Жозефина',
+      },
+      {
+        id: '1034',
+        text: 'Gorem ipsum dolor sit amet, consectetur adipiscing elit. Nuncvulputate libero velit interdum, ac aliquet odio mattis. Nunc vulputate libero etvelit interdum, ac aliquet, odio mattis. Gorem ipsum dolor sit amet, consecteturadipiscing elit Gorem ipsum dolor adipiscing elit amet.',
+        createdAt: new Date('2022-12-19T23:00:05'),
+        author: 'Иванов Иван',
+      },
+      {
+        id: '1035',
+        text: 'Gorem ipsum dolor sit amet, consectetur adipiscing elit. Nuncvulputate libero velit interdum, ac aliquet odio mattis. Nunc vulputate libero etvelit interdum, ac aliquet, odio mattis. Gorem ipsum dolor sit amet, consecteturadipiscing elit Gorem ipsum dolor adipiscing elit amet.',
+        createdAt: new Date('2022-12-18T23:00:05'),
+        author: 'Чухрай Зоя',
+      },
+      {
+        id: '1036',
+        text: 'Gorem ipsum dolor sit amet, consectetur adipiscing elit. Nuncvulputate libero velit interdum, ac aliquet odio mattis. Nunc vulputate libero etvelit interdum, ac aliquet, odio mattis. Gorem ipsum dolor sit amet, consecteturadipiscing elit Gorem ipsum dolor adipiscing elit amet.',
+        createdAt: new Date('2022-12-17T23:00:05'),
+        author: 'Игнатьева Жозефина',
+      },
+    ],
   },
   {
     id: '2',
     name: 'Переименовать константу DELAY_TIME',
     description:
-      'Необходимо переименовать константу с DELAY_TIME на DELAY_API_TIME',
+        'Необходимо переименовать константу с DELAY_TIME на DELAY_API_TIME',
     createdAt: new Date('2023-03-09T23:00:05'),
     assignee: 'Иванов Иван',
     status: 'Complete',
@@ -33,7 +70,7 @@ const tasks = [
     id: '3',
     name: 'Elit at imperdiet dui accumsan',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut tellus elementum sagittis vitae et. Porta lorem mollis aliquam ut.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut tellus elementum sagittis vitae et. Porta lorem mollis aliquam ut.',
     createdAt: new Date('2022-12-25T23:55:30'),
     assignee: 'Игнатьева Жозефина',
     status: 'To Do',
@@ -52,7 +89,7 @@ const tasks = [
     id: '4',
     name: 'Lectus sit amet est placerat in egestas erat imperdiet sed',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Laoreet sit amet cursus sit amet dictum sit amet justo. Diam maecenas sed enim ut sem viverra aliquet eget sit.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Laoreet sit amet cursus sit amet dictum sit amet justo. Diam maecenas sed enim ut sem viverra aliquet eget sit.',
     createdAt: new Date('2023-01-14T23:04:48'),
     assignee: 'Иванов Иван',
     status: 'Complete',
@@ -71,7 +108,7 @@ const tasks = [
     id: '5',
     name: 'Tincidunt augue interdum velit euismod in pellentesque massa placerat duis',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Porttitor leo a diam sollicitudin. Natoque penatibus et magnis dis.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Porttitor leo a diam sollicitudin. Natoque penatibus et magnis dis.',
     createdAt: new Date('2023-02-27T10:51:10'),
     assignee: 'Игнатьева Жозефина',
     status: 'To Do',
@@ -90,7 +127,7 @@ const tasks = [
     id: '6',
     name: 'Nulla at volutpat diam ut venenatis tellus in metus vulputate',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Porttitor leo a diam sollicitudin. Natoque penatibus et magnis dis.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Porttitor leo a diam sollicitudin. Natoque penatibus et magnis dis.',
     createdAt: new Date('2022-12-01T17:01:16'),
     assignee: 'Иванов Иван',
     status: 'Complete',
@@ -109,7 +146,7 @@ const tasks = [
     id: '7',
     name: 'Vestibulum lectus mauris ultrices eros in cursus turpis massa tincidunt',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Porttitor leo a diam sollicitudin. Natoque penatibus et magnis dis.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Porttitor leo a diam sollicitudin. Natoque penatibus et magnis dis.',
     createdAt: new Date('2022-12-08T00:44:07'),
     assignee: 'Иванов Иван',
     status: 'To Do',
@@ -128,7 +165,7 @@ const tasks = [
     id: '8',
     name: 'Placerat in egestas erat imperdiet sed euismod nisi porta lorem',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Porttitor leo a diam sollicitudin. Natoque penatibus et magnis dis.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Porttitor leo a diam sollicitudin. Natoque penatibus et magnis dis.',
     createdAt: new Date('2022-12-29T21:18:05'),
     assignee: 'Игнатьева Жозефина',
     status: 'Complete',
@@ -147,10 +184,10 @@ const tasks = [
     id: '9',
     name: 'Massa sapien faucibus et molestie ac feugiat sed lectus vestibulum',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Porttitor leo a diam sollicitudin. Natoque penatibus et magnis dis.',
+        '!!!!!!!!!!!!!Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Porttitor leo a diam sollicitudin. Natoque penatibus et magnis dis.',
     createdAt: new Date('2023-02-21T07:17:55'),
     assignee: 'Иванов Иван',
-    status: 'To Do',
+    status: 'Complete',
     priority: 'High',
     isPrivate: false,
     comments: [
@@ -166,7 +203,7 @@ const tasks = [
     id: '10',
     name: 'Cursus turpis massa tincidunt dui ut ornare lectus sit amet',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Porttitor leo a diam sollicitudin. Natoque penatibus et magnis dis.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Porttitor leo a diam sollicitudin. Natoque penatibus et magnis dis.',
     createdAt: new Date('2023-02-06T21:15:16'),
     assignee: 'Чухрай Зоя',
     status: 'To Do',
@@ -185,7 +222,7 @@ const tasks = [
     id: '11',
     name: 'Netus et malesuada fames ac turpis egestas maecenas pharetra convallis',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Porttitor leo a diam sollicitudin. Natoque penatibus et magnis dis.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Porttitor leo a diam sollicitudin. Natoque penatibus et magnis dis.',
     createdAt: new Date('2023-01-25T03:12:33'),
     assignee: 'Иванов Иван',
     status: 'In progress',
@@ -204,7 +241,7 @@ const tasks = [
     id: '12',
     name: 'Placerat vestibulum lectus mauris ultrices eros in cursus turpis massa',
     description:
-      'Diam vulputate ut pharetra sit amet aliquam id diam. Condimentum id venenatis a condimentum.',
+        'Diam vulputate ut pharetra sit amet aliquam id diam. Condimentum id venenatis a condimentum.',
     createdAt: new Date('2023-02-06T21:15:16'),
     assignee: 'Никитина Любовь',
     status: 'Complete',
@@ -223,7 +260,7 @@ const tasks = [
     id: '13',
     name: 'Auctor neque vitae tempus quam pellentesque nec nam aliquam sem',
     description:
-      'Ellus in metus vulputate eu scelerisque felis imperdiet proin. Eget est lorem ipsum dolor.',
+        'Ellus in metus vulputate eu scelerisque felis imperdiet proin. Eget est lorem ipsum dolor.',
     createdAt: new Date('2023-01-30T13:18:32'),
     assignee: 'Лановой Святослав',
     status: 'To Do',
@@ -242,7 +279,7 @@ const tasks = [
     id: '14',
     name: 'Ultrices gravida dictum fusce ut placerat orci nulla pellentesque dignissim',
     description:
-      'Orci porta non pulvinar neque laoreet. Ut diam quam nulla porttitor.',
+        'Orci porta non pulvinar neque laoreet. Ut diam quam nulla porttitor.',
     createdAt: new Date('2023-01-05T05:06:34'),
     assignee: 'Иванов Иван',
     status: 'In progress',
@@ -261,7 +298,7 @@ const tasks = [
     id: '15',
     name: 'Tempor nec feugiat nisl pretium fusce id velit ut tortor',
     description:
-      'Adipiscing elit ut aliquam purus. Libero id faucibus nisl tincidunt.',
+        'Adipiscing elit ut aliquam purus. Libero id faucibus nisl tincidunt.',
     createdAt: new Date('2023-01-05T05:08:34'),
     assignee: 'Иванов Иван',
     status: 'Complete',
@@ -280,7 +317,7 @@ const tasks = [
     id: '16',
     name: 'Risus ultricies tristique nulla aliquet enim tortor at auctor urna',
     description:
-      'Необходимо переименовать константу с DELAY_TIME на DELAY_API_TIME',
+        'Необходимо переименовать константу с DELAY_TIME на DELAY_API_TIME',
     createdAt: new Date('2022-12-10T15:33:23'),
     assignee: 'Щабловская Катерина',
     status: 'High',
@@ -299,7 +336,7 @@ const tasks = [
     id: '17',
     name: 'Urna et pharetra pharetra massa massa ultricies mi quis hendrerit',
     description:
-      'Adipiscing elit ut aliquam purus. Libero id faucibus nisl tincidunt. Et molestie ac feugiat sed lectus vestibulum. Quis vel eros donec ac odio tempor orci dapibus ultrices. Tellus at urna condimentum mattis. Donec ac odio tempor orci.',
+        'Adipiscing elit ut aliquam purus. Libero id faucibus nisl tincidunt. Et molestie ac feugiat sed lectus vestibulum. Quis vel eros donec ac odio tempor orci dapibus ultrices. Tellus at urna condimentum mattis. Donec ac odio tempor orci.',
     createdAt: new Date('2022-12-17T05:46:49'),
     assignee: 'Савенко Богдан',
     status: 'In progress',
@@ -318,7 +355,7 @@ const tasks = [
     id: '18',
     name: 'Tortor consequat id porta nibh venenatis cras sed felis eget',
     description:
-      'Pellentesque pulvinar pellentesque habitant morbi tristique senectus et netus et. Elementum nibh tellus molestie nunc non. ',
+        'Pellentesque pulvinar pellentesque habitant morbi tristique senectus et netus et. Elementum nibh tellus molestie nunc non. ',
     createdAt: new Date('2023-02-25T21:09:34'),
     assignee: 'Иванов Иван',
     status: 'To Do',
@@ -337,7 +374,7 @@ const tasks = [
     id: '19',
     name: 'Tortor consequat id porta nibh venenatis cras sed felis eget',
     description:
-      'Elementum nibh tellus molestie nunc non. Pretium viverra suspendisse potenti nullam ac tortor vitae.',
+        'Elementum nibh tellus molestie nunc non. Pretium viverra suspendisse potenti nullam ac tortor vitae.',
     createdAt: new Date('2022-12-03T01:52:57'),
     assignee: 'Щабловская Катерина',
     status: 'Complete',
@@ -356,7 +393,7 @@ const tasks = [
     id: '20',
     name: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames',
     description:
-      'Pellentesque pulvinar pellentesque habitant morbi tristique senectus et netus et. Elementum nibh tellus molestie nunc non. ',
+        'Pellentesque pulvinar pellentesque habitant morbi tristique senectus et netus et. Elementum nibh tellus molestie nunc non. ',
     createdAt: new Date('2023-01-31T01:58:39'),
     assignee: 'Иванов Иван',
     status: 'In progress',
@@ -375,7 +412,7 @@ const tasks = [
     id: '21',
     name: 'In egestas erat imperdiet sed euismod nisi porta lorem mollis',
     description:
-      'Tincidunt eget nullam non nisi. Sollicitudin tempor id eu nisl. Libero volutpat sed cras ornare arcu.',
+        'Tincidunt eget nullam non nisi. Sollicitudin tempor id eu nisl. Libero volutpat sed cras ornare arcu.',
     createdAt: new Date('2022-12-28T17:44:31'),
     assignee: 'Щабловская Катерина',
     status: 'Complete',
@@ -394,7 +431,7 @@ const tasks = [
     id: '22',
     name: 'Augue ut lectus arcu bibendum at varius vel pharetra vel',
     description:
-      'Необходимо переименовать константу с DELAY_TIME на DELAY_API_TIME',
+        'Необходимо переименовать константу с DELAY_TIME на DELAY_API_TIME',
     createdAt: new Date('2022-12-27T10:14:49'),
     assignee: 'Иванов Иван',
     status: 'To Do',
@@ -413,7 +450,7 @@ const tasks = [
     id: '23',
     name: 'Ac odio tempor orci dapibus ultrices in iaculis nunc sed',
     description:
-      'Massa sed elementum tempus egestas sed. Orci porta non pulvinar neque laoreet. Ut diam quam nulla porttitor',
+        'Massa sed elementum tempus egestas sed. Orci porta non pulvinar neque laoreet. Ut diam quam nulla porttitor',
     createdAt: new Date('2022-12-07T22:38:10'),
     assignee: 'Щабловская Катерина',
     status: 'In progress',
@@ -468,7 +505,7 @@ const tasks = [
     id: '26',
     name: 'Mi ipsum faucibus vitae aliquet nec ullamcorper sit amet risus',
     description:
-      'Libero volutpat sed cras ornare arcu. Tristique risus nec feugiat in fermentum.',
+        'Libero volutpat sed cras ornare arcu. Tristique risus nec feugiat in fermentum.',
     createdAt: new Date('2022-12-17T17:13:36'),
     assignee: 'Бачей Чеслава',
     status: 'In progress',
@@ -487,7 +524,7 @@ const tasks = [
     id: '27',
     name: 'Id leo in vitae turpis massa sed elementum tempus egestas',
     description:
-      'Bibendum at varius vel pharetra vel. Lorem ipsum dolor sit amet.',
+        'Bibendum at varius vel pharetra vel. Lorem ipsum dolor sit amet.',
     createdAt: new Date('2023-01-06T02:27:11'),
     assignee: 'Бондаренко Платон',
     status: 'Complete',
@@ -506,7 +543,7 @@ const tasks = [
     id: '28',
     name: 'Sed velit dignissim sodales ut eu sem integer vitae justo',
     description:
-      'Praesent tristique magna sit amet. Orci dapibus ultrices in iaculis nunc sed augue.',
+        'Praesent tristique magna sit amet. Orci dapibus ultrices in iaculis nunc sed augue.',
     createdAt: new Date('2022-12-31T16:01:50'),
     assignee: 'Карпов Влад',
     status: 'To Do',
@@ -543,7 +580,7 @@ const tasks = [
     id: '30',
     name: 'Nulla facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum',
     description:
-      'Tortor vitae purus faucibus ornare suspendisse sed nisi lacus sed. Libero id faucibus nisl tincidunt.',
+        'Tortor vitae purus faucibus ornare suspendisse sed nisi lacus sed. Libero id faucibus nisl tincidunt.',
     createdAt: new Date('2023-02-04T01:36:16'),
     assignee: 'Никифорова Таисия',
     status: 'To Do',
@@ -577,381 +614,4 @@ const tasks = [
     ],
   },
 ];
-
-const module = (
-  function myMod() {
-    let user = 'Иванов Иван';
-
-    function sortCollection(array) {
-      array.sort((a, b) => b.createdAt - a.createdAt);
-      return array;
-    }
-
-    function getUniqueId() {
-      const id = Math.floor(1 + Math.random() * 1000).toString();
-      const idArray = tasks.map((item) => item.id);
-      const hasThisId = idArray.some((item) => item === id);
-      if (hasThisId) {
-        return getUniqueId();
-      }
-      return id;
-    }
-    return {
-      user,
-      getTasks: (skip = 0, top = 10, filterConfig = {}) => {
-        const {
-          assignee: filterAssignee,
-          dateFrom: filterdateFrom,
-          dateTo: filterdateTo,
-          status: filterStatus,
-          priority: filterPriority,
-          isPrivate: filterIsPrivate,
-          description: filterDescription,
-        } = filterConfig;
-        let result = tasks;
-        if (filterAssignee !== undefined) {
-          result = result.filter((item) => item.assignee.includes(filterAssignee));
-        }
-        if (filterdateFrom !== undefined) {
-          result = result.filter((item) => item.createdAt >= new Date(filterdateFrom));
-        }
-        if (filterdateTo !== undefined) {
-          result = result.filter((item) => item.createdAt <= new Date(filterdateTo));
-        }
-        if (filterStatus !== undefined) {
-          result = result.filter((item) => item.status === filterStatus);
-        }
-        if (filterPriority !== undefined) {
-          result = result.filter((item) => item.priority === filterPriority);
-        }
-        if (filterIsPrivate !== undefined) {
-          result = result.filter((item) => item.isPrivate === filterIsPrivate);
-        }
-        if (filterDescription !== undefined) {
-          result = result.filter((item) => item.description.includes(filterDescription));
-        }
-        const sortedArr = sortCollection(result).splice(skip, top);
-        // console.log(sortedArr);
-        return sortedArr;
-      },
-      getTask: (id) => {
-        const idArray = tasks.map((item) => item.id);
-        let index;
-        if (idArray.includes(id)) {
-          index = tasks.findIndex((item) => item.id === id);
-          // console.log(tasks[index]);
-          return tasks[index];
-        }
-        // console.log('The id must be a string with a number');
-        return false;
-      },
-      validateTask: (task) => {
-        function isIdvalid() {
-          return typeof task.id === 'string' && task.id !== '';
-        }
-
-        function isNameValid() {
-          return typeof task.name === 'string' && task.name !== '' && task.name.length <= 100;
-        }
-
-        function isDescriptionValid() {
-          return typeof task.description === 'string'
-          && task.description !== ''
-          && task.description.length <= 280;
-        }
-
-        function isDateValid() {
-          return task.createdAt instanceof Date;
-        }
-
-        function isAssigneeValid() {
-          return typeof task.assignee === 'string' && task.assignee !== '';
-        }
-
-        function isStatusValid() {
-          return typeof task.status === 'string'
-          && task.status !== '' && ['To Do', 'In progress', 'Complete'].includes(task.status);
-        }
-
-        function isPriorityValid() {
-          return typeof task.priority === 'string'
-          && task.priority !== '' && ['Low', 'Medium', 'High'].includes(task.priority);
-        }
-
-        function isPrivateValid() {
-          return typeof task.isPrivate === 'boolean';
-        }
-
-        function isArrayValid() {
-          return Array.isArray(task.comments);
-        }
-
-        if (isIdvalid()
-      && isNameValid()
-      && isDescriptionValid()
-      && isDateValid()
-      && isAssigneeValid()
-      && isStatusValid()
-      && isPriorityValid()
-      && isPrivateValid()
-      && isArrayValid()) {
-        // console.log('Task is valid');
-          return true;
-        }
-        // console.log('Task is invalid, check the value of the fields');
-        return false;
-      },
-      addTask: (name, description, assignee, status, priority, isPrivate) => {
-        const id = getUniqueId();
-        const newTask = {
-          id,
-          name,
-          description,
-          status,
-          priority,
-          isPrivate,
-          comments: [],
-          createdAt: new Date(),
-          assignee: assignee || user,
-        };
-        // console.log(newTask);
-        if (module.validateTask(newTask)) {
-          tasks.push(newTask);
-          // console.log('Task added');
-          return true;
-        }
-        // console.log('Task not added');
-        return false;
-      },
-      editTask: (
-        id,
-        name,
-        description,
-        assignee,
-        status,
-        priority,
-        isPrivate = false,
-      ) => {
-        const editTask = module.getTask(id);
-        if (editTask.assignee === user) {
-          if (assignee !== undefined) {
-            editTask.assignee = assignee;
-          }
-          if (name !== undefined) {
-            editTask.name = name;
-          }
-          if (description !== undefined) {
-            editTask.description = description;
-          }
-          if (status !== undefined) {
-            editTask.status = status;
-          }
-          if (priority !== undefined) {
-            editTask.priority = priority;
-          }
-          if (isPrivate !== undefined) {
-            editTask.isPrivate = isPrivate;
-          }
-          // console.log(editTask);
-          // console.log(module.validateTask(editTask));
-          return module.validateTask(editTask);
-        }
-        // console.log('You do not have user rights');
-        return false;
-      },
-      removeTask: (id) => {
-        const idArray = tasks.map((item) => item.id);
-        const deletedTask = module.getTask(id);
-        let index;
-        if (idArray.includes(id)) {
-          if (deletedTask.assignee === user) {
-            index = tasks.findIndex((item) => item.id === id);
-            tasks.splice(index, 1);
-            // console.log(`You deleted task from id: ${id}`);
-            return true;
-          }
-          // console.log('You do not have user rights');
-          return false;
-        }
-        // console.log('The id must be a string with a number');
-        return false;
-      },
-      validateComment: (com) => {
-        function isIdValid() {
-          return typeof com.id === 'string' && com.id !== '';
-        }
-
-        function isTextValid() {
-          return typeof com.text === 'string' && com.text.length <= 280;
-        }
-
-        function isDateValid() {
-          return com.createdAt instanceof Date;
-        }
-
-        function isAuthorvalid() {
-          return typeof com.author === 'string' && com.author !== '';
-        }
-
-        if (isIdValid() && isTextValid() && isDateValid() && isAuthorvalid()) {
-        // console.log('Comment is valid');
-          return true;
-        }
-        // console.log('Comment is invalid, check the value of the fields');
-        return false;
-      },
-      addComment: (id, text) => {
-        const idArray = tasks.map((item) => item.id);
-        let newComm = {};
-        if (idArray.includes(id)) {
-          const task = module.getTask(id);
-          if (text !== undefined) {
-            newComm = {
-              id: getUniqueId(),
-              text,
-              createdAt: new Date(),
-              author: user,
-            };
-          } else // console.log('Add text');
-          if (module.validateComment(newComm)) {
-            task.comments.push(newComm);
-            // console.log('Comment added');
-            return true;
-          }
-          // console.log('Comment not added');
-          return false;
-        }
-        // console.log('The id must be a string with a number');
-        return false;
-      },
-      changeUser: (usr) => {
-        if (typeof usr === 'string' && usr !== '') {
-          user = usr;
-        }
-      },
-    };
-  }());
-// -------------------------------CHECKING FUNCTIONS--------------------------------
-//                           ADD/REMOVE comment     ctr + /
-
-// GETTASKS
-
-// module.getTasks(0, 10, {
-//   assignee: "Иван",
-// });
-// module.getTasks(1, 10, {
-//   dateFrom: "2023-01-01",
-//   dateTo: "2023-03-31",
-// })
-// module.getTasks(1, 10, {
-// status: "Complete"
-// })
-// module.getTasks(1, 10, {
-//  priority: "Low",
-// })
-// module.getTasks(1, 10, {
-//  isPrivate: false,
-// })
-// module.getTasks(1, 10, {
-// description: "Lorem",
-// })
-
-// GETTASK
-
-// module.getTask('2');
-// module.getTask('');
-// module.getTask(8);
-
-// VALIDATETASK
-
-// let task = {
-//   id: "3",
-//   name: "Elit at imperdiet dui accumsan",
-//   description: "Lorem ipsum dol.",
-//   createdAt: new Date("2022-12-25T23:55:30"),
-//   assignee: "Игнатьева Жозефина",
-//   status: "To Do",
-//   priority: "Medium",
-//   isPrivate: true,
-//   comments: [],
-// };
-// let taskInval = {
-//   id: 3,
-//   name: "Elit at imperdiet dui accumsan",
-//   description: "Lorem ipsum dol.",
-//   createdAt: new Date("2022-12-25T23:55:30"),
-//   assignee: "Игнатьева Жозефина",
-//   status: "To",
-//   priority: "Medium",
-//   isPrivate: true,
-//   comments: [],
-// };
-// module.validateTask(task);
-// module.validateTask(taskInval);
-
-// ADDTASK
-
-// module.addTask(
-//   "Cursus ",
-//   "Cursus turpis massa tincidunt",
-//   module.user,
-//   "To Do",
-//   "Low",
-//   false
-// );
-// module.addTask(
-//   "Cursus ",
-//   "Cursus turpis massa tincidunt",
-//   'user',
-//   "To Do",
-//   "",
-//   'false'
-// );
-
-// EDITTASK
-
-// module.editTask('7','check');
-// module.editTask('7','');
-// module.editTask('5','');
-// module.editTask(
-// '7',
-// 'feed the cats',
-// 'some task about cats',
-// 'Mothers of cats','Complete',
-// 'High',
-//  true);
-
-// REMOVETASK
-
-// module.removeTask('7');
-// module.removeTask('5');
-// module.removeTask('');
-// module.removeTask('two');
-
-// VALIDATECOMMENT
-
-// let com = {
-//  id: "789",
-//  text: "text",
-//  createdAt: new Date("2022-12-29T21:18:05"),
-//  author: "linna"
-// }
-// let comInval= {
-//  id: "789",
-//  text: "text",
-//  createdAt: '15-10-2022',
-//  author: "linna"
-// }
-// module.validateComment(com);
-// module.validateComment(comInval);
-
-// ADDCOMMENT
-
-// module.addComment("10", "trewetswetswert");
-// module.addComment("11", "trewetswetswert");
-// module.addComment("10", );
-
-// CHANGEUSER
-
-// module.changeUser('kate');
-// module.changeUser('')
+export default tasks;

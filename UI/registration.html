@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles_registration.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__wrapper wrapper">
+            <div class="header-logo">
+                <span class="ico logo"></span>
+                <p class="logo__text">Funtask</p>
+            </div>
+            <div class="header__box">
+                <p class="profile-name" id="profile-name"></p>
+                <button class="header__button button">Log out</button>
+            </div>
+        </div>
+    </header>
+    <main class="main">
+        <section class="regist">
+            <div class="regist__wrapper wrapper">
+                
+                <div class="path-to">
+                    <a class="button__to-main" href="main_row.html"><span class="ico arrow-back"></span>
+                        < Main page</a>
+                </div>
+                <div class="regist__container" id="regist__container">
+                    <h1 class="regist__header">Create account</h1>
+                    <div class="img-container">
+                        <div class="avatar"></div>
+                        <button class="button__add-img"><span class="ico camera"></span></button>
+                    </div>
+                    <form class="form" action="../action_page.php" id="registr">
+                        <div class="form-field">
+                            <label for="login">Login</label>
+                            <input type="text" placeholder="Type Login" name="login" id="login">
+                            <div class="errorText"></div>
+                        </div>
+                        <div class="form-field">
+                            <label for="psw">Password</label>
+                            <input type="password" placeholder="Type password"autocomplete="on" name="psw" id="psw">
+                            <div class="errorText"></div>
+                        </div>
+                        <div class="form-field">
+                            <label for="repsw">Re-type password</label>
+                            <input type="password" placeholder="Re-type password"autocomplete="on" name="repsw" id="repsw">
+                            <div class="errorText"></div>
+                        </div>
+                        <div class="form-field">
+                            <label for="username">Username</label>
+                            <input type="text" placeholder="Type Username" name="username" id="username">
+                            <div class="errorText"></div>
+                        </div>
+                        <div class="form-field">
+                        <input type="submit" value="Register" class="registbtn disabled">
+                        </div>
+                        <hr>
+                        <div class="linktoreg">Already have an account?<a href="login.html">Log in</a></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer__wrapper wrapper">
+            <div class="author">
+                <p class="logo__text">Funtask</p>
+                <span class="ico copyright"></span>
+                <p class="profile-name">Shchablovskaya Katerina</p>
+            </div>
+            <div class="info">
+                <div class="mail">shablovskaykate@mail.ru</div>
+                <span class="ico email"></span>
+                <div class="pulication-date">22.02.2023</div>
+            </div>
+        </div>
+    </footer>
+    <script src="/src/regist.js"></script>
+</body>
+
+</html>

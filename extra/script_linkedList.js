@@ -1,7 +1,4 @@
-/* eslint-disable max-classes-per-file */
-/* eslint-disable no-plusplus */
-/* eslint-disable consistent-return */
-/* eslint-disable no-console */
+
 class Node {
   constructor(value = null, next = null) {
     this.value = value;
