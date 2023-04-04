@@ -42,9 +42,6 @@ class Comment {
     function isAuthorvalid() {
       return typeof com.author === 'string' && com.author !== '';
     }
-    console.log(
-      isIdValid() && isTextValid() && isDateValid() && isAuthorvalid(),
-    );
     return isIdValid() && isTextValid() && isDateValid() && isAuthorvalid();
   }
 }

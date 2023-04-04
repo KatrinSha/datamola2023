@@ -9,8 +9,6 @@ function getUniqId() {
 class Task {
   #id;
 
-  #createdAt;
-
   name;
 
   description;
@@ -25,7 +23,10 @@ class Task {
 
   assignee;
 
+  #createdAt;
+
   constructor(
+    id,
     name,
     description,
     status,
@@ -33,8 +34,9 @@ class Task {
     isPrivate,
     comments,
     assignee,
+    createdAt
   ) {
-    this.#id = getUniqId();
+    this.#id = id ?? getUniqId();
     this.name = name;
     this.description = description;
     this.status = status;
@@ -42,7 +44,7 @@ class Task {
     this.isPrivate = isPrivate;
     this.comments = comments;
     this.assignee = assignee;
-    this.#createdAt = new Date();
+    this.#createdAt =  createdAt ?? new Date();
   }
 
   get id() {
@@ -75,6 +77,7 @@ class Task {
     }
 
     function isDateValid() {
+      
       return task.createdAt instanceof Date;
     }
 
@@ -99,13 +102,14 @@ class Task {
     }
 
     function isPrivateValid() {
+     // console.log(task.isPrivate);
       return typeof task.isPrivate === 'boolean';
     }
 
     function isArrayValid() {
       return Array.isArray(task.comments);
     }
-
+ //console.log(isIdvalid()&& isNameValid()&& isDescriptionValid()&& isDateValid()&& isAssigneeValid()&& isStatusValid()&& isPriorityValid()&& isPrivateValid()&& isArrayValid())
     return (
       isIdvalid()
         && isNameValid()

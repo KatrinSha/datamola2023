@@ -27,7 +27,6 @@ class HeaderView {
     const headerButton = document.createElement('button');
     headerButton.classList.add('header__button', 'button');
     if (user === '') {
-      console.log(`${user}222`);
       headerButton.textContent = 'Log in';
     } else {
       headerButton.textContent = 'Log out';

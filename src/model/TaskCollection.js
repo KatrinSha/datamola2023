@@ -1,4 +1,5 @@
 import Task from './Task.js';
+import tasks from './Tasks.js';
 
 function getUniqId() {
   return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
@@ -7,14 +8,6 @@ function getUniqId() {
     return v.toString(16);
   });
 }
-
-// const task1 = new Task('NameNameName', 'Description', 'To Do', 'Low', true, [], 'assignee', 'Kate Kate');
-// Task.validate(task1);
-// console.log(task1);
-
-// const com = new Comment("ftghfyktgykt", "lala");
-// com.print()
-// Comment.validate(com)
 
 class TaskCollection {
   #user = 'Иванов Иван';
@@ -26,9 +19,12 @@ class TaskCollection {
   }
 
   addAll(someTasks) {
+    console.log(this.#tasks)
+    console.log(someTasks);
     const validTask = someTasks.filter((item) => Task.validate(item));
-    console.log(this.#tasks);
-    this.#tasks = [...this.#tasks || [], ...validTask];
+    console.log(validTask );
+    this.#tasks = [...this.#tasks ?? [], ...validTask];
+    console.log(this.#tasks)
     return someTasks.filter((item) => !Task.validate(item));
   }
 
@@ -85,7 +81,6 @@ class TaskCollection {
       result = result.filter((item) => item.description.includes(filterDescription));
     }
     const sortedArr = sortCollection(result).slice(skip, top + skip);
-    console.log(sortedArr);
     return sortedArr;
   }
 
@@ -98,17 +93,15 @@ class TaskCollection {
   }
 
   add(task) {
-    // console.log(task);
     if (Task.validate(task)) {
       this.#tasks.push(task);
-      console.log(this.#tasks.length);
       return true;
     }
     return false;
   }
 
   edit(id, task) {
-    console.log('test');
+
     const editTask = this.get(id);
 
     if (editTask.assignee === this.#user) {
@@ -130,7 +123,6 @@ class TaskCollection {
       if (task.isPrivate !== undefined) {
         editTask.isPrivate = task.isPrivate;
       }
-      console.log(Task.validate(editTask));
       return Task.validate(editTask);
     }
     return false;
@@ -139,11 +131,10 @@ class TaskCollection {
   removeTask(id) {
     const deletedTask = this.get(id);
     let index;
-    console.log(deletedTask);
+
     if (deletedTask.assignee === this.user) {
       index = this.#tasks.findIndex((item) => item.id === id);
       this.#tasks = this.#tasks.filter((item, i) => i !== index);
-      console.log(this.#tasks);
       return true;
     }
     return false;
@@ -164,3 +155,8 @@ class TaskCollection {
   }
 }
 export default TaskCollection;
+
+
+//const col=new TaskCollection();
+//const sub=tasks.map((item)=>{return new Task(item.id,item.description,item.name,item.status,item.priority,item.isPrivate,item.comments,item.assignee,item.createdAt)});
+//const tasks1=col.addAll(sub);

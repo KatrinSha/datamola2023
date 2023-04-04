@@ -6,7 +6,6 @@ class TaskView {
   }
 
   display(task) {
-    console.log('ghtfj');
     const taskPage = document.createElement('section');
 
     taskPage.classList.add('task');
@@ -44,7 +43,7 @@ class TaskView {
 
     statusWrapper.classList.add('status__wrapper');
     cardStatus.classList.add('task__status');
-    console.log(task.status);
+
     statusWrapper.textContent = task.status;
     cardStatus.append(statusWrapper);
 
@@ -107,7 +106,6 @@ class TaskView {
       cardEditBtn,
     );
     taskBox.classList.add('task__box');
-    console.log(taskBox);
     taskContainer.prepend(taskBox);
 
     const commentsBox = document.createElement('div');
@@ -132,30 +130,30 @@ class TaskView {
       comment.append(username, commentDate, commentText);
       commentsBox.append(comment);
     });
-    console.log(commentsBox);
+
     const formComm = document.createElement('form');
 
     formComm.classList.add('comment__form');
     formComm.setAttribute('method', 'post');
     formComm.setAttribute('action', ' ');
-    console.log(formComm);
+
     const commInput = document.createElement('input');
     commInput.classList.add('comment__input');
     commInput.setAttribute('placeholder', 'Add comment...');
-    console.log(commInput);
+
     const addCommBtn = document.createElement('button');
     addCommBtn.classList.add('submit');
     addCommBtn.textContent = 'Enter';
-    console.log(addCommBtn);
+
     formComm.prepend(commInput, addCommBtn);
-    console.log(formComm);
+
     taskContainer.append(commentsBox, formComm);
     taskWrapper.append(pathTo, taskContainer);
     taskPage.append(taskWrapper);
     const main = document.querySelector('main');
     main.replaceWith(taskPage);
     const link = document.querySelector('link');
-    link.setAttribute('href', '../UI/css/styles_task.css');
+    link.setAttribute('href', '/datamola2023/UI/css/styles_task.css');
   }
 }
 export default TaskView;

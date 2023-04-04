@@ -56,8 +56,8 @@ class Controller {
     this.filterView.display(this.collection.tasks);
   }
 
-  loadAllTasks(array) {
-    this.taskFeedView.display(array, this.collection.user);
+  loadAllTasks() {
+    this.taskFeedView.display(this.collection.tasks, this.collection.user);
   }
 
   removeTask(id) {
