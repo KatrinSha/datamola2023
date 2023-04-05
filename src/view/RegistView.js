@@ -6,7 +6,34 @@ class RegistView {
   }
 
   display(user) {
+    const regist = document.createElement('section');
+    regist.setAttribute('class', 'regist');
+    const registWrapper = document.createElement('div');
+    registWrapper.classList.add('egist__wrapper', 'wrapper');
+    // ------link to main----------
+    const pathTo = document.createElement('div');
+    pathTo.classList.add('path-to');
+    const path = document.createElement('div');
+    path.classList.add('path');
+    const linkToMain = document.createElement('a');
+    linkToMain.setAttribute('href', '');
+    linkToMain.textContent = 'Main';
+    const icoArrowBack = document.createElement('span');
+    icoArrowBack.classList.add('ico', 'arrow-back_dark');
+    const linkToTask = document.createElement('a');
+    linkToTask.setAttribute('href', '');
+    linkToTask.textContent = 'Task';
+    const buttonToMain = document.createElement('button');
+    buttonToMain.classList.add('button__to-main');
+    buttonToMain.textContent = 'Main page';
+    const icoArrowBackToMain = document.createElement('span');
+    icoArrowBackToMain.classList.add('ico', 'arrow-back');
+    buttonToMain.append(icoArrowBackToMain);
+    path.append(linkToMain, icoArrowBack, linkToTask);
+    pathTo.append(path, buttonToMain);
+    // ---------------------Regist Container--------
     const registContainer = document.createElement('div');
+    // ---------------
     registContainer.setAttribute('class', 'regist__container');
     registContainer.setAttribute('id', 'regist__container');
 
@@ -26,17 +53,17 @@ class RegistView {
     const spanIcoCamera = document.createElement('span');
     spanIcoCamera.setAttribute('class', 'ico camera');
 
-    buttonAddImg.appendChild(spanIcoCamera);
-    imgContainer.appendChild(avatar);
-    imgContainer.appendChild(buttonAddImg);
+    buttonAddImg.append(spanIcoCamera);
+    imgContainer.append(avatar, buttonAddImg);
 
+    // ----------FORM----------------
     const form = document.createElement('form');
     form.setAttribute('class', 'form');
     form.setAttribute('action', '../action_page.php');
     form.setAttribute('id', 'registr');
 
-    const formField1 = document.createElement('div');
-    formField1.setAttribute('class', 'form-field');
+    const formFieldLogin = document.createElement('div');
+    formFieldLogin.setAttribute('class', 'form-field');
 
     const labelLogin = document.createElement('label');
     labelLogin.setAttribute('for', 'login');
@@ -48,15 +75,15 @@ class RegistView {
     inputLogin.setAttribute('name', 'login');
     inputLogin.setAttribute('id', 'login');
 
-    const errorText1 = document.createElement('div');
-    errorText1.setAttribute('class', 'errorText');
+    const errorTextLogin = document.createElement('div');
+    errorTextLogin.setAttribute('class', 'errorText');
 
-    formField1.appendChild(labelLogin);
-    formField1.appendChild(inputLogin);
-    formField1.appendChild(errorText1);
+    formFieldLogin.appendChild(labelLogin);
+    formFieldLogin.appendChild(inputLogin);
+    formFieldLogin.appendChild(errorTextLogin);
 
-    const formField2 = document.createElement('div');
-    formField2.setAttribute('class', 'form-field');
+    const formFieldPsw = document.createElement('div');
+    formFieldPsw.setAttribute('class', 'form-field');
 
     const labelPsw = document.createElement('label');
     labelPsw.setAttribute('for', 'psw');
@@ -69,15 +96,12 @@ class RegistView {
     inputPsw.setAttribute('name', 'psw');
     inputPsw.setAttribute('id', 'psw');
 
-    const errorText2 = document.createElement('div');
-    errorText2.setAttribute('class', 'errorText');
+    const errorTextPsw = document.createElement('div');
+    errorTextPsw.setAttribute('class', 'errorText');
 
-    formField2.appendChild(labelPsw);
-    formField2.appendChild(inputPsw);
-    formField2.appendChild(errorText2);
-
-    const formField3 = document.createElement('div');
-    formField3.setAttribute('class', 'form-field');
+    formFieldPsw.append(labelPsw, inputPsw, errorTextPsw);
+    const formFieldRepsw = document.createElement('div');
+    formFieldRepsw.setAttribute('class', 'form-field');
 
     const labelRepsw = document.createElement('label');
     labelRepsw.setAttribute('for', 'repsw');
@@ -90,15 +114,13 @@ class RegistView {
     inputRepsw.setAttribute('name', 'repsw');
     inputRepsw.setAttribute('id', 'repsw');
 
-    const errorText3 = document.createElement('div');
-    errorText3.setAttribute('class', 'errorText');
+    const errorTextRepsw = document.createElement('div');
+    errorTextRepsw.setAttribute('class', 'errorText');
 
-    formField3.appendChild(labelRepsw);
-    formField3.appendChild(inputRepsw);
-    formField3.appendChild(errorText3);
+    formFieldRepsw.append(labelRepsw, inputRepsw, errorTextRepsw);
 
-    const formField4 = document.createElement('div');
-    formField4.setAttribute('class', 'form-field');
+    const formFieldUsername = document.createElement('div');
+    formFieldUsername.setAttribute('class', 'form-field');
 
     const labelUsername = document.createElement('label');
     labelUsername.setAttribute('for', 'username');
@@ -110,7 +132,35 @@ class RegistView {
     inputUsername.setAttribute('name', 'username');
     inputUsername.setAttribute('id', 'username');
 
-    const errorText4 = document.createElement('div');
+    const errorTextUsername = document.createElement('div');
+    errorTextUsername.setAttribute('class', 'errorText');
+
+    formFieldUsername.append(labelUsername, inputUsername, errorTextUsername);
+
+    const formFieldSubmit = document.createElement('div');
+    formFieldSubmit.setAttribute('class', 'form-field');
+
+    const hr = document.createElement('hr');
+
+    const inputSubmit = document.createElement('input');
+    inputSubmit.setAttribute('type', 'submit');
+    inputSubmit.setAttribute('value', 'Register');
+    inputSubmit.classList.add('registbtn', 'disabled');
+    inputSubmit.setAttribute('name', 'username');
+    inputSubmit.setAttribute('id', 'username');
+    formFieldSubmit.append(inputSubmit);
+    const linktoreg = document.createElement('div');
+    linktoreg.setAttribute('class', 'linktoreg');
+    linktoreg.textContent = 'Already have an account?';
+    const toLogin = document.createElement('a');
+    toLogin.setAttribute('href', 'login.html');
+    toLogin.textContent = 'Log in';
+    linktoreg.append(toLogin);
+
+    form.append(formFieldLogin, formFieldPsw, formFieldRepsw, formFieldUsername, formFieldSubmit, hr, linktoreg);
+    registContainer.append(registHeader, imgContainer, form);
+    registWrapper.append(pathTo, registContainer);
+    regist.append(registWrapper);
   }
 }
 export default RegistView;
