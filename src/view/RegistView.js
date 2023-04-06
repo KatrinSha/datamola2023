@@ -9,28 +9,18 @@ class RegistView {
     const regist = document.createElement('section');
     regist.setAttribute('class', 'regist');
     const registWrapper = document.createElement('div');
-    registWrapper.classList.add('egist__wrapper', 'wrapper');
+    registWrapper.classList.add('regist__wrapper', 'wrapper');
     // ------link to main----------
     const pathTo = document.createElement('div');
     pathTo.classList.add('path-to');
-    const path = document.createElement('div');
-    path.classList.add('path');
-    const linkToMain = document.createElement('a');
-    linkToMain.setAttribute('href', '');
-    linkToMain.textContent = 'Main';
-    const icoArrowBack = document.createElement('span');
-    icoArrowBack.classList.add('ico', 'arrow-back_dark');
-    const linkToTask = document.createElement('a');
-    linkToTask.setAttribute('href', '');
-    linkToTask.textContent = 'Task';
-    const buttonToMain = document.createElement('button');
+    const  buttonToMain = document.createElement('a');
     buttonToMain.classList.add('button__to-main');
-    buttonToMain.textContent = 'Main page';
+    buttonToMain.textContent = '< Main page';
+
     const icoArrowBackToMain = document.createElement('span');
     icoArrowBackToMain.classList.add('ico', 'arrow-back');
     buttonToMain.append(icoArrowBackToMain);
-    path.append(linkToMain, icoArrowBack, linkToTask);
-    pathTo.append(path, buttonToMain);
+    pathTo.append( buttonToMain);
     // ---------------------Regist Container--------
     const registContainer = document.createElement('div');
     // ---------------
@@ -49,11 +39,15 @@ class RegistView {
 
     const buttonAddImg = document.createElement('button');
     buttonAddImg.setAttribute('class', 'button__add-img');
+    const spanAddImg=document.createElement('span');
+    spanAddImg.setAttribute('type','file');
+    spanAddImg.setAttribute('id','file');
+    spanAddImg.setAttribute('name','file');
 
     const spanIcoCamera = document.createElement('span');
     spanIcoCamera.setAttribute('class', 'ico camera');
-
-    buttonAddImg.append(spanIcoCamera);
+    spanAddImg.append(spanIcoCamera);
+    buttonAddImg.append(spanAddImg);
     imgContainer.append(avatar, buttonAddImg);
 
     // ----------FORM----------------
@@ -90,7 +84,7 @@ class RegistView {
     labelPsw.textContent = 'Password';
 
     const inputPsw = document.createElement('input');
-    inputPsw.setAttribute('type', 'password');
+    inputPsw.setAttribute('type', 'text');
     inputPsw.setAttribute('placeholder', 'Type password');
     inputPsw.setAttribute('autocomplete', 'on');
     inputPsw.setAttribute('name', 'psw');
@@ -108,7 +102,7 @@ class RegistView {
     labelRepsw.textContent = 'Re-type password';
 
     const inputRepsw = document.createElement('input');
-    inputRepsw.setAttribute('type', 'password');
+    inputRepsw.setAttribute('type', '');
     inputRepsw.setAttribute('placeholder', 'Re-type password');
     inputRepsw.setAttribute('autocomplete', 'on');
     inputRepsw.setAttribute('name', 'repsw');
@@ -146,8 +140,6 @@ class RegistView {
     inputSubmit.setAttribute('type', 'submit');
     inputSubmit.setAttribute('value', 'Register');
     inputSubmit.classList.add('registbtn', 'disabled');
-    inputSubmit.setAttribute('name', 'username');
-    inputSubmit.setAttribute('id', 'username');
     formFieldSubmit.append(inputSubmit);
     const linktoreg = document.createElement('div');
     linktoreg.setAttribute('class', 'linktoreg');
@@ -161,6 +153,22 @@ class RegistView {
     registContainer.append(registHeader, imgContainer, form);
     registWrapper.append(pathTo, registContainer);
     regist.append(registWrapper);
+    const main = document.querySelector('main');
+    main.append(regist);
+    const link = document.querySelector('link');
+    link.setAttribute('href', '/datamola2023/UI/css/styles_registration.css');
+    const filters=document.querySelector('.filters');
+    filters.remove();
+    const scriptReg = document.createElement('script');
+    scriptReg.setAttribute('src', '/datamola2023/src/regist.js');
+    const body=document.querySelector('body');
+    body.append(scriptReg);
+
+    console.log(inputUsername.value);
+    if(user===inputUsername.value){
+      errorTextUsername.textContent='This username exists';
+    }
+
   }
 }
 export default RegistView;

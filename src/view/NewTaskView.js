@@ -6,7 +6,7 @@ class NewTaskView {
   }
 
     display(user) {
-        const modalBody = document.createElement("div");
+const modalBody = document.createElement("div");
 modalBody.classList.add("modal-body");
 
 const taskForm = document.createElement("form");
@@ -117,7 +117,7 @@ privacyDiv.classList.add("task__privacy", "select-box");
 
 const publicInput = document.createElement("input");
 publicInput.classList.add("input-public");
-publicInput.setAttribute("type",
+
     }
 }
 export default NewTaskView;

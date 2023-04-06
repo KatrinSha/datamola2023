@@ -41,7 +41,6 @@ const checkLogin = () => {
   const min = 5;
   const max = 20;
   const login = loginEl.value.trim();
-  console.log(login);
   if (!isRequired(login)) {
     showError(loginEl, 'Login cannot be blank.');
   } else if (!isBetween(login.length, min, max)) {
@@ -57,7 +56,7 @@ const checkUsername = () => {
   const min = 5;
   const max = 25;
   const username = usernameEl.value.trim();
-
+console.log(username)
   if (!isRequired(username)) {
     showError(usernameEl, 'Username cannot be blank.');
   } else if (!isBetween(username.length, min, max)) {
@@ -154,3 +153,12 @@ formElement.addEventListener('submit', (e) => {
   const login = formData.get('login');
   console.log(login)
 }); */
+form.addEventListener('submit', ()=>{
+
+localStorage.setItem("login", form.elements.login.value);
+localStorage.setItem("username", form.elements.username.value);
+localStorage.setItem("password", form.elements.password.value);
+})
+document.querySelector('.button__add-img').addEventListener('click',()=>{
+  console.log(localStorage.getItem('login'))
+})

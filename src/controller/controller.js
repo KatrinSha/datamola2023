@@ -22,6 +22,11 @@ class Controller {
 
   taskView = new TaskView('task');
 
+  registView= new RegistView('regist');
+
+  //loginView=new LoginView('login');
+
+  //newTaskView= new newTaskView('newTask');
   skip = 0;
 
   top = 10;
@@ -66,16 +71,16 @@ class Controller {
     this.taskFeedView.display(tasks, this.collection.user);
   }
 
-  showRegistPage(id) {
-    this.RegistView.display(this.collection.user);
+  showRegistPage() {
+    this.registView.display(this.collection.user);
   }
 
   showLoginPage(id) {
-    this.LoinView.display(this.collection.user);
+   // this.loinView.display(this.collection.user);
   }
 
   showNewTaskPage(id) {
-    this.NewTaskView.display(this.collection.user);
+    //this.newTaskView.display(this.collection.user);
   }
 }
 export default Controller;
