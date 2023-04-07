@@ -23,10 +23,11 @@ const task1 = new Task(
 ); */
 const contr = new Controller();
 // -------Show----------
-contr.setCurrentUser("Иванов Иван");
+const user=localStorage.getItem('username')
+contr.setCurrentUser(user);
 contr.getFilter();
-//contr.loadAllTasks();
-contr.showRegistPage();
+contr.loadAllTasks();
+//contr.showRegistPage();
 // contr.showTask('1');
 // contr.getFeed(0, 31, {});
 // contr.getFeed(0, 10, { });

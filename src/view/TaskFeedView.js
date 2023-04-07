@@ -298,6 +298,17 @@ class TaskFeedView {
     if (!main.hasChildNodes()) {
       main.append(cards);
     } else main.replaceWith(cards);
+
+    const link = document.querySelector('link');
+    link.setAttribute('href', '/datamola2023/UI/css/styles_main-row.css');
+
+    const scriptReg = document.createElement('script');
+    scriptReg.setAttribute('src', '/datamola2023/src/row_table.js');
+    scriptReg.setAttribute('type', 'module');
+    const body=document.querySelector('body');
+    body.append(scriptReg);
+
   }
+ 
 }
 export default TaskFeedView;

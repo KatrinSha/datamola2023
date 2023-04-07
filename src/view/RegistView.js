@@ -161,10 +161,11 @@ class RegistView {
     filters.remove();
     const scriptReg = document.createElement('script');
     scriptReg.setAttribute('src', '/datamola2023/src/regist.js');
+    scriptReg.setAttribute('type', 'module');
     const body=document.querySelector('body');
     body.append(scriptReg);
 
-    console.log(inputUsername.value);
+ 
     if(user===inputUsername.value){
       errorTextUsername.textContent='This username exists';
     }
