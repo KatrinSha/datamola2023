@@ -13,8 +13,8 @@
 
 .filters__container {
     display: flex;
-    gap: 3.5rem;
-    width: 80%;
+    gap: 2.5rem;
+    width: 70%;
 }
 
 .filters-box {

@@ -13,14 +13,14 @@ class RegistView {
     // ------link to main----------
     const pathTo = document.createElement('div');
     pathTo.classList.add('path-to');
-    const  buttonToMain = document.createElement('a');
+    const buttonToMain = document.createElement('a');
     buttonToMain.classList.add('button__to-main');
     buttonToMain.textContent = '< Main page';
 
     const icoArrowBackToMain = document.createElement('span');
     icoArrowBackToMain.classList.add('ico', 'arrow-back');
     buttonToMain.append(icoArrowBackToMain);
-    pathTo.append( buttonToMain);
+    pathTo.append(buttonToMain);
     // ---------------------Regist Container--------
     const registContainer = document.createElement('div');
     // ---------------
@@ -39,10 +39,10 @@ class RegistView {
 
     const buttonAddImg = document.createElement('button');
     buttonAddImg.setAttribute('class', 'button__add-img');
-    const spanAddImg=document.createElement('span');
-    spanAddImg.setAttribute('type','file');
-    spanAddImg.setAttribute('id','file');
-    spanAddImg.setAttribute('name','file');
+    const spanAddImg = document.createElement('span');
+    spanAddImg.setAttribute('type', 'file');
+    spanAddImg.setAttribute('id', 'file');
+    spanAddImg.setAttribute('name', 'file');
 
     const spanIcoCamera = document.createElement('span');
     spanIcoCamera.setAttribute('class', 'ico camera');
@@ -157,19 +157,17 @@ class RegistView {
     main.append(regist);
     const link = document.querySelector('link');
     link.setAttribute('href', '/datamola2023/UI/css/styles_registration.css');
-    const filters=document.querySelector('.filters');
+    const filters = document.querySelector('.filters');
     filters.remove();
     const scriptReg = document.createElement('script');
     scriptReg.setAttribute('src', '/datamola2023/src/regist.js');
     scriptReg.setAttribute('type', 'module');
-    const body=document.querySelector('body');
+    const body = document.querySelector('body');
     body.append(scriptReg);
 
- 
-    if(user===inputUsername.value){
-      errorTextUsername.textContent='This username exists';
+    if (user === inputUsername.value) {
+      errorTextUsername.textContent = 'This username exists';
     }
-
   }
 }
 export default RegistView;

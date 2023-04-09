@@ -1,42 +1,43 @@
-import Controller from "./controller/Controller.js";
-const cont = new Controller();
-const loginEl = document.querySelector("#login");
-const usernameEl = document.querySelector("#username");
-const passwordEl = document.querySelector("#psw");
-const retypePasswordEl = document.querySelector("#repsw");
-const registButton = document.querySelector(".registbtn");
+import Controller from './controller/Controller.js';
 
-const form = document.querySelector("#registr");
-form.addEventListener("submit", (e) => {
+const cont = new Controller();
+const loginEl = document.querySelector('#login');
+const usernameEl = document.querySelector('#username');
+const passwordEl = document.querySelector('#psw');
+const retypePasswordEl = document.querySelector('#repsw');
+const registButton = document.querySelector('.registbtn');
+
+const form = document.querySelector('#registr');
+form.addEventListener('submit', (e) => {
   e.preventDefault();
 });
 
-const isRequired = (value) => value !== "";
+const isRequired = (value) => value !== '';
 const isBetween = (length, min, max) => !(length < min || length > max);
 const isPasswordSecure = (password) => {
-  const regular = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])");
+  const regular = new RegExp('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])');
   return regular.test(password);
 };
 const showError = (input, message) => {
   const formField = input.parentElement;
 
-  formField.classList.remove("success");
-  formField.classList.add("error");
-  registButton.setAttribute("disabled", "disabled");
-  registButton.classList.add("disabled");
-  const error = formField.querySelector(".errorText");
+  formField.classList.remove('success');
+  formField.classList.add('error');
+  registButton.setAttribute('disabled', 'disabled');
+  registButton.classList.add('disabled');
+  const error = formField.querySelector('.errorText');
   error.textContent = message;
 };
 const showSuccess = (input) => {
   const formField = input.parentElement;
 
-  formField.classList.remove("error");
-  formField.classList.add("success");
-  registButton.removeAttribute("disabled", "disabled");
-  registButton.classList.remove("disabled");
+  formField.classList.remove('error');
+  formField.classList.add('success');
+  registButton.removeAttribute('disabled', 'disabled');
+  registButton.classList.remove('disabled');
 
-  const error = formField.querySelector(".errorText");
-  error.textContent = "";
+  const error = formField.querySelector('.errorText');
+  error.textContent = '';
 };
 const checkLogin = () => {
   let valid = false;
@@ -44,7 +45,7 @@ const checkLogin = () => {
   const max = 20;
   const login = loginEl.value.trim();
   if (!isRequired(login)) {
-    showError(loginEl, "Login cannot be blank.");
+    showError(loginEl, 'Login cannot be blank.');
   } else if (!isBetween(login.length, min, max)) {
     showError(loginEl, `Login must contain ${min} - ${max} characters.`);
   } else {
@@ -60,13 +61,12 @@ const checkUsername = () => {
   const username = usernameEl.value.trim();
   console.log(username === cont.collection.user);
   if (!isRequired(username)) {
-    showError(usernameEl, "Username cannot be blank.");
+    showError(usernameEl, 'Username cannot be blank.');
   } else if (!isBetween(username.length, min, max)) {
     showError(usernameEl, `Username must contain ${min} - ${max} characters.`);
   } else if (username === cont.collection.user) {
-    showError(usernameEl, `This user exists`);
-  }
-  else {
+    showError(usernameEl, 'This user exists');
+  } else {
     showSuccess(usernameEl);
     valid = true;
   }
@@ -78,11 +78,11 @@ const checkPassword = () => {
   const password = passwordEl.value.trim();
 
   if (!isRequired(password)) {
-    showError(passwordEl, "Password cannot be blank.");
+    showError(passwordEl, 'Password cannot be blank.');
   } else if (!isPasswordSecure(password)) {
     showError(
       passwordEl,
-      "Password must has at least 8 characters that include at least 1 lowercase character, 1 uppercase characters, 1 number"
+      'Password must has at least 8 characters that include at least 1 lowercase character, 1 uppercase characters, 1 number',
     );
   } else {
     showSuccess(passwordEl);
@@ -99,9 +99,9 @@ const checkConfirmPassword = () => {
   const password = passwordEl.value.trim();
 
   if (!isRequired(confirmPassword)) {
-    showError(retypePasswordEl, "Please enter the password again");
+    showError(retypePasswordEl, 'Please enter the password again');
   } else if (password !== confirmPassword) {
-    showError(retypePasswordEl, "Your passwords do not match");
+    showError(retypePasswordEl, 'Your passwords do not match');
   } else {
     showSuccess(retypePasswordEl);
     valid = true;
@@ -109,7 +109,7 @@ const checkConfirmPassword = () => {
 
   return valid;
 };
-form.addEventListener("submit", (e) => {
+form.addEventListener('submit', (e) => {
   // prevent the form from submitting
   e.preventDefault();
 
@@ -119,29 +119,28 @@ form.addEventListener("submit", (e) => {
   const isPasswordValid = checkPassword();
   const isConfirmPasswordValid = checkConfirmPassword();
 
-  const isFormValid =
-    isUsernameValid &&
-    isLoginValid &&
-    isPasswordValid &&
-    isConfirmPasswordValid;
+  const isFormValid = isUsernameValid
+    && isLoginValid
+    && isPasswordValid
+    && isConfirmPasswordValid;
 
   // submit to the server if the form is valid
   if (isFormValid) {
   }
 });
 
-form.addEventListener("input", (e) => {
+form.addEventListener('input', (e) => {
   switch (e.target.id) {
-    case "username":
+    case 'username':
       checkUsername();
       break;
-    case "login":
+    case 'login':
       checkLogin();
       break;
-    case "psw":
+    case 'psw':
       checkPassword();
       break;
-    case "repsw":
+    case 'repsw':
       checkConfirmPassword();
       break;
   }
@@ -159,16 +158,16 @@ formElement.addEventListener('submit', (e) => {
   const login = formData.get('login');
   console.log(login)
 }); */
-form.addEventListener("submit", () => {
-  localStorage.setItem("login", form.elements.login.value);
-  localStorage.setItem("username", form.elements.username.value);
-  localStorage.setItem("password", form.elements.password.value);
+form.addEventListener('submit', () => {
+  localStorage.setItem('login', form.elements.login.value);
+  localStorage.setItem('username', form.elements.username.value);
+  localStorage.setItem('password', form.elements.password.value);
   cont.getFeed(0, 31, {});
 });
 
-registButton.addEventListener('click',()=>{
+registButton.addEventListener('click', () => {
   cont.getFeed(0, 31, {});
-})
-document.querySelector(".button__add-img").addEventListener("click", () => {
-  console.log(localStorage.getItem("login"));
+});
+document.querySelector('.button__add-img').addEventListener('click', () => {
+  console.log(localStorage.getItem('login'));
 });

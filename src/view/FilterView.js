@@ -14,7 +14,7 @@ class FilterView {
 
     const filtersWrapper = document.createElement('div');
     filtersWrapper.classList.add('filters__wrapper', 'wrapper');
-    const filtersContainer = document.createElement('div');
+    const filtersContainer = document.createElement('form');
     filtersContainer.classList.add('filters__container');
     // ---------------------filter Name
     const filtersName = document.createElement('div');
@@ -78,26 +78,26 @@ class FilterView {
     selectPriority.append(optionDisPriority, optionPriority1, optionPriority2, optionPriority3);
     filterPriority.append(selectPriority);
 
-     // ---------------------------filter status
-     const filterStatus= document.createElement('div');
-     filterStatus.classList.add('filters__priority', 'filters-box');
-     const selectStatus = document.createElement('select');
-     selectStatus.setAttribute('id', 'priority');
-     const optionDisStatus = document.createElement('option');
-     optionDisStatus.setAttribute('disabled', 'disabled');
-     optionDisStatus.setAttribute('selected', 'selected');
-     optionDisStatus.textContent = 'Status';
-     const optionStatus1 = document.createElement('option');
-     optionStatus1.setAttribute('value', 'To Do');
-     optionStatus1.textContent = 'To Do';
-     const optionStatus2 = document.createElement('option');
-     optionStatus2.setAttribute('value', 'In progress');
-     optionStatus2.textContent = 'In progress';
-     const optionStatus3 = document.createElement('option');
-     optionStatus3.setAttribute('value', 'Complete');
-     optionStatus3.textContent = 'Complete';
-     selectStatus.append(optionDisStatus, optionStatus1, optionStatus2, optionStatus3);
-     filterStatus.append(selectStatus);
+    // ---------------------------filter status
+    const filterStatus = document.createElement('div');
+    filterStatus.classList.add('filters__priority', 'filters-box');
+    const selectStatus = document.createElement('select');
+    selectStatus.setAttribute('id', 'status');
+    const optionDisStatus = document.createElement('option');
+    optionDisStatus.setAttribute('disabled', 'disabled');
+    optionDisStatus.setAttribute('selected', 'selected');
+    optionDisStatus.textContent = 'Status';
+    const optionStatus1 = document.createElement('option');
+    optionStatus1.setAttribute('value', 'To Do');
+    optionStatus1.textContent = 'To Do';
+    const optionStatus2 = document.createElement('option');
+    optionStatus2.setAttribute('value', 'In progress');
+    optionStatus2.textContent = 'In progress';
+    const optionStatus3 = document.createElement('option');
+    optionStatus3.setAttribute('value', 'Complete');
+    optionStatus3.textContent = 'Complete';
+    selectStatus.append(optionDisStatus, optionStatus1, optionStatus2, optionStatus3);
+    filterStatus.append(selectStatus);
 
     // ---------------------------filter Date
     const filterDate = document.createElement('div');
@@ -139,7 +139,7 @@ class FilterView {
     const inputSub = document.createElement('button');
     inputSub.classList.add('calSub');
     inputSub.setAttribute('id', 'calSub');
-    inputSub.textContent='Enter';
+    inputSub.textContent = 'Enter';
     calendar.append(from, to, inputSub);
     filterDate.append(btnDate, calendar);
 
@@ -196,8 +196,8 @@ class FilterView {
     icoAdd.classList.add('ico', 'add');
     buttonAdd.append(icoAdd);
 
-    filtersContainer.append(filtersName, filterPrivacy, filterPriority,filterStatus,filterDate, filtersSearch,inputSubmit, buttonReset);
-    filtersWrapper.append(filtersContainer,view, buttonAdd);
+    filtersContainer.append(filtersName, filterPrivacy, filterPriority, filterStatus, filterDate, filtersSearch, inputSubmit, buttonReset);
+    filtersWrapper.append(filtersContainer, view, buttonAdd);
     filters.append(filtersWrapper);
 
     header.insertAdjacentElement('afterend', filters);

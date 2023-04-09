@@ -1,6 +1,6 @@
-import { TaskCollection, Task } from "./model/index.js";
-import tasks from "./model/Tasks.js";
-import Controller from "./controller/Controller.js";
+import { TaskCollection, Task } from './model/index.js';
+import tasks from './model/Tasks.js';
+import Controller from './controller/Controller.js';
 // -------instances----------
 const collect = new TaskCollection(tasks);
 /* const task = new Task(
@@ -23,26 +23,25 @@ const task1 = new Task(
 ); */
 const contr = new Controller();
 // -------Show----------
-const user=localStorage.getItem('username')
+const user = localStorage.getItem('username');
 contr.setCurrentUser(user);
 contr.getFilter();
 contr.loadAllTasks();
-//contr.showRegistPage();
+// contr.showRegistPage();
 // contr.showTask('1');
 // contr.getFeed(0, 31, {});
 // contr.getFeed(0, 10, { });
 // contr.addTask(task1);
 // contr.editTask('9',task);
 // contr.removeTask('1');
-const link = document.querySelector("link");
-const tableView = document.querySelector(".button__view-table");
-const rowView = document.querySelector(".button__view-row");
+const link = document.querySelector('link');
+const tableView = document.querySelector('.button__view-table');
+const rowView = document.querySelector('.button__view-row');
 if (tableView) {
-  tableView.addEventListener("click", () => {
-    link.setAttribute("href", "/datamola2023/UI/css/styles_main-table.css");
+  tableView.addEventListener('click', () => {
+    link.setAttribute('href', './UI/css/styles_main-table.css');
   });
-  rowView.addEventListener("click", () => {
-    link.setAttribute("href", "/datamola2023/UI/css/styles_main-row.css");
+  rowView.addEventListener('click', () => {
+    link.setAttribute('href', './UI/css/styles_main-row.css');
   });
 }
-
