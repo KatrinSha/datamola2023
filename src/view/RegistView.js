@@ -7,7 +7,7 @@ class RegistView {
 
   display(user) {
     const regist = document.createElement('section');
-    regist.setAttribute('class', 'regist');
+    regist.setAttribute('class', this.id);
     const registWrapper = document.createElement('div');
     registWrapper.classList.add('regist__wrapper', 'wrapper');
     // ------link to main----------

@@ -37,11 +37,18 @@ contr.loadAllTasks();
 const link = document.querySelector('link');
 const tableView = document.querySelector('.button__view-table');
 const rowView = document.querySelector('.button__view-row');
+const tableHeader=document.querySelectorAll('.table__header');
 if (tableView) {
   tableView.addEventListener('click', () => {
     link.setAttribute('href', './UI/css/styles_main-table.css');
+    tableHeader.forEach((item)=>{
+      item.classList.remove('disabled')
+    })
   });
   rowView.addEventListener('click', () => {
     link.setAttribute('href', './UI/css/styles_main-row.css');
+    tableHeader.forEach((item)=>{
+      item.classList.add('disabled')
+    })
   });
 }

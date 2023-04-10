@@ -12,9 +12,11 @@
     border-radius: 1rem;
     border-bottom: 1px solid var(--secondary-color-o20);
     gap: 0.1rem;
+}
+.card__wrapper-to768 {
+
     overflow-y: scroll;
 }
-
 .cards__info {
     display: none;
 }
@@ -180,51 +182,51 @@
     height: 1.4rem;
     opacity: 50%;
 }
-.todo::-webkit-scrollbar {
+#todo::-webkit-scrollbar {
     width: 1.5rem;
     background-color: var(--additional-color-2);
     border-radius: 2rem;
 }
 
-.todo::-webkit-scrollbar-track {
+#todo::-webkit-scrollbar-track {
     box-shadow: inset 0 0 0.2rem var(--additional-color-2-darker);
     border-radius: 2rem;
 }
 
-.todo::-webkit-scrollbar-thumb {
+#todo::-webkit-scrollbar-thumb {
     background-color: var(--additional-color-2-darker-o50);
     border-radius: 2rem;
 }
-.inprogress::-webkit-scrollbar {
+#inprogress::-webkit-scrollbar {
     width: 1.5rem;
     background-color: var(--additional-color-1);
     border-radius: 2rem;
 }
 
-.inprogress::-webkit-scrollbar-track {
+#inprogress::-webkit-scrollbar-track {
     box-shadow: inset 0 0 0.2rem var(--additional-color-1-darker);
     border-radius: var(--offset-l);
 }
 
-.inprogress::-webkit-scrollbar-thumb {
+#inprogress::-webkit-scrollbar-thumb {
     background-color: #d4711380;
     border-radius: 2rem;
 }
 
 
 
-.complete::-webkit-scrollbar {
+#complete::-webkit-scrollbar {
     width: 1.5rem;
     background-color: var(--primary-color);
     border-radius: 2rem;
 }
 
-.complete::-webkit-scrollbar-track {
+#complete::-webkit-scrollbar-track {
     box-shadow: inset 0 0 2px var(--secondary-color);
     border-radius: 2rem;
 }
 
-.complete::-webkit-scrollbar-thumb {
+#complete::-webkit-scrollbar-thumb {
     background-color: var(--secondary-color);
     border-radius: 2rem;
 }
@@ -239,7 +241,9 @@
     left: 50vw;
     transform: translateX(-50%);
 }
-
+.disabled{
+    display: none;
+}
 .button__view-row {
     background-color: var(--secondary-color);
     box-shadow: 0px 0.4rem 0.4rem var(--secondary-color-o20);

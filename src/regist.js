@@ -146,18 +146,9 @@ form.addEventListener('input', (e) => {
   }
 });
 
-/*
+
 // -----------FORM REGISTRATION------------
-const formElement = document.getElementById('registr'); // извлекаем элемент формы
-formElement.addEventListener('submit', (e) => {
-  e.preventDefault();
-  const formData = new FormData(formElement); // создаём объект FormData, передаём в него элемент формы
-  // теперь можно извлечь данные
-  const username = formData.get('username');
-  console.log(username)
-  const login = formData.get('login');
-  console.log(login)
-}); */
+
 form.addEventListener('submit', () => {
   localStorage.setItem('login', form.elements.login.value);
   localStorage.setItem('username', form.elements.username.value);
@@ -168,6 +159,6 @@ form.addEventListener('submit', () => {
 registButton.addEventListener('click', () => {
   cont.getFeed(0, 31, {});
 });
-document.querySelector('.button__add-img').addEventListener('click', () => {
-  console.log(localStorage.getItem('login'));
-});
+// document.querySelector('.button__add-img').addEventListener('click', () => {
+//   console.log(localStorage.getItem('login'));
+// });
