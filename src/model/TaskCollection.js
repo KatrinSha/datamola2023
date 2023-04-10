@@ -10,7 +10,7 @@ function getUniqId() {
 }
 
 class TaskCollection {
-  #user = 'Иванов Иван';
+  #user = '';
 
   #tasks;
 

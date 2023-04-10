@@ -68,7 +68,7 @@ class LoginView {
     linkToReg.classList.add('linktoreg');
     linkToReg.textContent = 'Don’t have an account?';
     const toRegis = document.createElement('a');
-    toRegis.setAttribute('href', '/datamola2023/UI/registration.html');
+    toRegis.setAttribute('href', '/UI/registration.html');
     linkToReg.append(toRegis);
 
     loginForm.append(

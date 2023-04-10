@@ -1,4 +1,4 @@
- class NewTaskView {
+class NewTaskView {
   id;
 
   constructor(id) {
@@ -6,8 +6,8 @@
   }
 
   display(array, user) {
-    const modal= document.createElement('section');
-    modal.classList.add('modal','wrapper');
+    const modal = document.createElement('section');
+    modal.classList.add('modal', 'wrapper');
 
     const modalContent = document.createElement('div');
     modalContent.classList.add('modal-content');
@@ -17,15 +17,15 @@
 
     const modalTitle = document.createElement('h3');
     modalTitle.classList.add('modal-title');
-    modalTitle.textContent='New Task';
+    modalTitle.textContent = 'New Task';
 
     const button = document.createElement('button');
-    button .classList.add('close');
-   
-    const close=document.createElement('span');
-    close.textContent='X';
-    button.append(close)
-    modalHeader.append(modalTitle,button);
+    button.classList.add('close');
+
+    const close = document.createElement('span');
+    close.textContent = 'X';
+    button.append(close);
+    modalHeader.append(modalTitle, button);
     const modalBody = document.createElement('div');
     modalBody.classList.add('modal-body');
 
@@ -75,17 +75,17 @@
     const assigneeOption = document.createElement('option');
     assigneeOption.setAttribute('value', 'Livia Aminoff');
     assigneeOption.innerText = 'Livia Aminoff';
-  
+
     const nameArray = [];
-   array.forEach((item) => {
+    array.forEach((item) => {
       nameArray.push(item.assignee);
     });
     new Set([...nameArray]).forEach((item) => {
       const option = document.createElement('option');
       option.value = item;
       option.textContent = item;
-      if(item===user){
-        option.setAttribute('selected', 'selected')
+      if (item === user) {
+        option.setAttribute('selected', 'selected');
       }
       assigneeSelect.append(option);
     });
@@ -119,14 +119,14 @@
     statusOption3.setAttribute('value', 'Complete');
     statusOption3.innerText = 'Complete';
 
-    statusSelect.append(statusOption1,statusOption2, statusOption3);
+    statusSelect.append(statusOption1, statusOption2, statusOption3);
 
     const statusOptional = document.createElement('div');
     statusOptional.classList.add('optional');
     statusOptional.innerText = 'optional';
 
-    statusDiv.append(statusLabel,statusSelect,statusOptional);
- 
+    statusDiv.append(statusLabel, statusSelect, statusOptional);
+
     const priorityDiv = document.createElement('div');
     priorityDiv.classList.add('task__priority', 'select-box');
 
@@ -152,60 +152,61 @@
     prioritySelect.append(priorityOption1, priorityOption2, priorityOption3);
     priorityDiv.append(priorityLabel, prioritySelect);
 
-
     const privacyDiv = document.createElement('div');
     privacyDiv.classList.add('task__privacy', 'select-box');
 
     const publicInput = document.createElement('input');
-    publicInput.classList.add('input-public');
-    publicInput.setAttribute('type','radio');
-    publicInput.setAttribute('name','Privacy');
-    publicInput.setAttribute('id','taskPablic');
-    const publicLabel=document.createElement('label');
+    publicInput.classList.add('input-privacy');
+    publicInput.setAttribute('type', 'radio');
+    publicInput.setAttribute('name', 'Privacy');
+    publicInput.setAttribute('id', 'taskPublic');
+    publicInput.setAttribute('value', 'false');
+    const publicLabel = document.createElement('label');
     publicLabel.classList.add('label-for-public');
-    publicLabel.setAttribute('for','taskPablic');
-    publicLabel.textContent="Public";
+    publicLabel.setAttribute('for', 'taskPablic');
+    publicLabel.textContent = 'Public';
 
     const privateInput = document.createElement('input');
-    privateInput.classList.add('input-private');
-    privateInput.setAttribute('type','radio');
-    privateInput.setAttribute('name','Privacy');
-    privateInput.setAttribute('id','taskPrivate');
-    const privateLabel=document.createElement('label');
+    privateInput.classList.add('input-privacy');
+    privateInput.setAttribute('type', 'radio');
+    privateInput.setAttribute('name', 'Privacy');
+    privateInput.setAttribute('id', 'taskPrivate');
+    privateInput.setAttribute('value', 'true');
+    const privateLabel = document.createElement('label');
     privateLabel.classList.add('label-for-public');
-    privateLabel.setAttribute('for','taskPablic');
-    privateLabel.textContent="Public";
+    privateLabel.setAttribute('for', 'taskPublic');
+    privateLabel.textContent = 'Private';
     const privateOptional = document.createElement('div');
     privateOptional.classList.add('optional');
     privateOptional.innerText = 'optional';
 
-    privacyDiv.append(publicInput,publicLabel, privateInput, privateLabel,privateOptional);
+    privacyDiv.append(publicInput, publicLabel, privateInput, privateLabel, privateOptional);
 
-    const formsButtons=document.createElement('div');
+    const formsButtons = document.createElement('div');
     formsButtons.classList.add('forms-buttons');
-    const btnReset=document.createElement('button');
+    const btnReset = document.createElement('button');
     btnReset.classList.add('reset');
-    btnReset.setAttribute('disabled','disabled');
-    btnReset.textContent='Reset';
-    const btnSave=document.createElement('button');
+    btnReset.setAttribute('disabled', 'disabled');
+    btnReset.textContent = 'Reset';
+    const btnSave = document.createElement('button');
     btnSave.classList.add('submit');
-   // btnSave.setAttribute('disabled','disabled');
-    btnSave.textContent='Save';
+    // btnSave.setAttribute('disabled','disabled');
+    btnSave.textContent = 'Save';
 
     formsButtons.append(btnReset, btnSave);
-    taskForm.append(titleLabel,titleInput,descriptionLabel,descriptionInput,assigneeDiv,statusDiv,priorityDiv,privacyDiv,formsButtons);
+    taskForm.append(titleLabel, titleInput, descriptionLabel, descriptionInput, assigneeDiv, statusDiv, priorityDiv, privacyDiv, formsButtons);
     modalBody.append(taskForm);
-    modalContent.append(modalHeader,modalBody)
+    modalContent.append(modalHeader, modalBody);
     modal.append(modalContent);
     const cards = document.querySelector('#cards');
-    cards.insertAdjacentElement('afterend',modal);
+    cards.insertAdjacentElement('afterend', modal);
 
     const scriptNTask = document.createElement('script');
-    scriptNTask.setAttribute('src', '/datamola2023/src/new_task.js');
+    scriptNTask.setAttribute('src', '/src/new_task.js');
     scriptNTask.setAttribute('type', 'module');
+    scriptNTask.setAttribute('id', 'scriptNTas');
     const body = document.querySelector('body');
     body.append(scriptNTask);
-
   }
 }
- export default NewTaskView;
+export default NewTaskView;

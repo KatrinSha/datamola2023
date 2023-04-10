@@ -22,11 +22,12 @@ class Controller {
 
   taskView = new TaskView('task');
 
- // registView = new RegistView('regist');
+  // registView = new RegistView('regist');
 
   // loginView=new LoginView('login');
 
-   newTaskView= new NewTaskView('newTask');
+  newTaskView = new NewTaskView('newTask');
+
   skip = 0;
 
   top = 10;
@@ -50,7 +51,7 @@ class Controller {
 
   showTask(id) {
     const task = this.collection.get(id);
-    this.taskView.display(task);
+    this.taskView.display(task, this.collection.user);
   }
 
   getFeed(skip, top, filter) {
@@ -80,7 +81,7 @@ class Controller {
   }
 
   showNewTaskPage(user) {
-     this.newTaskView.display(this.collection.tasks, user);
+    this.newTaskView.display(this.collection.tasks, user);
   }
 }
 export default Controller;

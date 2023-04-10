@@ -251,13 +251,14 @@
 
 .button__view-table {
     background-color: var(--white);
-    box-shadow: none;
+    box-shadow: 0px 1px 3px 0px var(--secondary-color-o20) inset;
 }
 
 .table-view {
     background-image: url("../assets/icon/table_dark.svg");
     width: 2.6rem;
     height: 2.6rem;
+   
 }
 
 .row-view {

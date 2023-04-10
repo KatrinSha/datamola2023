@@ -146,7 +146,6 @@ form.addEventListener('input', (e) => {
   }
 });
 
-
 // -----------FORM REGISTRATION------------
 
 form.addEventListener('submit', () => {

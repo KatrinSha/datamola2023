@@ -5,7 +5,7 @@ class TaskView {
     this.id = containerId;
   }
 
-  display(task) {
+  display(task, user) {
     const taskPage = document.createElement('section');
 
     taskPage.classList.add('task');
@@ -92,6 +92,10 @@ class TaskView {
     cardEditBtn.textContent = 'Edit';
     const editBtn = document.createElement('span');
     editBtn.classList.add('ico', 'edit');
+    if (user === '') {
+      cardDeleteBtn.setAttribute('disabled', 'disabled');
+      cardEditBtn.setAttribute('disabled', 'disabled');
+    }
     cardEditBtn.append(editBtn);
     taskBox.append(
       cardStatus,
@@ -150,10 +154,18 @@ class TaskView {
     taskContainer.append(commentsBox, formComm);
     taskWrapper.append(pathTo, taskContainer);
     taskPage.append(taskWrapper);
-    const main = document.querySelector('main');
-    main.replaceWith(taskPage);
+    const cards = document.querySelector('#cards');
+    cards.replaceWith(taskPage);
+    const filters = document.querySelector('.filters');
+    filters.remove();
     const link = document.querySelector('link');
-    link.setAttribute('href', '/datamola2023/UI/css/styles_task.css');
+    link.setAttribute('href', '/UI/css/styles_task.css');
+
+    const scriptTask = document.createElement('script');
+    scriptTask.setAttribute('src', '/src/task.js');
+    scriptTask.setAttribute('type', 'module');
+    const body = document.querySelector('body');
+    body.append(scriptTask);
   }
 }
 export default TaskView;

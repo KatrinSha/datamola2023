@@ -24,9 +24,9 @@ class TaskFeedView {
     const tableHeader1 = document.createElement('div');
     tableHeader1.classList.add('table__header', 'disabled');
     const tableHeader2 = document.createElement('div');
-    tableHeader2.classList.add('table__header','disabled');
+    tableHeader2.classList.add('table__header', 'disabled');
     const tableHeader3 = document.createElement('div');
-    tableHeader3.classList.add('table__header','disabled');
+    tableHeader3.classList.add('table__header', 'disabled');
 
     const arrHeaderTab = ['To Do', 'In progress', 'Complete'];
     arrHeaderTab.forEach((item) => {
@@ -175,6 +175,7 @@ class TaskFeedView {
       // create task's box
       const box = document.createElement('div');
       box.classList.add('card', 'card__box', 'disabled');
+      box.setAttribute('data-id', item.id);
 
       const statusWrapper = document.createElement('div');
 
@@ -301,10 +302,11 @@ class TaskFeedView {
     } else main.replaceWith(cards);
 
     const link = document.querySelector('link');
-    link.setAttribute('href', '/datamola2023/UI/css/styles_main-row.css');
+    link.setAttribute('href', '/UI/css/styles_main-row.css');
 
     const scriptReg = document.createElement('script');
-    scriptReg.setAttribute('src', '/datamola2023/src/row_table.js');
+    scriptReg.setAttribute('src', '/src/row_table.js');
+    scriptReg.setAttribute('id', 'row_table');
     scriptReg.setAttribute('type', 'module');
     const body = document.querySelector('body');
     body.append(scriptReg);
