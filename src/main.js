@@ -1,6 +1,6 @@
-import { TaskCollection, Task } from './model/index.js';
-import tasks from './model/Tasks.js';
-import Controller from './controller/Controller.js';
+import { TaskCollection, Task } from "./model/index.js";
+import tasks from "./model/Tasks.js";
+import Controller from "./controller/Controller.js";
 // -------instances----------
 const collect = new TaskCollection(tasks);
 /* const task = new Task(
@@ -23,32 +23,140 @@ const task1 = new Task(
 ); */
 const contr = new Controller();
 // -------Show----------
-const user = localStorage.getItem('username');
+const user = localStorage.getItem("username");
 contr.setCurrentUser(user);
 contr.getFilter();
-contr.loadAllTasks();
-// contr.showRegistPage();
+//contr.loadAllTasks();
+//contr.showRegistPage(user);
 // contr.showTask('1');
-// contr.getFeed(0, 31, {});
+contr.getFeed(0, 31, {});
 // contr.getFeed(0, 10, { });
 // contr.addTask(task1);
 // contr.editTask('9',task);
 // contr.removeTask('1');
-const link = document.querySelector('link');
-const tableView = document.querySelector('.button__view-table');
-const rowView = document.querySelector('.button__view-row');
-const tableHeader = document.querySelectorAll('.table__header');
+const link = document.querySelector("link");
+const tableView = document.querySelector(".button__view-table");
+const rowView = document.querySelector(".button__view-row");
+const tableHeader = document.querySelectorAll(".table__header");
 if (tableView) {
-  tableView.addEventListener('click', () => {
-    link.setAttribute('href', './UI/css/styles_main-table.css');
+  tableView.addEventListener("click", () => {
+    link.setAttribute("href", "/datamola2023/UI/css/styles_main-table.css");
     tableHeader.forEach((item) => {
-      item.classList.remove('disabled');
+      item.classList.remove("disabled");
     });
   });
-  rowView.addEventListener('click', () => {
-    link.setAttribute('href', './UI/css/styles_main-row.css');
+  rowView.addEventListener("click", () => {
+    link.setAttribute("href", "/datamola2023/UI/css/styles_main-row.css");
     tableHeader.forEach((item) => {
-      item.classList.add('disabled');
+      item.classList.add("disabled");
     });
   });
 }
+//---------filters-------------------------
+const filterObj = {};
+const nameSelector = document.querySelector("#name");
+const privacySelector = document.querySelector("#privacy");
+const prioritySelector = document.querySelector("#priority");
+const statusSelector = document.querySelector("#status");
+const btnDate = document.querySelector(".button-date");
+const calendars = document.querySelector(".calendars");
+const dateFromInput = document.querySelector("#date1");
+const dateToInput = document.querySelector("#date2");
+const calSub = document.querySelector(".calSub");
+const descriptionInput = document.querySelector("#description");
+const buttonSearch = document.querySelector(".button-search");
+const buttonResetFilters = document.querySelector(".button-reset");
+
+nameSelector.addEventListener("change", function () {
+  filterObj.assignee = this.value;
+});
+privacySelector.addEventListener("change", function () {
+  filterObj.privacy = this.value;
+});
+
+prioritySelector.addEventListener("change", function () {
+  filterObj.priority = this.value;
+});
+
+statusSelector.addEventListener("change", function () {
+  filterObj.status = this.value;
+});
+btnDate.addEventListener("click", (e) => {
+  e.preventDefault();
+  calendars.classList.toggle("visibilityDate");
+});
+
+calSub.addEventListener("click", (e) => {
+  e.preventDefault();
+  filterObj.dateFrom = new Date(dateFromInput.value);
+  filterObj.dateTo = new Date(dateToInput.value);
+  calendars.classList.toggle("visibilityDate");
+});
+buttonSearch.addEventListener("click", (e) => {
+  e.preventDefault();
+  filterObj.description = descriptionInput.value;
+});
+const buttonApplayFilters = document.querySelector(".button-applay");
+//--Applay------------
+buttonApplayFilters.addEventListener("click", (e) => {
+  e.preventDefault();
+  contr.getFeed(0, 31, filterObj);
+});
+buttonResetFilters.addEventListener("click", (e) => {
+  e.preventDefault();
+  document.querySelector(".filters__container").reset();
+  contr.getFeed(0, 31, { });
+});
+//-------------------------Show task----------------------------
+const cardWrapper = document.querySelectorAll(".card__wrapper-to768");
+let selectedTaskId;
+cardWrapper.forEach((item) => {
+  item.addEventListener("click", (e) => {
+    if (e.target.classList.contains("card")) {
+      selectedTaskId = e.target.dataset.id;
+      console.log(e.target.dataset.id);
+      contr.showTask(selectedTaskId);
+      document.querySelector("#row_table").remove();
+    }
+  });
+});
+
+
+//---------------Add Task----------------
+
+const buttonAdd = document.querySelector('.button__add-new-task');
+buttonAdd.addEventListener('click', () => {
+  contr.showNewTaskPage(user);
+  const secondStyle = document.createElement('link');
+  secondStyle.setAttribute('href', '/datamola2023/UI/css/styles_new_task.css');
+  secondStyle.setAttribute('rel', 'stylesheet');
+  link.insertAdjacentElement('afterend', secondStyle);
+});
+const btnResetTask=document.querySelector('.reset');
+
+//-----------New Task form------------------
+// const radioBtns = document.querySelectorAll('.input-privacy');
+// document.querySelector('.task__form').addEventListener('submit', (e) => {
+//   e.preventDefault();
+//   const form = document.querySelector('.task__form');
+//   localStorage.setItem('name', form.elements.taskTitle.value);
+//   localStorage.setItem('description', form.elements.description.value);
+//   localStorage.setItem('createdAt', new Date());
+//   localStorage.setItem('assignee', form.elements.taskAssignee.value);
+//   localStorage.setItem('status', form.elements.taskStatus.value);
+//   localStorage.setItem('priority', form.elements.taskPriority.value);
+//   for (let i = 0; i < radioBtns.length; i++) {
+//     if (radioBtns[i].checked) {
+//       localStorage.setItem('isPrivate', radioBtns[i].value);
+//     }
+//   }
+//   localStorage.setItem('isPrivate', form.elements.taskPublic.value);
+// });
+// console.log(localStorage.getItem('createdAt'));
+// console.log(btnResetTask);
+
+// btnResetTask.addEventListener("click", () => {
+//   console.log('hiopi');
+//   document.querySelector('.task__form').reset();
+//   contr.getFeed(0, 31, { });
+// });

@@ -5,9 +5,10 @@
     position: absolute;
     background-color: var(--white-o70);
     top:0;
-
 }
-
+.disabled{
+    display: none;
+}
 .modal-content {
     width: 80rem;
     margin: 0 auto;

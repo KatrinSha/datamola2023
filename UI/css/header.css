@@ -26,6 +26,7 @@
     font-size: 1.8rem;
     text-transform: uppercase;
     align-self: flex-end;
+    margin-left: 0.5rem;
 }
 
 .header__box {

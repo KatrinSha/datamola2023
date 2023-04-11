@@ -202,7 +202,7 @@ class NewTaskView {
     cards.insertAdjacentElement('afterend', modal);
 
     const scriptNTask = document.createElement('script');
-    scriptNTask.setAttribute('src', '/src/new_task.js');
+    scriptNTask.setAttribute('src', '/datamola2023/src/new_task.js');
     scriptNTask.setAttribute('type', 'module');
     scriptNTask.setAttribute('id', 'scriptNTas');
     const body = document.querySelector('body');

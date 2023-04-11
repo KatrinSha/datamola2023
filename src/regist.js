@@ -33,8 +33,8 @@ const showSuccess = (input) => {
 
   formField.classList.remove('error');
   formField.classList.add('success');
-  registButton.removeAttribute('disabled', 'disabled');
-  registButton.classList.remove('disabled');
+   registButton.removeAttribute('disabled', 'disabled');
+   registButton.classList.remove('disabled');
 
   const error = formField.querySelector('.errorText');
   error.textContent = '';
@@ -109,6 +109,7 @@ const checkConfirmPassword = () => {
 
   return valid;
 };
+
 form.addEventListener('submit', (e) => {
   // prevent the form from submitting
   e.preventDefault();
@@ -118,14 +119,24 @@ form.addEventListener('submit', (e) => {
   const isLoginValid = checkLogin();
   const isPasswordValid = checkPassword();
   const isConfirmPasswordValid = checkConfirmPassword();
-
+  console.log(checkUsername())
+  console.log(isLoginValid)
+  console.log(isPasswordValid)
+  console.log(isConfirmPasswordValid)
   const isFormValid = isUsernameValid
     && isLoginValid
     && isPasswordValid
     && isConfirmPasswordValid;
-
+    console.log(isFormValid)
   // submit to the server if the form is valid
   if (isFormValid) {
+    console.log('tttt')
+    localStorage.setItem('login', form.elements.login.value);
+    localStorage.setItem('username', form.elements.username.value);
+    localStorage.setItem('password', form.elements.password.value);
+    cont.getFilter();
+    cont.getFeed(0, 31, {});
+
   }
 });
 
@@ -146,18 +157,11 @@ form.addEventListener('input', (e) => {
   }
 });
 
-// -----------FORM REGISTRATION------------
 
-form.addEventListener('submit', () => {
-  localStorage.setItem('login', form.elements.login.value);
-  localStorage.setItem('username', form.elements.username.value);
-  localStorage.setItem('password', form.elements.password.value);
-  cont.getFeed(0, 31, {});
-});
+const buttonToMain=document.querySelector('.button__to-main');
 
-registButton.addEventListener('click', () => {
+buttonToMain.addEventListener('click', ()=>{
+  cont.getFilter();
   cont.getFeed(0, 31, {});
-});
-// document.querySelector('.button__add-img').addEventListener('click', () => {
-//   console.log(localStorage.getItem('login'));
-// });
+  document.querySelector('#registPage').remove();
+})

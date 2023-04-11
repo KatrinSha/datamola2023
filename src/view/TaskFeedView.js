@@ -5,8 +5,7 @@ class TaskFeedView {
     this.id = containerId;
   }
 
-  display(collect, user) {
-    const array = collect;
+  display(array, user) {
     const headerButton = document.querySelector('.header__button');
     // -------------------------------------
     const cards = document.createElement('section');
@@ -171,6 +170,7 @@ class TaskFeedView {
     let todoCount = 0;
     let inprogressCount = 0;
     let completeCount = 0;
+
     array.forEach((item) => {
       // create task's box
       const box = document.createElement('div');
@@ -260,10 +260,12 @@ class TaskFeedView {
         headerButton.textContent = 'Log in';
       }
       // access to edit and delete btn
+
       if (user !== item.assignee) {
         cardEditBtn.style.opacity = '50%';
         cardDeleteBtn.style.opacity = '50%';
       }
+
       if (user == '' && item.isPrivate) {
         box.style.display = 'none';
 
@@ -276,7 +278,7 @@ class TaskFeedView {
         if (item.status === 'Complete' && !item.isPrivate) {
           completeCount += 1;
         }
-      } else if (item.status === 'To Do') {
+      }  else if (item.status === 'To Do') {
         todoCount += 1;
         todoBox.append(box);
       }
@@ -289,6 +291,41 @@ class TaskFeedView {
         completeBox.append(box);
       }
     });
+
+    function showMore(item) {
+          const tasks = item.children;
+        let tasksCount = 10;
+       function showTasks() {
+           if (tasksCount > tasks.length) {
+             for (let i = 0; i < tasks.length; i++) {
+               tasks[i].classList.remove('disabled');
+             }
+           } else {
+             for (let i = 0; i < tasksCount; i++) {
+             tasks[i].classList.remove('disabled');
+             }
+           }
+          }
+        showTasks();
+
+        item.addEventListener('scroll', () => {
+          const isScrolled = item.scrollTop + item.clientHeight;
+          if (item.scrollHeight == isScrolled && tasks.length > tasksCount) {
+            btnShowMore.classList.remove('disabled');
+          }
+        });
+        btnShowMore.addEventListener('click', () => {
+         tasksCount += 10;
+    
+          showTasks();
+        });
+      return item;
+  }
+    
+    showMore(todoBox);
+    showMore(inprogressBox);
+    showMore(completeBox);
+
     cardsCountTodo.textContent = todoCount;
     cardsCountInprogress.textContent = inprogressCount;
     cardsCountComplete.textContent = completeCount;
@@ -296,16 +333,20 @@ class TaskFeedView {
     cardsContainerInprogress.append(inprogressBox);
     cardsContainerComplete.append(completeBox);
     cards.append(cardsWrapper, btnShowMore);
+
     const main = document.querySelector('main');
     if (!main.hasChildNodes()) {
       main.append(cards);
-    } else main.replaceWith(cards);
+    } else{
+      const child = main.lastChild;
+      child.replaceWith(cards) 
+    } 
 
-    const link = document.querySelector('link');
-    link.setAttribute('href', '/UI/css/styles_main-row.css');
+    //const link = document.querySelector('link');
+    //link.setAttribute('href', '/datamola2023/UI/css/styles_main-row.css');
 
     const scriptReg = document.createElement('script');
-    scriptReg.setAttribute('src', '/src/row_table.js');
+    scriptReg.setAttribute('src', '/datamola2023/src/row_table.js');
     scriptReg.setAttribute('id', 'row_table');
     scriptReg.setAttribute('type', 'module');
     const body = document.querySelector('body');

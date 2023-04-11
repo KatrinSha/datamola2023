@@ -84,7 +84,7 @@ class RegistView {
     labelPsw.textContent = 'Password';
 
     const inputPsw = document.createElement('input');
-    inputPsw.setAttribute('type', 'text');
+    inputPsw.setAttribute('type', 'password');
     inputPsw.setAttribute('placeholder', 'Type password');
     inputPsw.setAttribute('autocomplete', 'on');
     inputPsw.setAttribute('name', 'psw');
@@ -102,7 +102,7 @@ class RegistView {
     labelRepsw.textContent = 'Re-type password';
 
     const inputRepsw = document.createElement('input');
-    inputRepsw.setAttribute('type', '');
+    inputRepsw.setAttribute('type', 'password');
     inputRepsw.setAttribute('placeholder', 'Re-type password');
     inputRepsw.setAttribute('autocomplete', 'on');
     inputRepsw.setAttribute('name', 'repsw');
@@ -156,14 +156,15 @@ class RegistView {
     const main = document.querySelector('main');
     main.append(regist);
     const link = document.querySelector('link');
-    link.setAttribute('href', '/UI/css/styles_registration.css');
+    link.setAttribute('href', '/datamola2023/UI/css/styles_registration.css');
     const filters = document.querySelector('.filters');
     filters.remove();
     const scriptReg = document.createElement('script');
-    scriptReg.setAttribute('src', '/src/regist.js');
+    scriptReg.setAttribute('src', '/datamola2023/src/regist.js');
     scriptReg.setAttribute('type', 'module');
+    scriptReg.setAttribute('id', 'registPage');
     const body = document.querySelector('body');
-    body.append(scriptReg);
+    //body.append(scriptReg);
 
     if (user === inputUsername.value) {
       errorTextUsername.textContent = 'This username exists';

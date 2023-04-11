@@ -22,7 +22,7 @@ class Controller {
 
   taskView = new TaskView('task');
 
-  // registView = new RegistView('regist');
+   registView = new RegistView('regist');
 
   // loginView=new LoginView('login');
 
@@ -55,8 +55,8 @@ class Controller {
   }
 
   getFeed(skip, top, filter) {
-    const collect = collection.getPage(skip, top, filter);
-    this.taskFeedView.display(collect, this.collection.user);
+    const collect = this.collection.getPage(skip, top, filter);
+    this.taskFeedView.display(collect, this.collection.user); 
   }
 
   getFilter() {
@@ -72,8 +72,8 @@ class Controller {
     this.taskFeedView.display(tasks, this.collection.user);
   }
 
-  showRegistPage() {
-    this.registView.display();
+  showRegistPage(user) {
+    this.registView.display(user);
   }
 
   showLoginPage(id) {
