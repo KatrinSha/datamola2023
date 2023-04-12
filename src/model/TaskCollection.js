@@ -88,9 +88,11 @@ class TaskCollection {
     return false;
   }
 
-  add(task={}) {
-    const{name, description, assignee,status,priority, isPrivate,createdAt}=task;
-    const newTask=new Task(getUniqId(),description,name,status,priority,isPrivate,[],assignee,createdAt)
+  add(task = {}) {
+    const {
+      name, description, assignee, status, priority, isPrivate, createdAt,
+    } = task;
+    const newTask = new Task(getUniqId(), description, name, status, priority, isPrivate, [], assignee, createdAt);
     if (Task.validate(newTask)) {
       this.#tasks.push(newTask);
       return true;

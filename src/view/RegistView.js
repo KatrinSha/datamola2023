@@ -156,11 +156,11 @@ class RegistView {
     const main = document.querySelector('main');
     main.append(regist);
     const link = document.querySelector('link');
-    link.setAttribute('href', '/datamola2023/UI/css/styles_registration.css');
+    link.setAttribute('href', './UI/css/styles_registration.css');
     const filters = document.querySelector('.filters');
     filters.remove();
     const scriptReg = document.createElement('script');
-    scriptReg.setAttribute('src', '/datamola2023/src/regist.js');
+    scriptReg.setAttribute('src', './src/regist.js');
     scriptReg.setAttribute('type', 'module');
     scriptReg.setAttribute('id', 'registPage');
     const body = document.querySelector('body');

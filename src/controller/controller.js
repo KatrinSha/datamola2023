@@ -9,7 +9,6 @@ import {
 } from '../view/index.js';
 import tasks from '../model/Tasks.js';
 
-
 class Controller {
   collection = new TaskCollection(tasks);
 
@@ -21,7 +20,7 @@ class Controller {
 
   taskView = new TaskView('task');
 
-   registView = new RegistView('regist');
+  registView = new RegistView('regist');
 
   // loginView=new LoginView('login');
 
@@ -55,7 +54,7 @@ class Controller {
 
   getFeed(skip, top, filter) {
     const collect = this.collection.getPage(skip, top, filter);
-    this.taskFeedView.display(collect, this.collection.user); 
+    this.taskFeedView.display(collect, this.collection.user);
   }
 
   getFilter() {

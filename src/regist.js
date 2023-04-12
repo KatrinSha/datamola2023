@@ -33,8 +33,8 @@ const showSuccess = (input) => {
 
   formField.classList.remove('error');
   formField.classList.add('success');
-   registButton.removeAttribute('disabled', 'disabled');
-   registButton.classList.remove('disabled');
+  registButton.removeAttribute('disabled', 'disabled');
+  registButton.classList.remove('disabled');
 
   const error = formField.querySelector('.errorText');
   error.textContent = '';
@@ -110,7 +110,6 @@ const checkConfirmPassword = () => {
 };
 
 form.addEventListener('submit', (e) => {
-
   e.preventDefault();
 
   // validate fields
@@ -124,13 +123,11 @@ form.addEventListener('submit', (e) => {
     && isConfirmPasswordValid;
 
   if (isFormValid) {
-
     localStorage.setItem('login', form.elements.login.value);
     localStorage.setItem('username', form.elements.username.value);
     localStorage.setItem('password', form.elements.password.value);
     cont.getFilter();
     cont.getFeed(0, 31, {});
-
   }
 });
 
@@ -151,10 +148,9 @@ form.addEventListener('input', (e) => {
   }
 });
 
-
-const buttonToMain=document.querySelector('.button__to-main');
-buttonToMain.addEventListener('click', ()=>{
+const buttonToMain = document.querySelector('.button__to-main');
+buttonToMain.addEventListener('click', () => {
   cont.getFilter();
   cont.getFeed(0, 31, {});
   document.querySelector('#registPage').remove();
-})
+});

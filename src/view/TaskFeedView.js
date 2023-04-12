@@ -278,7 +278,7 @@ class TaskFeedView {
         if (item.status === 'Complete' && !item.isPrivate) {
           completeCount += 1;
         }
-      }  else if (item.status === 'To Do') {
+      } else if (item.status === 'To Do') {
         todoCount += 1;
         todoBox.append(box);
       }
@@ -293,35 +293,35 @@ class TaskFeedView {
     });
 
     function showMore(item) {
-          const tasks = item.children;
-        let tasksCount = 10;
-       function showTasks() {
-           if (tasksCount > tasks.length) {
-             for (let i = 0; i < tasks.length; i++) {
-               tasks[i].classList.remove('disabled');
-             }
-           } else {
-             for (let i = 0; i < tasksCount; i++) {
-             tasks[i].classList.remove('disabled');
-             }
-           }
+      const tasks = item.children;
+      let tasksCount = 10;
+      function showTasks() {
+        if (tasksCount > tasks.length) {
+          for (let i = 0; i < tasks.length; i++) {
+            tasks[i].classList.remove('disabled');
           }
-        showTasks();
+        } else {
+          for (let i = 0; i < tasksCount; i++) {
+            tasks[i].classList.remove('disabled');
+          }
+        }
+      }
+      showTasks();
 
-        item.addEventListener('scroll', () => {
-          const isScrolled = item.scrollTop + item.clientHeight;
-          if (item.scrollHeight == isScrolled && tasks.length > tasksCount) {
-            btnShowMore.classList.remove('disabled');
-          }
-        });
-        btnShowMore.addEventListener('click', () => {
-         tasksCount += 10;
-    
-          showTasks();
-        });
+      item.addEventListener('scroll', () => {
+        const isScrolled = item.scrollTop + item.clientHeight;
+        if (item.scrollHeight == isScrolled && tasks.length > tasksCount) {
+          btnShowMore.classList.remove('disabled');
+        }
+      });
+      btnShowMore.addEventListener('click', () => {
+        tasksCount += 10;
+
+        showTasks();
+      });
       return item;
-  }
-    
+    }
+
     showMore(todoBox);
     showMore(inprogressBox);
     showMore(completeBox);
@@ -337,10 +337,10 @@ class TaskFeedView {
     const main = document.querySelector('main');
     if (!main.hasChildNodes()) {
       main.append(cards);
-    } else{
+    } else {
       const child = main.firstChild;
-      child.replaceWith(cards) 
-    } 
+      child.replaceWith(cards);
+    }
   }
 }
 export default TaskFeedView;

@@ -159,7 +159,7 @@ class TaskView {
     const filters = document.querySelector('.filters');
     filters.remove();
     const link = document.querySelector('link');
-    link.setAttribute('href', '/datamola2023/UI/css/styles_task.css');
-
+    link.setAttribute('href', './UI/css/styles_task.css');
+  }
 }
 export default TaskView;

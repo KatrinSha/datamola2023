@@ -107,7 +107,7 @@ class Task {
     function isArrayValid() {
       return Array.isArray(task.comments);
     }
-   
+
     return (
       isIdvalid()
         && isNameValid()
