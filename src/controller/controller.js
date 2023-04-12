@@ -5,10 +5,9 @@ import {
   HeaderView,
   TaskFeedView,
   TaskView,
+  LoginView, RegistView, NewTaskView,
 } from '../view/index.js';
 import tasks from '../model/Tasks.js';
-
-const collection = new TaskCollection(tasks);
 
 class Controller {
   collection = new TaskCollection(tasks);
@@ -20,6 +19,12 @@ class Controller {
   taskFeedView = new TaskFeedView('cards');
 
   taskView = new TaskView('task');
+
+  registView = new RegistView('regist');
+
+  // loginView=new LoginView('login');
+
+  newTaskView = new NewTaskView('newTask');
 
   skip = 0;
 
@@ -44,11 +49,11 @@ class Controller {
 
   showTask(id) {
     const task = this.collection.get(id);
-    this.taskView.display(task);
+    this.taskView.display(task, this.collection.user);
   }
 
   getFeed(skip, top, filter) {
-    const collect = collection.getPage(skip, top, filter);
+    const collect = this.collection.getPage(skip, top, filter);
     this.taskFeedView.display(collect, this.collection.user);
   }
 
@@ -63,6 +68,18 @@ class Controller {
   removeTask(id) {
     this.collection.removeTask(id);
     this.taskFeedView.display(tasks, this.collection.user);
+  }
+
+  showRegistPage(user) {
+    this.registView.display(user);
+  }
+
+  showLoginPage(id) {
+    // this.loinView.display(this.collection.user);
+  }
+
+  showNewTaskPage(user) {
+    this.newTaskView.display(this.collection.tasks, user);
   }
 }
 export default Controller;

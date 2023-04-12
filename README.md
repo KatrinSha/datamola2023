@@ -18,3 +18,5 @@
 * Task 4 - JS Intro [Pull request](https://github.com/KatrinSha/datamola2023/pull/6);
 * Task 5 - JS Deep Dive [Pull request](https://github.com/KatrinSha/datamola2023/pull/10)
 * Task 6 - DOM, BOM [Pull request](https://github.com/KatrinSha/datamola2023/pull/12)
+
+https://KatrinSha.github.io/datamola2023

@@ -5,8 +5,7 @@ class TaskFeedView {
     this.id = containerId;
   }
 
-  display(collect, user) {
-    const array = collect;
+  display(array, user) {
     const headerButton = document.querySelector('.header__button');
     // -------------------------------------
     const cards = document.createElement('section');
@@ -17,15 +16,16 @@ class TaskFeedView {
     cardsWrapper.setAttribute('id', 'cards__wrapper');
     const btnShowMore = document.createElement('button');
     btnShowMore.classList.add('button_show-more');
+    btnShowMore.classList.add('disabled');
     btnShowMore.textContent = 'Show more task';
 
     // --------------create table's header
     const tableHeader1 = document.createElement('div');
-    tableHeader1.classList.add('table__header');
+    tableHeader1.classList.add('table__header', 'disabled');
     const tableHeader2 = document.createElement('div');
-    tableHeader2.classList.add('table__header');
+    tableHeader2.classList.add('table__header', 'disabled');
     const tableHeader3 = document.createElement('div');
-    tableHeader3.classList.add('table__header');
+    tableHeader3.classList.add('table__header', 'disabled');
 
     const arrHeaderTab = ['To Do', 'In progress', 'Complete'];
     arrHeaderTab.forEach((item) => {
@@ -170,10 +170,12 @@ class TaskFeedView {
     let todoCount = 0;
     let inprogressCount = 0;
     let completeCount = 0;
+
     array.forEach((item) => {
       // create task's box
       const box = document.createElement('div');
-      box.classList.add('card', 'card__box');
+      box.classList.add('card', 'card__box', 'disabled');
+      box.setAttribute('data-id', item.id);
 
       const statusWrapper = document.createElement('div');
 
@@ -252,16 +254,18 @@ class TaskFeedView {
         cardEditBtn,
       );
       // if the user is not logged in
-      if (user == '') {
+      if (user == '' || user == null) {
         cardEditBtn.style.display = 'none';
         cardDeleteBtn.style.display = 'none';
         headerButton.textContent = 'Log in';
       }
       // access to edit and delete btn
+
       if (user !== item.assignee) {
         cardEditBtn.style.opacity = '50%';
         cardDeleteBtn.style.opacity = '50%';
       }
+
       if (user == '' && item.isPrivate) {
         box.style.display = 'none';
 
@@ -287,6 +291,41 @@ class TaskFeedView {
         completeBox.append(box);
       }
     });
+
+    function showMore(item) {
+      const tasks = item.children;
+      let tasksCount = 10;
+      function showTasks() {
+        if (tasksCount > tasks.length) {
+          for (let i = 0; i < tasks.length; i++) {
+            tasks[i].classList.remove('disabled');
+          }
+        } else {
+          for (let i = 0; i < tasksCount; i++) {
+            tasks[i].classList.remove('disabled');
+          }
+        }
+      }
+      showTasks();
+
+      item.addEventListener('scroll', () => {
+        const isScrolled = item.scrollTop + item.clientHeight;
+        if (item.scrollHeight == isScrolled && tasks.length > tasksCount) {
+          btnShowMore.classList.remove('disabled');
+        }
+      });
+      btnShowMore.addEventListener('click', () => {
+        tasksCount += 10;
+
+        showTasks();
+      });
+      return item;
+    }
+
+    showMore(todoBox);
+    showMore(inprogressBox);
+    showMore(completeBox);
+
     cardsCountTodo.textContent = todoCount;
     cardsCountInprogress.textContent = inprogressCount;
     cardsCountComplete.textContent = completeCount;
@@ -294,10 +333,14 @@ class TaskFeedView {
     cardsContainerInprogress.append(inprogressBox);
     cardsContainerComplete.append(completeBox);
     cards.append(cardsWrapper, btnShowMore);
+
     const main = document.querySelector('main');
     if (!main.hasChildNodes()) {
       main.append(cards);
-    } else main.replaceWith(cards);
+    } else {
+      const child = main.firstChild;
+      child.replaceWith(cards);
+    }
   }
 }
 export default TaskFeedView;

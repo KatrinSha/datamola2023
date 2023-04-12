@@ -26,7 +26,7 @@ class HeaderView {
     profileName.setAttribute('id', 'profile-name');
     const headerButton = document.createElement('button');
     headerButton.classList.add('header__button', 'button');
-    if (user === '') {
+    if (user === '' || user == null) {
       headerButton.textContent = 'Log in';
     } else {
       headerButton.textContent = 'Log out';

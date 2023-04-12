@@ -10,7 +10,7 @@ function getUniqId() {
 }
 
 class TaskCollection {
-  #user = 'Иванов Иван';
+  #user = '';
 
   #tasks;
 
@@ -19,12 +19,8 @@ class TaskCollection {
   }
 
   addAll(someTasks) {
-    console.log(this.#tasks)
-    console.log(someTasks);
     const validTask = someTasks.filter((item) => Task.validate(item));
-    console.log(validTask );
     this.#tasks = [...this.#tasks ?? [], ...validTask];
-    console.log(this.#tasks)
     return someTasks.filter((item) => !Task.validate(item));
   }
 
@@ -92,16 +88,19 @@ class TaskCollection {
     return false;
   }
 
-  add(task) {
-    if (Task.validate(task)) {
-      this.#tasks.push(task);
+  add(task = {}) {
+    const {
+      name, description, assignee, status, priority, isPrivate, createdAt,
+    } = task;
+    const newTask = new Task(getUniqId(), description, name, status, priority, isPrivate, [], assignee, createdAt);
+    if (Task.validate(newTask)) {
+      this.#tasks.push(newTask);
       return true;
     }
     return false;
   }
 
   edit(id, task) {
-
     const editTask = this.get(id);
 
     if (editTask.assignee === this.#user) {
@@ -156,7 +155,6 @@ class TaskCollection {
 }
 export default TaskCollection;
 
-
-//const col=new TaskCollection();
-//const sub=tasks.map((item)=>{return new Task(item.id,item.description,item.name,item.status,item.priority,item.isPrivate,item.comments,item.assignee,item.createdAt)});
-//const tasks1=col.addAll(sub);
+// const col=new TaskCollection();
+// const sub=tasks.map((item)=>{return new Task(item.id,item.description,item.name,item.status,item.priority,item.isPrivate,item.comments,item.assignee,item.createdAt)});
+// const tasks1=col.addAll(sub);

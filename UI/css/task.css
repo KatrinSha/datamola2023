@@ -185,12 +185,20 @@ main {
     line-height: 120%;
     gap: 1rem;
 }
+.task__delete-button:disabled,.task__edit-button:disabled{
+    background-color: var(--secondary-color-o50);
+    cursor:not-allowed;
+}
 
 .edit {
     background-image: url("../assets/icon/edit.svg");
     width: 14px;
     height: 14px;
     opacity: 100%;
+}
+.task__delete-button:disabled .delete, .task__edit-button:disabled .edit{
+
+    cursor:not-allowed;
 }
 
 .comments-box {
@@ -201,7 +209,8 @@ main {
     background: var(--additional-color-2-o50);
     border-top: 0.1rem solid var(--secondary-color-o30);
     box-shadow: 0rem 0rem 0.4rem var(--secondary-color-o20), 0.2rem 0.2rem 0.4rem var(--secondary-color-o20);
-    height: calc(100vh - 70rem);
+    height: fit-content;
+    max-height: calc(100vh - 70rem);
     overflow-y: scroll;
 }
 

@@ -14,7 +14,7 @@ class FilterView {
 
     const filtersWrapper = document.createElement('div');
     filtersWrapper.classList.add('filters__wrapper', 'wrapper');
-    const filtersContainer = document.createElement('div');
+    const filtersContainer = document.createElement('form');
     filtersContainer.classList.add('filters__container');
     // ---------------------filter Name
     const filtersName = document.createElement('div');
@@ -78,6 +78,27 @@ class FilterView {
     selectPriority.append(optionDisPriority, optionPriority1, optionPriority2, optionPriority3);
     filterPriority.append(selectPriority);
 
+    // ---------------------------filter status
+    const filterStatus = document.createElement('div');
+    filterStatus.classList.add('filters__priority', 'filters-box');
+    const selectStatus = document.createElement('select');
+    selectStatus.setAttribute('id', 'status');
+    const optionDisStatus = document.createElement('option');
+    optionDisStatus.setAttribute('disabled', 'disabled');
+    optionDisStatus.setAttribute('selected', 'selected');
+    optionDisStatus.textContent = 'Status';
+    const optionStatus1 = document.createElement('option');
+    optionStatus1.setAttribute('value', 'To Do');
+    optionStatus1.textContent = 'To Do';
+    const optionStatus2 = document.createElement('option');
+    optionStatus2.setAttribute('value', 'In progress');
+    optionStatus2.textContent = 'In progress';
+    const optionStatus3 = document.createElement('option');
+    optionStatus3.setAttribute('value', 'Complete');
+    optionStatus3.textContent = 'Complete';
+    selectStatus.append(optionDisStatus, optionStatus1, optionStatus2, optionStatus3);
+    filterStatus.append(selectStatus);
+
     // ---------------------------filter Date
     const filterDate = document.createElement('div');
     filterDate.classList.add('filters__date');
@@ -115,10 +136,10 @@ class FilterView {
     inputTo.setAttribute('name', 'dateTo');
     to.append(labelTo, inputTo);
 
-    const inputSub = document.createElement('input');
+    const inputSub = document.createElement('button');
     inputSub.classList.add('calSub');
     inputSub.setAttribute('id', 'calSub');
-    inputSub.setAttribute('value', 'Enter');
+    inputSub.textContent = 'Enter';
     calendar.append(from, to, inputSub);
     filterDate.append(btnDate, calendar);
 
@@ -130,20 +151,27 @@ class FilterView {
     formSearch.setAttribute('action', '');
     formSearch.setAttribute('method', 'post');
     const inputSearch = document.createElement('input');
-    inputSearch.setAttribute('placeholder', 'Title');
+    inputSearch.setAttribute('placeholder', 'Description');
     inputSearch.setAttribute('name', 'search');
+    inputSearch.setAttribute('type', 'text');
+    inputSearch.setAttribute('id', 'description');
     const buttonSearch = document.createElement('button');
     buttonSearch.classList.add('button-search');
-    buttonSearch.setAttribute('type', 'submit');
     const icoSearch = document.createElement('span');
     icoSearch.classList.add('ico', 'search');
     buttonSearch.append(icoSearch);
     formSearch.append(inputSearch, buttonSearch);
     filtersSearch.append(formSearch);
+    // ----------------Aplay btn------------
+    const inputSubmit = document.createElement('input');
+    inputSubmit.setAttribute('type', 'submit');
+    inputSubmit.setAttribute('value', 'Applay filters');
+    inputSubmit.classList.add('button-applay');
     // ---------------------------filter Search
     const buttonReset = document.createElement('button');
     buttonReset.classList.add('button-reset');
-    buttonReset.textContent = 'Reset all filters';
+    buttonReset.textContent = 'Reset';
+
     // ---------------------------View
     const view = document.createElement('div');
     view.classList.add('view');
@@ -168,8 +196,8 @@ class FilterView {
     icoAdd.classList.add('ico', 'add');
     buttonAdd.append(icoAdd);
 
-    filtersContainer.append(filtersName, filterPrivacy, filterPriority, filterDate, filtersSearch, buttonReset, view, buttonAdd);
-    filtersWrapper.append(filtersContainer);
+    filtersContainer.append(filtersName, filterPrivacy, filterPriority, filterStatus, filterDate, filtersSearch, inputSubmit, buttonReset);
+    filtersWrapper.append(filtersContainer, view, buttonAdd);
     filters.append(filtersWrapper);
 
     header.insertAdjacentElement('afterend', filters);
