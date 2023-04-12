@@ -7,7 +7,7 @@ class NewTaskView {
 
   display(array, user) {
     const modal = document.createElement('section');
-    modal.classList.add('modal', 'wrapper');
+    modal.classList.add('modal', 'wrapper', 'disabled');
 
     const modalContent = document.createElement('div');
     modalContent.classList.add('modal-content');
@@ -110,8 +110,8 @@ class NewTaskView {
     statusSelect.setAttribute('name', 'status');
 
     const statusOption1 = document.createElement('option');
-    statusOption1.setAttribute('value', 'To do');
-    statusOption1.innerText = 'To do';
+    statusOption1.setAttribute('value', 'To Do');
+    statusOption1.innerText = 'To Do';
     const statusOption2 = document.createElement('option');
     statusOption2.setAttribute('value', 'In progress');
     statusOption2.innerText = 'In progress';
@@ -160,6 +160,7 @@ class NewTaskView {
     publicInput.setAttribute('type', 'radio');
     publicInput.setAttribute('name', 'Privacy');
     publicInput.setAttribute('id', 'taskPublic');
+    publicInput.setAttribute('checked', 'checked');
     publicInput.setAttribute('value', 'false');
     const publicLabel = document.createElement('label');
     publicLabel.classList.add('label-for-public');
@@ -200,13 +201,6 @@ class NewTaskView {
     modal.append(modalContent);
     const cards = document.querySelector('#cards');
     cards.insertAdjacentElement('afterend', modal);
-
-    const scriptNTask = document.createElement('script');
-    scriptNTask.setAttribute('src', '/datamola2023/src/new_task.js');
-    scriptNTask.setAttribute('type', 'module');
-    scriptNTask.setAttribute('id', 'scriptNTas');
-    const body = document.querySelector('body');
-    body.append(scriptNTask);
   }
 }
 export default NewTaskView;

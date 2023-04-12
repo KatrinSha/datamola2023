@@ -164,7 +164,7 @@ class RegistView {
     scriptReg.setAttribute('type', 'module');
     scriptReg.setAttribute('id', 'registPage');
     const body = document.querySelector('body');
-    //body.append(scriptReg);
+    body.append(scriptReg);
 
     if (user === inputUsername.value) {
       errorTextUsername.textContent = 'This username exists';

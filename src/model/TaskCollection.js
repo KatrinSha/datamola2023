@@ -19,12 +19,8 @@ class TaskCollection {
   }
 
   addAll(someTasks) {
-    console.log(this.#tasks);
-    console.log(someTasks);
     const validTask = someTasks.filter((item) => Task.validate(item));
-    console.log(validTask);
     this.#tasks = [...this.#tasks ?? [], ...validTask];
-    console.log(this.#tasks);
     return someTasks.filter((item) => !Task.validate(item));
   }
 
@@ -92,9 +88,11 @@ class TaskCollection {
     return false;
   }
 
-  add(task) {
-    if (Task.validate(task)) {
-      this.#tasks.push(task);
+  add(task={}) {
+    const{name, description, assignee,status,priority, isPrivate,createdAt}=task;
+    const newTask=new Task(getUniqId(),description,name,status,priority,isPrivate,[],assignee,createdAt)
+    if (Task.validate(newTask)) {
+      this.#tasks.push(newTask);
       return true;
     }
     return false;

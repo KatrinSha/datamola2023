@@ -9,7 +9,6 @@ import {
 } from '../view/index.js';
 import tasks from '../model/Tasks.js';
 
-const collection = new TaskCollection(tasks);
 
 class Controller {
   collection = new TaskCollection(tasks);

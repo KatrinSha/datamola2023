@@ -59,7 +59,6 @@ const checkUsername = () => {
   const min = 5;
   const max = 25;
   const username = usernameEl.value.trim();
-  console.log(username === cont.collection.user);
   if (!isRequired(username)) {
     showError(usernameEl, 'Username cannot be blank.');
   } else if (!isBetween(username.length, min, max)) {
@@ -111,7 +110,7 @@ const checkConfirmPassword = () => {
 };
 
 form.addEventListener('submit', (e) => {
-  // prevent the form from submitting
+
   e.preventDefault();
 
   // validate fields
@@ -119,18 +118,13 @@ form.addEventListener('submit', (e) => {
   const isLoginValid = checkLogin();
   const isPasswordValid = checkPassword();
   const isConfirmPasswordValid = checkConfirmPassword();
-  console.log(checkUsername())
-  console.log(isLoginValid)
-  console.log(isPasswordValid)
-  console.log(isConfirmPasswordValid)
   const isFormValid = isUsernameValid
     && isLoginValid
     && isPasswordValid
     && isConfirmPasswordValid;
-    console.log(isFormValid)
-  // submit to the server if the form is valid
+
   if (isFormValid) {
-    console.log('tttt')
+
     localStorage.setItem('login', form.elements.login.value);
     localStorage.setItem('username', form.elements.username.value);
     localStorage.setItem('password', form.elements.password.value);
@@ -159,7 +153,6 @@ form.addEventListener('input', (e) => {
 
 
 const buttonToMain=document.querySelector('.button__to-main');
-
 buttonToMain.addEventListener('click', ()=>{
   cont.getFilter();
   cont.getFeed(0, 31, {});

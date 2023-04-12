@@ -161,12 +161,5 @@ class TaskView {
     const link = document.querySelector('link');
     link.setAttribute('href', '/datamola2023/UI/css/styles_task.css');
 
-    const scriptTask = document.createElement('script');
-    scriptTask.setAttribute('src', '/datamola2023/src/task.js');
-    scriptTask.setAttribute('type', 'module');
-    scriptTask.setAttribute('id', 'taskPage');
-    const body = document.querySelector('body');
-    body.append(scriptTask);
-  }
 }
 export default TaskView;

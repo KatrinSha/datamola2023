@@ -23,14 +23,15 @@ const task1 = new Task(
 ); */
 const contr = new Controller();
 // -------Show----------
+
 const user = localStorage.getItem("username");
 contr.setCurrentUser(user);
 contr.getFilter();
-//contr.loadAllTasks();
-//contr.showRegistPage(user);
-// contr.showTask('1');
 contr.getFeed(0, 31, {});
-// contr.getFeed(0, 10, { });
+contr.showNewTaskPage(user);
+
+//contr.showRegistPage(user);
+//contr.showTask('1');
 // contr.addTask(task1);
 // contr.editTask('9',task);
 // contr.removeTask('1');
@@ -105,7 +106,7 @@ buttonApplayFilters.addEventListener("click", (e) => {
 buttonResetFilters.addEventListener("click", (e) => {
   e.preventDefault();
   document.querySelector(".filters__container").reset();
-  contr.getFeed(0, 31, { });
+  contr.getFeed(0, 31, {});
 });
 //-------------------------Show task----------------------------
 const cardWrapper = document.querySelectorAll(".card__wrapper-to768");
@@ -114,49 +115,68 @@ cardWrapper.forEach((item) => {
   item.addEventListener("click", (e) => {
     if (e.target.classList.contains("card")) {
       selectedTaskId = e.target.dataset.id;
-      console.log(e.target.dataset.id);
       contr.showTask(selectedTaskId);
-      document.querySelector("#row_table").remove();
     }
   });
 });
+const buttonToMain = document.querySelector('.button__to-main');
 
-
+if(buttonToMain){
+buttonToMain.addEventListener('click', () => {
+  contr.getFilter()
+  contr.getFeed(0, 31, {});
+  document.querySelector('link').remove()
+  document.querySelector('#taskPage').remove()
+    const link = document.querySelector('link');
+    link.setAttribute('href', '/datamola2023/UI/css/styles_main-row.css');
+});
+}
 //---------------Add Task----------------
 
-const buttonAdd = document.querySelector('.button__add-new-task');
-buttonAdd.addEventListener('click', () => {
-  contr.showNewTaskPage(user);
-  const secondStyle = document.createElement('link');
-  secondStyle.setAttribute('href', '/datamola2023/UI/css/styles_new_task.css');
-  secondStyle.setAttribute('rel', 'stylesheet');
-  link.insertAdjacentElement('afterend', secondStyle);
+const buttonAdd = document.querySelector(".button__add-new-task");
+buttonAdd.addEventListener("click", () => {
+  document.querySelector(".modal").classList.remove("disabled");
+  const secondStyle = document.createElement("link");
+  secondStyle.setAttribute("href", "/datamola2023/UI/css/styles_new_task.css");
+  secondStyle.setAttribute("rel", "stylesheet");
+  link.insertAdjacentElement("afterend", secondStyle);
 });
-const btnResetTask=document.querySelector('.reset');
+const btnResetTask = document.querySelector(".reset");
 
 //-----------New Task form------------------
-// const radioBtns = document.querySelectorAll('.input-privacy');
-// document.querySelector('.task__form').addEventListener('submit', (e) => {
-//   e.preventDefault();
-//   const form = document.querySelector('.task__form');
-//   localStorage.setItem('name', form.elements.taskTitle.value);
-//   localStorage.setItem('description', form.elements.description.value);
-//   localStorage.setItem('createdAt', new Date());
-//   localStorage.setItem('assignee', form.elements.taskAssignee.value);
-//   localStorage.setItem('status', form.elements.taskStatus.value);
-//   localStorage.setItem('priority', form.elements.taskPriority.value);
-//   for (let i = 0; i < radioBtns.length; i++) {
-//     if (radioBtns[i].checked) {
-//       localStorage.setItem('isPrivate', radioBtns[i].value);
-//     }
-//   }
-//   localStorage.setItem('isPrivate', form.elements.taskPublic.value);
-// });
-// console.log(localStorage.getItem('createdAt'));
-// console.log(btnResetTask);
+const radioBtns = document.querySelectorAll(".input-privacy");
+document.querySelector(".task__form").addEventListener("submit", (e) => {
+  e.preventDefault();
+  const form = document.querySelector(".task__form");
+  let privasy;
+  for (let i = 0; i < radioBtns.length; i++) {
+    if (radioBtns[i].checked) {
+      privasy = radioBtns[i].value;
+      break;
+    }
+  }
+  const task = {
+    name: form.elements.taskTitle.value,
+    description: form.elements.description.value,
+    createdAt: new Date(),
+    assignee: form.elements.taskAssignee.value,
+    status: form.elements.taskStatus.value,
+    priority: form.elements.taskPriority.value,
+    isPrivate: !!privasy,
+  };
+    contr.addTask(task);
 
-// btnResetTask.addEventListener("click", () => {
-//   console.log('hiopi');
-//   document.querySelector('.task__form').reset();
-//   contr.getFeed(0, 31, { });
-// });
+});
+
+btnResetTask.addEventListener("click", () => {
+  document.querySelector(".task__form").reset();
+  contr.getFeed(0, 31, {});
+});
+
+const btnClose = document.querySelector(".close");
+
+function close() {
+  document.querySelector(".modal").classList.add("disabled");
+}
+
+btnClose.addEventListener("click", close);

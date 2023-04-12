@@ -101,14 +101,13 @@ class Task {
     }
 
     function isPrivateValid() {
-      // console.log(task.isPrivate);
       return typeof task.isPrivate === 'boolean';
     }
 
     function isArrayValid() {
       return Array.isArray(task.comments);
     }
-    // console.log(isIdvalid()&& isNameValid()&& isDescriptionValid()&& isDateValid()&& isAssigneeValid()&& isStatusValid()&& isPriorityValid()&& isPrivateValid()&& isArrayValid())
+   
     return (
       isIdvalid()
         && isNameValid()
