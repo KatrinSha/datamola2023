@@ -5,7 +5,7 @@ class TaskFeedView {
     this.id = containerId;
   }
 
-  display(array, user) {
+  display(array, user, onCardWrapperPressed) {
     const headerButton = document.querySelector('.header__button');
     // -------------------------------------
     const cards = document.createElement('section');
@@ -166,7 +166,9 @@ class TaskFeedView {
     const completeBox = document.createElement('div');
     completeBox.classList.add('card__wrapper-to768');
     completeBox.setAttribute('id', 'complete');
-
+    [todoBox, inprogressBox, completeBox].forEach((item) => {
+      item.addEventListener('click', onCardWrapperPressed);
+    });
     let todoCount = 0;
     let inprogressCount = 0;
     let completeCount = 0;

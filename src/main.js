@@ -110,15 +110,7 @@ buttonResetFilters.addEventListener('click', (e) => {
 });
 // -------------------------Show task----------------------------
 const cardWrapper = document.querySelectorAll('.card__wrapper-to768');
-let selectedTaskId;
-cardWrapper.forEach((item) => {
-  item.addEventListener('click', (e) => {
-    if (e.target.classList.contains('card')) {
-      selectedTaskId = e.target.dataset.id;
-      contr.showTask(selectedTaskId);
-    }
-  });
-});
+
 const buttonToMain = document.querySelector('.button__to-main');
 
 if (buttonToMain) {

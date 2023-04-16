@@ -47,18 +47,31 @@ class Controller {
     this.headerView.display(user);
   }
 
-  showTask(id) {
-    const task = this.collection.get(id);
-    this.taskView.display(task, this.collection.user);
-  }
-
   getFeed(skip, top, filter) {
     const collect = this.collection.getPage(skip, top, filter);
-    this.taskFeedView.display(collect, this.collection.user);
+    this.taskFeedView.display(collect, this.collection.user, (e) => {
+      if (e.target.classList.contains('card')) {
+        this.showTask(e.target.dataset.id);
+      }
+    });
   }
 
   getFilter() {
     this.filterView.display(this.collection.tasks);
+  }
+
+  kkk() {
+    console.log('123654');
+  }
+
+  toMainPage = () => {
+    this.getFilter();
+    this.getFeed(0, 31, {});
+  };
+
+  showTask(id) {
+    const task = this.collection.get(id);
+    this.taskView.display(task, this.collection.user, this.toMainPage);
   }
 
   loadAllTasks() {

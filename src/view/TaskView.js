@@ -5,7 +5,7 @@ class TaskView {
     this.id = containerId;
   }
 
-  display(task, user) {
+  display(task, user, toMainPage) {
     const taskPage = document.createElement('section');
 
     taskPage.classList.add('task');
@@ -31,6 +31,7 @@ class TaskView {
     const icoArrowBackToMain = document.createElement('span');
     icoArrowBackToMain.classList.add('ico', 'arrow-back');
     buttonToMain.append(icoArrowBackToMain);
+
     path.append(linkToMain, icoArrowBack, linkToTask);
     pathTo.append(path, buttonToMain);
 
@@ -160,6 +161,11 @@ class TaskView {
     filters.remove();
     const link = document.querySelector('link');
     link.setAttribute('href', './UI/css/styles_task.css');
+
+    buttonToMain.addEventListener('click', toMainPage);
+    buttonToMain.addEventListener('click', () => {
+      link.setAttribute('href', './UI/css/styles_main-row.css');
+    });
   }
 }
 export default TaskView;
